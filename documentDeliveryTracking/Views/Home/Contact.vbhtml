@@ -2,17 +2,116 @@
     ViewData("Title") = "Contact"
 End Code
 
-<h2>@ViewData("Title").</h2>
-<h3>@ViewData("Message")</h3>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="row">
+    <div class="col-md-4">
+        <h2>@ViewData("Title").</h2>
+        <h3>@ViewData("Message")</h3>
+        <p>Use this area to provide additional information.</p>
+    </div>
+    <div class="col-md-8">
+        <h2>Document Delivery Tracking</h2>
+        <p>Type something in the input field to search the table for first names, last names or emails:</p>
+        <!-- <input id="myInput" type="text" placeholder="Search.."><br><br> -->
+        <br />
+        <table class="table table-hover">
+            <tr>
+                <th>#</th>
+                <th>Bib Info</th>
+                <th>Image</th>
+                <th>QR Code</th>
+                <th>Action</th>
+            </tr>
+            <tbody id="myTable">
+                <tr>
+                    <td> </td>
+                    <td class="col-md-5">
+                        <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
+                        <b><img class="img-thumbnail" src="~/Content/Icon/iconDoc2.png"></b> &nbsp; &nbsp;
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                        <a href="https://www.youtube.com/watch?v=HgzGwKwLmgM" target="_blank">Link download</a><br>
+
+                        <b>Barcode :</b> B59121293<br>
+                        <b>Request Date :</b> 12/08/2528<br>
+                        <div class="btn btn-default" role="alert"><b>สถานะ : จัดส่งเรียบร้อยแล้ว</b></div>
+                    </td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-3">
+                        <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td class="col-md-5">
+                        <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
+                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; เรียนรวม5 <br>
+                        <b>Barcode :</b> B59121293<br>
+                        <b>Request Date :</b> 12/08/2528<br>
+                        <div class="btn btn-success" role="alert"><b>สถานะ : จัดส่งเรียบร้อยแล้ว</b></div>
+                    </td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-3">
+                        <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td class="col-md-5">
+                        <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
+                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; ตึกนวัตกรรม <br>
+                        <b>Barcode :</b> B59121293<br>
+                        <b>Request Date :</b> 12/08/2528<br>
+                        <div class="btn btn-danger" role="alert"><b>สถานะ : จัดส่งไม่สำเร็จ</b></div>
+                    </td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-3">
+                        <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td class="col-md-5">
+                        <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
+                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; ตึกนวัตกรรม <br>
+                        <b>Barcode :</b> B59121293<br>
+                        <b>Request Date :</b> 12/08/2528<br>
+                        <div class="btn btn-success" role="alert"><b>สถานะ : จัดส่งเรียบร้อยแล้ว</b></div>
+                    </td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-3">
+                        <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>   
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
