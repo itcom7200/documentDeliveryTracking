@@ -16,4 +16,10 @@
 
         Return View()
     End Function
+    Function Content() As ActionResult
+        ViewData("Message") = "Test content Page."
+
+        Return View()
+    End Function
+
 End Class
