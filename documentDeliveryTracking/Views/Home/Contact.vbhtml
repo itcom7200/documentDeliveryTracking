@@ -22,8 +22,17 @@ End Code
     <div class="col-md-8">
         <h2>Document Delivery Tracking</h2>
         <p>Type something in the input field to search the table for first names, last names or emails:</p>
-        <!-- <input id="myInput" type="text" placeholder="Search.."><br><br> -->
-        <br />
+        <br><br><!-- <input id="myInput" type="text" placeholder="Search..">  -->
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">ALL(4)</button>
+            <button type="button" class="btn btn-primary">Current(1)</button>
+            <button type="button" class="btn btn-primary">Reject(1)</button>
+            <button type="button" class="btn btn-primary">Complete(2)</button>
+        </div>
+
+
+
         <table class="table table-hover">
             <tr>
                 <th>#</th>
@@ -41,12 +50,12 @@ End Code
 
                         <a href="https://www.youtube.com/watch?v=HgzGwKwLmgM" target="_blank">Link download</a><br>
 
-                        <b>Barcode :</b> B59121293<br>
+                        <b>Barcode :</b> B59121210<br>
                         <b>Request Date :</b> 12/08/2528<br>
-                        <div class="btn btn-default" role="alert"><b>สถานะ : จัดส่งเรียบร้อยแล้ว</b></div>
+                        <div class="btn btn-warning" role="alert"><b>สถานะ : กำลังทำการจัดส่ง</b></div>
                     </td>
-                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px;"></td>
-                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px; min-width:100%"></td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px; min-width:100%;"></td>
                     <td class="col-md-3">
                         <div>
                             <button type="button" class="btn btn-primary">Edit</button>
@@ -58,7 +67,7 @@ End Code
                     <td> </td>
                     <td class="col-md-5">
                         <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
-                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; เรียนรวม5 <br>
+                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; : เรียนรวม5 <br>
                         <b>Barcode :</b> B59121293<br>
                         <b>Request Date :</b> 12/08/2528<br>
                         <div class="btn btn-success" role="alert"><b>สถานะ : จัดส่งเรียบร้อยแล้ว</b></div>
@@ -76,7 +85,25 @@ End Code
                     <td> </td>
                     <td class="col-md-5">
                         <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
-                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; ตึกนวัตกรรม <br>
+                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; : ตึกนวัตกรรม <br>
+                        <b>Barcode :</b> B59121293<br>
+                        <b>Request Date :</b> 12/08/2528<br>
+                        <div class="btn btn-success" role="alert"><b>สถานะ : จัดส่งเรียบร้อยแล้ว</b></div>
+                    </td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px;"></td>
+                    <td class="col-md-3">
+                        <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td class="col-md-5">
+                        <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
+                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; : ตึกนวัตกรรม <br>
                         <b>Barcode :</b> B59121293<br>
                         <b>Request Date :</b> 12/08/2528<br>
                         <div class="btn btn-danger" role="alert"><b>สถานะ : จัดส่งไม่สำเร็จ</b></div>
@@ -90,24 +117,6 @@ End Code
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td> </td>
-                    <td class="col-md-5">
-                        <b>Title :</b> กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.<br>
-                        <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp; ตึกนวัตกรรม <br>
-                        <b>Barcode :</b> B59121293<br>
-                        <b>Request Date :</b> 12/08/2528<br>
-                        <div class="btn btn-success" role="alert"><b>สถานะ : จัดส่งเรียบร้อยแล้ว</b></div>
-                    </td>
-                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/bookDefultImage.jpg" style="max-height:240px;"></td>
-                    <td class="col-md-2"><img class="img-responsive img-thumbnail" src="~/Content/Image/barcodeDefultImage.jpg" style="max-height:240px;"></td>
-                    <td class="col-md-3">
-                        <div>
-                            <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </div>
-                    </td>
-                </tr>   
 
             </tbody>
         </table>
