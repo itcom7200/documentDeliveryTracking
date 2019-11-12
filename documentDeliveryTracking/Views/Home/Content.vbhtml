@@ -79,7 +79,11 @@ End Code
                             <img class="img-responsive" src="~/Content/Image/barcodeDefultImage.jpg">
                         </div>
 
-                        <div class="col-xs-2">
+                        <div class="visible-lg col-xs-2">
+                            <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
+                            <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
+                        </div>
+                        <div class="hidden-lg col-xs-3">
                             <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
                             <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
                         </div>
@@ -173,7 +177,11 @@ End Code
                             <img class="img-responsive" src="~/Content/Image/barcodeDefultImage.jpg">
                         </div>
 
-                        <div class="col-xs-2">
+                        <div class="visible-lg col-xs-2">
+                            <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
+                            <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
+                        </div>
+                        <div class="hidden-lg col-xs-3">
                             <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
                             <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
                         </div>
@@ -267,7 +275,11 @@ End Code
                             <img class="img-responsive visible-lg" src="~/Content/Image/barcodeDefultImage.jpg">
                         </div>
 
-                        <div class="col-xs-2">
+                        <div class="visible-lg col-xs-2">
+                            <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
+                            <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
+                        </div>
+                        <div class="hidden-lg col-xs-3">
                             <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
                             <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
                         </div>
@@ -361,7 +373,11 @@ End Code
                             <img class="img-responsive visible-lg" src="~/Content/Image/barcodeDefultImage.jpg">
                         </div>
 
-                        <div class="col-xs-2">
+                        <div class="visible-lg col-xs-2">
+                            <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
+                            <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
+                        </div>
+                        <div class="hidden-lg col-xs-3">
                             <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
                             <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
                         </div>
