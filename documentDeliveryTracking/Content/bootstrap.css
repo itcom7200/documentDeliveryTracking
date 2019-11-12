@@ -6620,6 +6620,37 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
+.vl {
+    border-left: 6px solid black;
+    height: 45px;
+    
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+.icon {
+    width: 60px;
+    margin: 0px 25px;
+    background: url(../Content/Icon/iconLine.png) center repeat-y;
+    height: 100%;
+    //position: absolute;
+    left: 130px;
+    top: 0px;
+    height: 100%;
+    overflow: hidden
+}
+.icon-noline {
+    width: 60px;
+    margin: 0px 25px;
+    background: url(../Content/Icon/พื้นหลังว่าง) center repeat-y;
+    height: 100%;
+    //position: absolute;
+    left: 130px;
+    top: 0px;
+    height: 100%;
+    overflow: hidden
+}
+
 @media (max-width: 767px) {
   .visible-xs {
     display: block !important;

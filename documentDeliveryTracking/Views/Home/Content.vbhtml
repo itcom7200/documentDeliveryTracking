@@ -107,66 +107,76 @@ End Code
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
+                                    <div class="modal-content"> 
                                         <div class="modal-header">
-                                            <h3 class="modal-title" id="exampleModalScrollableTitle">Document Delivery Transection</h3>
+                                            <h3 class="modal-title text-success" id="exampleModalScrollableTitle">Document Delivery Transection</h3>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <h3></h3>
-                                            <table class="table table-borderless">
+                                        <div class="modal-body"> <!-- start body textbox -->
+                                            <div class="row">
+                                                <div class="col-xs-1"></div>
+                                                <div class="col-xs-10">
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="icon">
+                                                                <img class="img-responsive" src="~/Content/Icon/iconSuccess.png">
+                                                                <br><br>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <b class="text-success">รับคำร้องขอ</b><br>
+                                                            สาขา : หอสมุดกลาง<br>
+                                                            วันที่ : 11/11/2019 เวลา : 10:56 น.
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="icon">
+                                                                <img class="img-responsive" src="~/Content/Icon/iconTime.png">
+                                                                <br><br>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <b class="text-success">รับคำร้องขอ</b><br>
+                                                            สาขา : หอสมุดกลาง<br>
+                                                            วันที่ : 11/11/2019 เวลา : 10:56 น.
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="icon">
+                                                                <img class="img-responsive" src="~/Content/Icon/iconTime.png">
+                                                                <br><br>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <b class="text-success">รับคำร้องขอ</b><br>
+                                                            สาขา : หอสมุดกลาง<br>
+                                                            วันที่ : 11/11/2019 เวลา : 10:56 น.
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="icon-noline">
+                                                                <img class="img-responsive" src="~/Content/Icon/iconTime.png">
+                                                                <br><br>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <b class="text-success">รับคำร้องขอ</b><br>
+                                                            สาขา : หอสมุดกลาง<br>
+                                                            วันที่ : 11/11/2019 เวลา : 10:56 น.
+                                                        </div>
+                                                    </div>
 
-                                                <tr>
-                                                    <td>
-                                                        <b><img class="img-responsive" src="~/Content/Icon/iconWaiting2.png"></b> &nbsp; &nbsp;
 
-                                                    </td>
-                                                    <td>
-                                                        <b>รับคำร้องขอ</b><br>
-                                                        สาขา : หอสมุดกลาง<br>
-                                                        วันที่ : 11/11/2019 เวลา : 10:56 น.
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b><img class="img-responsive" src="~/Content/Icon/iconWaiting2.png"></b> &nbsp; &nbsp;
+                                                </div>
+                                                <div class="col-xs-1"></div>
+                                            </div>
 
-                                                    </td>
-                                                    <td>
-                                                        <b>ทำรายการเรียบร้อย</b><br>
-                                                        เจ้าหน้าที่ : staff WU<br>
-                                                        วันที่ : 11/11/2019 เวลา : 11:56 น.
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b><img class="img-responsive" src="~/Content/Icon/iconWaiting2.png"></b> &nbsp; &nbsp;
-
-                                                    </td>
-                                                    <td>
-                                                        <b>Document รอนำส่ง</b><br>
-                                                        Point : ตึกนวัตกรรม<br>
-                                                        วันที่ : 11/11/2019 เวลา : 15:30 น.
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b><img class="img-responsive" src="~/Content/Icon/iconSuccess.png"></b> &nbsp; &nbsp;
-
-                                                    </td>
-                                                    <td>
-                                                        <b>จัดส่งเรียบร้อยแล้ว</b><br>
-                                                        ผู้รับ : คุณ สวัสดี วันจันทร์<br>
-                                                        วันที่ : 11/11/2019 เวลา : 16:00 น.
-                                                    </td>
-                                                </tr>
-
-
-                                            </table>
-
-                                        </div>
+                                        </div> <!-- modal-body -->
 
                                     </div>
                                 </div>
@@ -280,8 +290,8 @@ End Code
                             <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
                         </div>
                         <div class="hidden-lg col-xs-3">
-                            <button type="button" class="col-xs-8 btn btn-primary">Edit</button><br><br>
-                            <button type="button" class="col-xs-8 btn btn-danger">Delete</button>
+                            <button type="button" class="col-xs-12 btn btn-primary">Edit</button><br><br>
+                            <button type="button" class="col-xs-12 btn btn-danger">Delete</button>
                         </div>
                     </div><!-- row content-->
                     <hr />

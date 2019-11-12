@@ -22,4 +22,10 @@
         Return View()
     End Function
 
+    Function Tracking() As ActionResult
+        ViewData("Message") = "Document Delivery Tracking transections"
+
+        Return View()
+    End Function
+
 End Class
