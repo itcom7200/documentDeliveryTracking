@@ -6650,6 +6650,16 @@ button.close {
     height: 100%;
     overflow: hidden
 }
+.img-clover-book {
+    display: inline-block;
+    max-width: 100%;
+    min-width: 98px;
+    height: auto;
+}
+.btn-action {
+    min-width: 65px;
+    max-width: 65px;
+}
 
 @media (max-width: 767px) {
   .visible-xs {
