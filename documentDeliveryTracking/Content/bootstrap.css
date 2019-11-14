@@ -6650,6 +6650,11 @@ button.close {
     height: 100%;
     overflow: hidden
 }
+.img-barcode-maxsize {
+    display: inline-block;
+    max-width: 130px;
+    height: auto;
+}
 .img-clover-book {
     display: inline-block;
     max-width: 100%;
@@ -6663,9 +6668,13 @@ button.close {
     height: auto;
 }
 .btn-action {
-    min-width: 65px;
-    max-width: 65px;
+    min-width: 85px;
+    max-width: 85px;
 }
+.btn-shadow {
+    filter: drop-shadow(3px 3px 4px #4444dd);
+}
+
 
 @media (max-width: 767px) {
   .visible-xs {
