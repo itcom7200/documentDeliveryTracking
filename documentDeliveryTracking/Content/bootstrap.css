@@ -6656,6 +6656,12 @@ button.close {
     min-width: 98px;
     height: auto;
 }
+.img-clover-book-min {
+    display: inline-block;
+    max-width: 100%;
+    min-width: 112px;
+    height: auto;
+}
 .btn-action {
     min-width: 65px;
     max-width: 65px;
@@ -6780,6 +6786,11 @@ button.close {
   .visible-lg-inline-block {
     display: inline-block !important;
   }
+}
+@media (max-width: 374px) {
+    .hidden-ss {
+        display: none !important;
+    }
 }
 @media (max-width: 767px) {
   .hidden-xs {
