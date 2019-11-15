@@ -6655,7 +6655,7 @@ button.close {
 }
 .img-qrcode-maxsize {
     display: inline-block;
-    max-width: 130px;
+    max-width: 150px;
     height: auto;
 }
 .img-clover-book {
