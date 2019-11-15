@@ -57,12 +57,12 @@ End Code
                         <div class="col-xs-4 visible-xs"></div>
 
                         <div class="col-md-2 col-sm-6 col-xs-5">
-                             <!-- <button type="button" class="btn-action btn btn-primary">Edit</button> -->
-                             
-                             <img class="img-thumbnail" src="~/Content/Icon/iconEdit.png">
-                             <div class="visible-lg visible-md"><br /></div>
-                             <!-- <button type="button" class="btn-action btn btn-danger">Delete</button> -->
-                             
+                            <!-- <button type="button" class="btn-action btn btn-primary">Edit</button> -->
+
+                            <img class="img-thumbnail" src="~/Content/Icon/iconEdit.png">
+                            <div class="visible-lg visible-md"><br /></div>
+                            <!-- <button type="button" class="btn-action btn btn-danger">Delete</button> -->
+
                             <img class="img-thumbnail" src="~/Content/Icon/iconDelete.png">
                         </div>
 
@@ -90,7 +90,7 @@ End Code
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content"> 
                                         <div class="modal-header">
-                                            <h2 class="modal-title text-success" id="exampleModalScrollableTitle">Document Delivery Tracking</h2>
+                                            <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Document Delivery Tracking</h2>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -106,7 +106,7 @@ End Code
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-9">
-                                                            <b class="lead text-success">จัดส่งเรียบร้อยแล้ว</b><br>
+                                                            <b class="lead text-green-opac">จัดส่งเรียบร้อยแล้ว</b><br>
                                                             ผู้รับ : คุณ สวัสดี วันจันทร์<br>
                                                             วันที่ : 11/11/2019 เวลา : 16:00 น.
                                                         </div>

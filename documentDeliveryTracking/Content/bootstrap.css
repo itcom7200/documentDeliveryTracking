@@ -1184,7 +1184,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 768;
   line-height: 1.1;
   color: inherit;
 }
@@ -1335,6 +1335,9 @@ mark,
 }
 .text-muted {
   color: #777;
+}
+.text-green-opac {
+    color: #72c02c;
 }
 .text-primary {
   color: #337ab7;
@@ -6650,7 +6653,7 @@ button.close {
     height: 100%;
     overflow: hidden
 }
-.img-barcode-maxsize {
+.img-qrcode-maxsize {
     display: inline-block;
     max-width: 130px;
     height: auto;
