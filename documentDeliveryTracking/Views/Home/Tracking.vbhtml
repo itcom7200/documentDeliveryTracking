@@ -213,7 +213,7 @@ End Code
                             <img class="img-clover-book img-thumbnail" src="~/Content/Image/71817-fc-a.jpg">
                         </div>
                         <div class="col-xs-7 col-sm-9 col-md-6">
-                            <b>Title :</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682" target="_blank">กรรมวิธีการผลิตชาสมุนไพร : รายงานการวิจัย = The production tea from herbs I / กุลยา จันทร์อรุณ.</a><br>
+                            <b>Title :</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682" target="_blank">ช้างกับกิ่งไม้ = The elephant and the twig / ทอมป์สัน, จีออฟ</a><br>
                             <br />
                             <b><img class="img-thumbnail" src="~/Content/Icon/iconDoc.png"></b> &nbsp; &nbsp;
 
@@ -355,7 +355,7 @@ End Code
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-8">
-                                                    <b class="lead text-green-opac">จัดส่งไม่สำเร็จ</b><br>
+                                                    <b class="lead text-danger">จัดส่งไม่สำเร็จ</b><br>
                                                     สาเหตุ : ไม่มีผู้รับ Document<br>
                                                     วันที่ : 11/11/2019 เวลา : 16:00 น.
                                                 </div>
