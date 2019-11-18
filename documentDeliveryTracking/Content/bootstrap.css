@@ -2752,6 +2752,9 @@ select[multiple].input-sm {
   font-size: 12px;
   line-height: 1.5;
 }
+.input-width-max {
+    width: 100%;
+}
 .input-lg {
   height: 46px;
   padding: 10px 16px;
@@ -3181,6 +3184,51 @@ fieldset[disabled] .btn-primary.focus {
   color: #337ab7;
   background-color: #fff;
 }
+.btn-green-opac {
+    color: #ffffff;
+    background-color: #72C02C;
+    border-color: #5DC700;
+}
+
+    .btn-green-opac:hover,
+    .btn-green-opac:focus,
+    .btn-green-opac:active,
+    .btn-green-opac.active,
+    .open .dropdown-toggle.btn-green-opac {
+        color: #ffffff;
+        background-color: #56941F;
+        border-color: #5DC700;
+    }
+
+    .btn-green-opac:active,
+    .btn-green-opac.active,
+    .open .dropdown-toggle.btn-green-opac {
+        background-image: none;
+    }
+
+    .btn-green-opac.disabled,
+    .btn-green-opac[disabled],
+    fieldset[disabled] .btn-green-opac,
+    .btn-green-opac.disabled:hover,
+    .btn-green-opac[disabled]:hover,
+    fieldset[disabled] .btn-green-opac:hover,
+    .btn-green-opac.disabled:focus,
+    .btn-green-opac[disabled]:focus,
+    fieldset[disabled] .btn-green-opac:focus,
+    .btn-green-opac.disabled:active,
+    .btn-green-opac[disabled]:active,
+    fieldset[disabled] .btn-green-opac:active,
+    .btn-green-opac.disabled.active,
+    .btn-green-opac[disabled].active,
+    fieldset[disabled] .btn-green-opac.active {
+        background-color: #72C02C;
+        border-color: #5DC700;
+    }
+
+    .btn-green-opac .badge {
+        color: #72C02C;
+        background-color: #ffffff;
+    }
 .btn-success {
   color: #fff;
   background-color: #5cb85c;

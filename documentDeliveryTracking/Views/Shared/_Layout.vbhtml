@@ -23,9 +23,12 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <!--
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Content", "Content", "Home")</li>
+                    -->
                     <li>@Html.ActionLink("Tracking", "Tracking", "Home")</li>
+                    <li>@Html.ActionLink("Search", "Search", "Home")</li>
                 </ul>
             </div>
         </div>

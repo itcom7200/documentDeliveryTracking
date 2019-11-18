@@ -212,6 +212,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Home\Content.vbhtml" />
     <Content Include="Views\Home\Tracking.vbhtml" />
+    <Content Include="Views\Home\Search.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
