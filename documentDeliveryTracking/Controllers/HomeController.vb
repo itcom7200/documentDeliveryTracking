@@ -33,5 +33,10 @@
 
         Return View()
     End Function
+    Function Newtracking() As ActionResult
+        ViewData("Message") = "Document Delivery Tracking"
+
+        Return View()
+    End Function
 
 End Class

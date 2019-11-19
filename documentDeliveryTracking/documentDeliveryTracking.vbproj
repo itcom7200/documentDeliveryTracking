@@ -213,6 +213,7 @@
     <Content Include="Views\Home\Content.vbhtml" />
     <Content Include="Views\Home\Tracking.vbhtml" />
     <Content Include="Views\Home\Search.vbhtml" />
+    <Content Include="Views\Home\Newtracking.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
