@@ -6703,12 +6703,12 @@ button.close {
 }
 .img-qrcode-maxsize {
     display: inline-block;
-    max-width: 150px;
+    max-width: 170px;
     height: auto;
 }
 .img-clover-book {
     display: inline-block;
-    max-width: 100%;
+    max-width: 130px;
     min-width: 98px;
     height: auto;
 }
@@ -6724,6 +6724,10 @@ button.close {
 }
 .btn-shadow {
     filter: drop-shadow(3px 3px 4px #4444dd);
+}
+.container-border {
+    border: 1px solid #ccc;
+    border-radius: 15px;
 }
 
 
@@ -6852,11 +6856,13 @@ button.close {
         display: none !important;
     }
 }
+
 @media (max-width: 479px) {
   .hidden-xs {
     display: none !important;
   }
 }
+
 @media (min-width: 480px) and (max-width: 991px) {
   .hidden-sm {
     display: none !important;
