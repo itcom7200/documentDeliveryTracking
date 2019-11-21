@@ -25,22 +25,31 @@ End Code
     </div>
     <div class="col-md-8">
         <h2>Document Delivery Tracking </h2>
-        <div class="btn-group btn-toggle" data-toggle="buttons">
-            <label class="btn btn-primary active">
-                <input name="options" value="option1" type="radio"> ALL(4)
-            </label>
-            <label class="btn btn-primary">
-                <input name="options" value="option2" type="radio"> Current(2)
-            </label>
-            <label class="btn btn-primary">
-                <input name="options" value="option3" type="radio"> Reject(1)
-            </label>
-            <label class="btn btn-primary">
-                <input name="options" value="option3" type="radio"> Complete(1)
-            </label>
-        </div>
-        <hr />
+            <div class="col-xs-12">
+            </div>
+            <div class="btn-group btn-toggle" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    <input name="options" value="option1" type="radio"> ALL(4)
+                </label>
+                <label class="btn btn-primary">
+                    <input name="options" value="option2" type="radio"> Current(2)
+                </label>
+                <label class="btn btn-primary">
+                    <input name="options" value="option3" type="radio"> Reject(1)
+                </label>
+                <label class="btn btn-primary">
+                    <input name="options" value="option3" type="radio"> Complete(1)
+                </label>
+            </div>
+        
+        
+        
+
+        
         <div class="container-fluid">
+
+            <hr />
+
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
                     <img class="img-clover-book img-thumbnail" src="~/Content/Image/bookRichdad.jpg">
@@ -464,7 +473,7 @@ End Code
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
-                            <b><img class="img-thumbnail" src="~/Content/Icon/iconDoc.png"></b> &nbsp; &nbsp;: 
+                            <b><img class="img-thumbnail" src="~/Content/Icon/iconDoc.png"></b> &nbsp; &nbsp;:
                             <a href="https://www.youtube.com/" target="_blank">Download</a>
 
                             <br><br>
@@ -563,9 +572,23 @@ End Code
                 <div class="visible-lg col-lg-2">
                     <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                 </div>
-                <hr />
-
             </div>
+
+            <!-- page paginations -->
+
+            <div class="row">
+                <div class="col-xs-8 col-xs-push-4 col-sm-push-6 col-md-push-6 col-lg-push-10">
+                    <ul class="pagination">
+                        <li><a href="#"><<</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">>></a></li>
+
+                    </ul>
+                </div>
+            </div>
+
         </div>
         
 
