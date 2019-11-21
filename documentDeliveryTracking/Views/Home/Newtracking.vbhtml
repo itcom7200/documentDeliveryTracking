@@ -28,7 +28,7 @@ End Code
 
         <div class="row">
             <div class="col-xs-5 col-sm-3 col-md-2">
-                <img class="img-clover-book img-responsive" src="~/Content/Image/bookRichdad.jpg">
+                <img class="img-clover-book" src="~/Content/Image/bookRichdad.jpg">
             </div>
             <div class="col-sm-9 col-md-5">
                 <div class="col-xs-7 col-sm-12">

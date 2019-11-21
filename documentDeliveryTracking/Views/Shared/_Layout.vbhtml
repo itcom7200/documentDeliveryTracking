@@ -28,7 +28,7 @@
                     <li>@Html.ActionLink("Content", "Content", "Home")</li>
                     -->
                     <li>@Html.ActionLink("Tracking", "Tracking", "Home")</li>
-                    <li>@Html.ActionLink("new", "Newtracking", "Home")</li>
+                    <!--<li>@Html.ActionLink("new", "Newtracking", "Home")</li>-->
                     <li>@Html.ActionLink("Search", "Search", "Home")</li>
                 </ul>
             </div>
