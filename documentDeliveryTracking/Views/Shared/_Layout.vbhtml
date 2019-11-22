@@ -8,7 +8,6 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Content/fontawesome.js")
-    @Scripts.Render("~/Scripts/jquery.min.js")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
