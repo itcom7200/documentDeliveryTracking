@@ -8,6 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Content/fontawesome.js")
+    @Scripts.Render("~/Scripts/jquery.min.js")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -18,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", New With { .area = "" }, New With { .class = "navbar-brand" })
+                @Html.ActionLink("Application name", "Index", "Home", New With {.area = ""}, New With {.class = "navbar-brand"})
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -30,7 +31,8 @@
                     -->
                     <li>@Html.ActionLink("Tracking", "Tracking", "Home")</li>
                     <!--<li>@Html.ActionLink("new", "Newtracking", "Home")</li>-->
-                    <li>@Html.ActionLink("Search", "Search", "Home")</li>
+                    <!--<li>@Html.ActionLink("Search", "Search", "Home")</li>-->
+                    <!--<li>@Html.ActionLink("AJAX", "Ajax", "Home")</li>-->
                 </ul>
             </div>
         </div>
@@ -43,7 +45,7 @@
         </footer>
     </div>
 
-    
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required:=False)
 </body>

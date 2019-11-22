@@ -20,32 +20,32 @@ End Code
 
         </address>
 
-        
+
 
     </div>
     <div class="col-md-8">
         <h2>Document Delivery Tracking </h2>
-            <div class="col-xs-12">
-            </div>
-            <div class="btn-group btn-toggle" data-toggle="buttons">
-                <label class="btn btn-primary active">
-                    <input name="options" value="option1" type="radio"> ALL(4)
-                </label>
-                <label class="btn btn-primary">
-                    <input name="options" value="option2" type="radio"> Current(2)
-                </label>
-                <label class="btn btn-primary">
-                    <input name="options" value="option3" type="radio"> Reject(1)
-                </label>
-                <label class="btn btn-primary">
-                    <input name="options" value="option3" type="radio"> Complete(1)
-                </label>
-            </div>
-        
-        
-        
+        <div class="col-xs-12">
+        </div>
+        <div class="btn-group btn-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active">
+                <input name="options" value="option1" type="radio"> ALL(4)
+            </label>
+            <label class="btn btn-primary">
+                <input name="options" value="option2" type="radio"> Current(2)
+            </label>
+            <label class="btn btn-primary">
+                <input name="options" value="option3" type="radio"> Reject(1)
+            </label>
+            <label class="btn btn-primary">
+                <input name="options" value="option3" type="radio"> Complete(1)
+            </label>
+        </div>
 
-        
+
+
+
+
         <div class="container-fluid">
 
             <hr />
@@ -62,7 +62,6 @@ End Code
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
-                            <i class="fa fa-truck"></i>
                             <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
@@ -113,7 +112,7 @@ End Code
                             </div>
 
                             <div class="col-xs-5">
-                                <button class="btn-xs btn btn-primary"><img src="~/Content/Icon/pencil.png"></button>
+                                <button class="btn-xs btn btn-primary"><img src="~/Content/Icon/edit.png"></button>
                                 <button class="btn-xs btn btn-danger"><img src="~/Content/Icon/bin.png"></button>
                             </div>
                         </div>
@@ -485,11 +484,11 @@ End Code
                             <div class="col-xs-7 col-sm-6">
                                 <div class="row">
                                     <!-- Button -->
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable9">
                                         สถานะ: จัดส่งเรียบร้อยแล้ว
                                     </button>
                                     <!-- Modal -->
-                                    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModalScrollable9" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -512,19 +511,6 @@ End Code
                                                             <b class="lead text-green-opac">จัดส่งเรียบร้อยแล้ว</b><br>
                                                             ผู้รับ: คุณ สวัสดี วันจันทร์<br>
                                                             วันที่: 11/11/2019 เวลา: 16:00 น.
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
-                                                            <div class="icon">
-                                                                <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
-                                                                <br><br>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-8">
-                                                            <b class="lead text-green-opac">Document รอนำส่ง</b><br>
-                                                            เจ้าหน้าที่: WU lineman<br>
-                                                            วันที่: 11/11/2019 เวลา: 15:30 น.
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -585,16 +571,16 @@ End Code
                         <li class="active"><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#">>></a></li>
-
                     </ul>
                 </div>
             </div>
 
         </div>
-        
+
 
 
 
     </div>
-      
+
 </div>
+

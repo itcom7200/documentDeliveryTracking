@@ -39,4 +39,10 @@
         Return View()
     End Function
 
+    Function Ajax() As ActionResult
+        ViewData("Message") = "Testing Jqury Ajax"
+
+        Return View()
+    End Function
+
 End Class
