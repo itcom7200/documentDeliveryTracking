@@ -50,5 +50,10 @@
 
         Return View()
     End Function
+    Function ajaxJson() As ActionResult
+        ViewData("Message") = "Testing ajaxJson"
+
+        Return View()
+    End Function
 
 End Class

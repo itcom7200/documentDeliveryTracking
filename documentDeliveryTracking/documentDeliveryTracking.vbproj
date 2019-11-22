@@ -217,6 +217,7 @@
     <Content Include="Views\Home\Newtracking.vbhtml" />
     <Content Include="Views\Home\Ajax.vbhtml" />
     <Content Include="Views\Home\Content2.vbhtml" />
+    <Content Include="Views\Home\ajaxJson.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
