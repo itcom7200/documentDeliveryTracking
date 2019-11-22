@@ -62,6 +62,7 @@ End Code
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
+                            <i class="fa fa-truck"></i>
                             <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
