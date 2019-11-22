@@ -23,7 +23,30 @@
     End Function
 
     Function Tracking() As ActionResult
-        ViewData("Message") = "Document Delivery Tracking transections"
+        ViewData("Message") = "Document Delivery Tracking"
+
+        Return View()
+    End Function
+
+    Function Search() As ActionResult
+        ViewData("Message") = "Search Document Delivery Tracking"
+
+        Return View()
+    End Function
+    Function Newtracking() As ActionResult
+        ViewData("Message") = "Document Delivery Tracking"
+
+        Return View()
+    End Function
+
+    Function Ajax() As ActionResult
+        ViewData("Message") = "Testing Jqury Ajax"
+
+        Return View()
+    End Function
+
+    Function Content2() As ActionResult
+        ViewData("Message") = "Testing Jqury Ajax"
 
         Return View()
     End Function

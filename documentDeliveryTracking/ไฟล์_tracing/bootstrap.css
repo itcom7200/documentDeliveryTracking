@@ -6710,10 +6710,10 @@ button.close {
     max-width: 170px;
     height: auto;
 }
-.img-clover-book { 
+.img-clover-book {
     display: inline-block;
-    max-height: 180px; 
-    min-width: 80px;
+    max-width: 130px;
+    min-width: 98px;
     height: auto;
 }
 .img-clover-book-min {
@@ -6733,11 +6733,7 @@ button.close {
     border: 1px solid #ccc;
     border-radius: 15px;
 }
-@media (max-width: 379px) {
-.visible-ss {
-    display: block !important;
-  }    
-}
+
 
 @media (max-width: 479px) {
   .visible-xs {
@@ -6859,7 +6855,7 @@ button.close {
     display: inline-block !important;
   }
 }
-@media (max-width: 322px) {
+@media (max-width: 374px) {
     .hidden-ss {
         display: none !important;
     }
