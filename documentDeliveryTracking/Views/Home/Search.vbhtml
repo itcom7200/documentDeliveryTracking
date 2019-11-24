@@ -16,7 +16,28 @@ End Code
         </div>
     </div>
 </div>
-    
+
+
+<button class="btn btn-success" onclick="loadPage()">show Content</button>
+
+<div id="showcontent">
+
+</div>
+
+<script type="text/javascript">
+
+    function loadPage() {
+        var x = new XMLHttpRequest();
+        x.open("get", "content");
+        x.onreadystatechange = function () {
+            var content = document.getElementById("showcontent");
+            content.innerHTML = x.responseText;
+        }
+        x.send(null);
+    }
+</script>
+
+
 
 
 
