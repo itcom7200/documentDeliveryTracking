@@ -1,9 +1,6 @@
 ﻿@Code
     ViewData("Title") = "Tracking"
 End Code
-
-
-
 <div class="row">
     <div class="col-md-4">
         <h2>Contact </h2>
@@ -584,20 +581,21 @@ End Code
 
 </div>
 
-<div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" onclick="loadPage('all')" class="btn btn-primary">ALL</button>
-    <button type="button" onclick="loadPage('current')" class="btn btn-primary">Current</button>
-    <button type="button" onclick="loadPage('reject')" class="btn btn-primary">Reject</button>
-    <button type="button" onclick="loadPage('complete')" class="btn btn-primary">Complete</button>
+
+<div class="btn-group btn-toggle" >
+    <label class="btn btn-primary active"><input type="radio" onclick="loadPage('all')">ALL</label>
+    <label class="btn btn-primary"><input type="radio" onclick="loadPage('current')">Current</label>
+    <label class="btn btn-primary"><input type="radio" onclick="loadPage('reject')">Reject</label>
+    <label class="btn btn-primary"><input type="radio" onclick="loadPage('complete')">Complete</label>
 </div>
 
 <div id="showcontent"></div>
 
 <script type="text/javascript">
 
-    function loadPage(para1) {
+    function loadPage(page) {
         var x = new XMLHttpRequest();
-        x.open("get", para1);
+        x.open("get", page);
         x.onreadystatechange = function () {
             var content = document.getElementById("showcontent");
             content.innerHTML = x.responseText;
@@ -605,3 +603,4 @@ End Code
         x.send(null);
     }
 </script>
+
