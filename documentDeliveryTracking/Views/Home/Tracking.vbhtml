@@ -583,3 +583,25 @@ End Code
     </div>
 
 </div>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" onclick="loadPage('all')" class="btn btn-primary">ALL</button>
+    <button type="button" onclick="loadPage('current')" class="btn btn-primary">Current</button>
+    <button type="button" onclick="loadPage('reject')" class="btn btn-primary">Reject</button>
+    <button type="button" onclick="loadPage('complete')" class="btn btn-primary">Complete</button>
+</div>
+
+<div id="showcontent"></div>
+
+<script type="text/javascript">
+
+    function loadPage(para1) {
+        var x = new XMLHttpRequest();
+        x.open("get", para1);
+        x.onreadystatechange = function () {
+            var content = document.getElementById("showcontent");
+            content.innerHTML = x.responseText;
+        }
+        x.send(null);
+    }
+</script>

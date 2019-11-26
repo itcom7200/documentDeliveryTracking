@@ -218,6 +218,10 @@
     <Content Include="Views\Home\Ajax.vbhtml" />
     <Content Include="Views\Home\Content2.vbhtml" />
     <Content Include="Views\Home\ajaxJson.vbhtml" />
+    <Content Include="Views\Home\all.vbhtml" />
+    <Content Include="Views\Home\current.vbhtml" />
+    <Content Include="Views\Home\reject.vbhtml" />
+    <Content Include="Views\Home\complete.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

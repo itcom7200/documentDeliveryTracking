@@ -56,4 +56,28 @@
         Return View()
     End Function
 
+    Function all() As ActionResult
+        ViewData("Message") = ""
+
+        Return View()
+    End Function
+
+    Function current() As ActionResult
+        ViewData("Message") = ""
+
+        Return View()
+    End Function
+
+    Function reject() As ActionResult
+        ViewData("Message") = ""
+
+        Return View()
+    End Function
+
+    Function complete() As ActionResult
+        ViewData("Message") = ""
+
+        Return View()
+    End Function
+
 End Class
