@@ -13,7 +13,7 @@ End Code
         </address>
 
         <address>
-            <strong>E-mail:</strong>   <a href="mailto:suntiparb.tu@mail.com">suntiparb.tu@mail.com</a><br />
+            <strong>E-mail:</strong>   <a href="mailto:suntiparb.tu@mail.wu.ac.th">suntiparb.tu@mail.wu.ac.th</a><br />
 
         </address>
 
@@ -581,7 +581,12 @@ End Code
 
 </div>
 
+<button id="baconButton">give me bacon</button><br /><br />
 
+<div id="baconIpsumOutput" class="container-border"></div>
+
+<div id="showcontent"></div>
+<!--
 <div class="btn-group btn-toggle">
     <label class="btn btn-primary"><input type="radio" id="btnAll" onclick="loadPage('all')">ALL(5)</label>
     <label class="btn btn-primary"><input type="radio" onclick="loadPage('current')">Current(2)</label>
@@ -589,7 +594,7 @@ End Code
     <label class="btn btn-primary"><input type="radio" onclick="loadPage('complete')">Complete(2)</label>
 </div>
 
-<div id="showcontent"></div>
+
 
 
 
@@ -604,8 +609,27 @@ End Code
         }
         x.send(null);
     }
-</script>
+</script> -->
 
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#baconButton").click(function () {
+            $.getJSON('https://baconipsum.com/api/?callback=?',
+                { 'type': 'meat-and-filler', 'start-with-lorem': '1', 'paras': '3' },
+                function (baconGoodness) {
+                    if (baconGoodness && baconGoodness.length > 0) {
+                        $("#baconIpsumOutput").html('');
+                        for (var i = 0; i < baconGoodness.length; i++)
+                            $("#baconIpsumOutput").append('<p>' + baconGoodness[i] + '</p><br />');
+                        $("#baconIpsumOutput").show();
+                    }
+                });
+        });
+    });
+
+</script>
 
 
 
