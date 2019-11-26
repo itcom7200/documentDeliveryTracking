@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Content/fontawesome.js")
+    <!-- @Scripts.Render("~/Content/fontawesome.js") -->
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,6 +32,7 @@
                     <!--<li>@Html.ActionLink("new", "Newtracking", "Home")</li>-->
                     <!--<li>@Html.ActionLink("Search", "Search", "Home")</li>-->
                     <!--<li>@Html.ActionLink("AJAX", "Ajax", "Home")</li>-->
+                    <li>@Html.ActionLink("Tracking2", "tracking2", "Home")</li>
                 </ul>
             </div>
         </div>

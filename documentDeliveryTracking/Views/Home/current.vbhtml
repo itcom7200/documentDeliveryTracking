@@ -1,8 +1,8 @@
 ﻿@Code
-    ViewData("Title") = "current"
+    ViewData("Title") = "Current"
 End Code
 
-<h2>current</h2>
+<h2>Current</h2>
 
 <div class="container-fluid">
 
@@ -204,4 +204,3 @@ End Code
     </div>
 
 </div>
-

@@ -582,14 +582,16 @@ End Code
 </div>
 
 
-<div class="btn-group btn-toggle" >
-    <label class="btn btn-primary active"><input type="radio" onclick="loadPage('all')">ALL</label>
-    <label class="btn btn-primary"><input type="radio" onclick="loadPage('current')">Current</label>
-    <label class="btn btn-primary"><input type="radio" onclick="loadPage('reject')">Reject</label>
-    <label class="btn btn-primary"><input type="radio" onclick="loadPage('complete')">Complete</label>
+<div class="btn-group btn-toggle">
+    <label class="btn btn-primary"><input type="radio" id="btnAll" onclick="loadPage('all')">ALL(5)</label>
+    <label class="btn btn-primary"><input type="radio" onclick="loadPage('current')">Current(2)</label>
+    <label class="btn btn-primary"><input type="radio" onclick="loadPage('reject')">Reject(1)</label>
+    <label class="btn btn-primary"><input type="radio" onclick="loadPage('complete')">Complete(2)</label>
 </div>
 
 <div id="showcontent"></div>
+
+
 
 <script type="text/javascript">
 
@@ -603,4 +605,10 @@ End Code
         x.send(null);
     }
 </script>
+
+
+
+
+
+
 

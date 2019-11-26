@@ -1,8 +1,8 @@
 ﻿@Code
-    ViewData("Title") = "all"
+    ViewData("Title") = "ALL"
 End Code
 
-<h2>all</h2>
+<h2>All</h2>
 
 <div class="container-fluid">
 
@@ -518,6 +518,8 @@ End Code
             <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
         </div>
     </div>
+
+
 
     <!-- page paginations -->
 

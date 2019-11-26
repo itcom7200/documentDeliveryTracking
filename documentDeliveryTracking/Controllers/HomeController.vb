@@ -33,11 +33,6 @@
 
         Return View()
     End Function
-    Function Newtracking() As ActionResult
-        ViewData("Message") = "Document Delivery Tracking"
-
-        Return View()
-    End Function
 
     Function Ajax() As ActionResult
         ViewData("Message") = "Testing Jqury Ajax"
@@ -77,6 +72,10 @@
     Function complete() As ActionResult
         ViewData("Message") = ""
 
+        Return View()
+    End Function
+
+    Function tracking2() As ActionResult
         Return View()
     End Function
 
