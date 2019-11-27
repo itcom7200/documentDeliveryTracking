@@ -6736,6 +6736,12 @@ button.close {
 .font-track-round {
     font-size: 1.25em;
 }
+.hr-set-margin{
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+
 @media (max-width: 379px) {
 .visible-ss {
     display: block !important;

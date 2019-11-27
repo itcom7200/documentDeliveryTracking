@@ -45,7 +45,7 @@ End Code
 
         <div class="container-fluid">
 
-            <hr />
+            <hr class="hr-set-margin" />
 
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
@@ -124,7 +124,7 @@ End Code
 
             </div>
 
-            <hr />
+            <hr class="hr-set-margin" />
 
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
@@ -228,7 +228,7 @@ End Code
 
             </div>
 
-            <hr />
+            <hr class="hr-set-margin" />
 
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
@@ -343,7 +343,7 @@ End Code
 
             </div>
 
-            <hr />
+            <hr class="hr-set-margin" />
 
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
@@ -458,7 +458,7 @@ End Code
 
             </div>
 
-            <hr />
+            <hr class="hr-set-margin" />
 
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
