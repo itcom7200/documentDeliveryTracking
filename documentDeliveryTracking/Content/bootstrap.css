@@ -6735,12 +6735,15 @@ button.close {
 }
 .font-track-round {
     font-size: 1.25em;
+    
 }
 .hr-set-margin{
     margin-top : 10px;
     margin-bottom : 10px;
 }
-
+.text-header-track-and-trace {
+    color: #808082;  /*   ’Õ–‰√¥’  */
+}
 
 @media (max-width: 379px) {
 .visible-ss {

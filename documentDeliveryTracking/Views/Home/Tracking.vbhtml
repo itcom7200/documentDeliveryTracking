@@ -1,5 +1,5 @@
 ﻿@Code
-    ViewData("Title") = "Tracking"
+            ViewData("Title") = "Tracking"
 End Code
 <div class="row">
     <div class="col-md-4">
@@ -76,7 +76,7 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title " id="exampleModalScrollableTitle">Track & Trace</h2>
+                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
                                                     <h5 class="text-green-opac font-track-round">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -155,7 +155,7 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Document Delivery Tracking</h2>
+                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
                                                     <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -259,7 +259,7 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Document Delivery Tracking</h2>
+                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
                                                     <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -374,7 +374,7 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Document Delivery Tracking</h2>
+                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
                                                     <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -491,7 +491,7 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Document Delivery Tracking</h2>
+                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
                                                     <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -583,7 +583,7 @@ End Code
 
 </div>
 
-<button id="baconButton">give me bacon</button><br /><br />
+@*<button id="baconButton">give me bacon</button><br /><br />
 
 <div id="baconIpsumOutput" class="container-border"></div>
 
@@ -611,7 +611,7 @@ End Code
         }
         x.send(null);
     }
-</script> 
+</script>*@
 <!--
 <script type="text/javascript">
     $(document).ready(function () {

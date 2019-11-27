@@ -16,7 +16,7 @@ End Code
 
 <div id="baconIpsumOutput" class="container-border"></div>
 
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(document).ready(function () {
         $("#baconButton").click(function () {
             $.getJSON('http://localhost:3000/customers',
@@ -34,4 +34,4 @@ End Code
         });
 
     });
-</script>
+</script>*@
