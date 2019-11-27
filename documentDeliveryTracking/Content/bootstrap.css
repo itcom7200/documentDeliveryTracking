@@ -6733,6 +6733,9 @@ button.close {
     border: 1px solid #ccc;
     border-radius: 15px;
 }
+.font-track-round {
+    font-size: 1.25em;
+}
 @media (max-width: 379px) {
 .visible-ss {
     display: block !important;

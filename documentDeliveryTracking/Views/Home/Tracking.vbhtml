@@ -65,7 +65,7 @@ End Code
                     </div>
                     <div class="col-xs-12">
                         <div class="row">
-                            <div class="col-xs-7 col-sm-6">
+                            <div class="col-xs-8 col-sm-6">
                                 <div class="row">
                                     <!-- Button -->
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalScrollable3">
@@ -76,8 +76,8 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Document Delivery Tracking</h2>
-                                                    <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
+                                                    <h2 class="modal-title " id="exampleModalScrollableTitle">Track & Trace</h2>
+                                                    <h5 class="text-green-opac font-track-round">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -108,9 +108,11 @@ End Code
 
                             </div>
 
-                            <div class="col-xs-5">
-                                <button class="btn-xs btn btn-primary"><img src="~/Content/Icon/edit.png"></button>
-                                <button class="btn-xs btn btn-danger"><img src="~/Content/Icon/bin.png"></button>
+                            <div class="col-xs-4"> 
+                                <div class="row">
+                                    <button class="btn-xs btn btn-primary"><img src="~/Content/Icon/IconEdit.png"></button>
+                                    <button class="btn-xs btn btn-danger"><img src="~/Content/Icon/IconReject.png"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -585,8 +587,8 @@ End Code
 
 <div id="baconIpsumOutput" class="container-border"></div>
 
-<div id="showcontent"></div>
-<!--
+
+
 <div class="btn-group btn-toggle">
     <label class="btn btn-primary"><input type="radio" id="btnAll" onclick="loadPage('all')">ALL(5)</label>
     <label class="btn btn-primary"><input type="radio" onclick="loadPage('current')">Current(2)</label>
@@ -595,7 +597,7 @@ End Code
 </div>
 
 
-
+<div id="showcontent"></div>
 
 
 <script type="text/javascript">
@@ -609,10 +611,8 @@ End Code
         }
         x.send(null);
     }
-</script> -->
-
-
-
+</script> 
+<!--
 <script type="text/javascript">
     $(document).ready(function () {
         $("#baconButton").click(function () {
@@ -630,9 +630,4 @@ End Code
     });
 
 </script>
-
-
-
-
-
-
+-->
