@@ -1,5 +1,5 @@
 ﻿@Code
-            ViewData("Title") = "Tracking"
+    ViewData("Title") = "Tracking"
 End Code
 <div class="row">
     <div class="col-md-4">
@@ -108,10 +108,66 @@ End Code
 
                             </div>
 
-                            <div class="col-xs-4"> 
+                            <div class="col-xs-4">
                                 <div class="row">
-                                    <button class="btn-xs btn btn-primary"><img src="~/Content/Icon/IconEdit.png"></button>
-                                    <button class="btn-xs btn btn-danger"><img src="~/Content/Icon/IconReject.png"></button>
+                                    <!-- Button trigger modal (Edit model)  -->
+                                    <button type="button" class="btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit1">
+                                        <img src="~/Content/Icon/IconEdit.png">
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalEdit1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit your Request</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="test1">Text:</label>
+                                                        <input type="text" class="form-control" id="usr">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="test2">Text:</label>
+                                                        <input type="text" class="form-control" id="pwd">
+                                                    </div>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                                                    <button type="button" class="btn " data-dismiss="modal">Cancle</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- div close modal-->
+                                    <!-- Button trigger modal (Reject model)  -->
+                                    <button type="button" class="btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject1">
+                                        <img src="~/Content/Icon/IconReject.png">
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalReject1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Reject Confirms</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are you sure you want to do this !
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Reject</button>
+                                                    <button type="button" class="btn " data-dismiss="modal">Cancle</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- div close modal-->
                                 </div>
                             </div>
                         </div>
@@ -561,18 +617,17 @@ End Code
             </div>
 
             <!-- page paginations -->
-
-            <div class="row">
-                <div class="col-xs-8 col-xs-push-4 col-sm-push-6 col-md-push-6 col-lg-push-10">
-                    <ul class="pagination">
-                        <li><a href="#"><<</a></li>
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">>></a></li>
-                    </ul>
-                </div>
-            </div>
+            @*<div class="row">
+                    <div class="col-xs-8 col-xs-push-4 col-sm-push-6 col-md-push-6 col-lg-push-10">
+                        <ul class="pagination">
+                            <li><a href="#"><<</a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">>></a></li>
+                        </ul>
+                    </div>
+                </div>*@
 
         </div>
 
@@ -585,35 +640,35 @@ End Code
 
 @*<button id="baconButton">give me bacon</button><br /><br />
 
-<div id="baconIpsumOutput" class="container-border"></div>
+    <div id="baconIpsumOutput" class="container-border"></div>
 
 
 
-<div class="btn-group btn-toggle">
-    <label class="btn btn-primary"><input type="radio" id="btnAll" onclick="loadPage('all')">ALL(5)</label>
-    <label class="btn btn-primary"><input type="radio" onclick="loadPage('current')">Current(2)</label>
-    <label class="btn btn-primary"><input type="radio" onclick="loadPage('reject')">Reject(1)</label>
-    <label class="btn btn-primary"><input type="radio" onclick="loadPage('complete')">Complete(2)</label>
-</div>
+    <div class="btn-group btn-toggle">
+        <label class="btn btn-primary"><input type="radio" id="btnAll" onclick="loadPage('all')">ALL(5)</label>
+        <label class="btn btn-primary"><input type="radio" onclick="loadPage('current')">Current(2)</label>
+        <label class="btn btn-primary"><input type="radio" onclick="loadPage('reject')">Reject(1)</label>
+        <label class="btn btn-primary"><input type="radio" onclick="loadPage('complete')">Complete(2)</label>
+    </div>
 
 
-<div id="showcontent"></div>
+    <div id="showcontent"></div>
 
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    function loadPage(page) {
-        var x = new XMLHttpRequest();
-        x.open("get", page);
-        x.onreadystatechange = function () {
-            var content = document.getElementById("showcontent");
-            content.innerHTML = x.responseText;
+        function loadPage(page) {
+            var x = new XMLHttpRequest();
+            x.open("get", page);
+            x.onreadystatechange = function () {
+                var content = document.getElementById("showcontent");
+                content.innerHTML = x.responseText;
+            }
+            x.send(null);
         }
-        x.send(null);
-    }
-</script>*@
-<!--
-<script type="text/javascript">
+    </script>*@
+
+@*<script type="text/javascript">
     $(document).ready(function () {
         $("#baconButton").click(function () {
             $.getJSON('https://baconipsum.com/api/?callback=?',
@@ -629,5 +684,5 @@ End Code
         });
     });
 
-</script>
--->
+</script>*@
+
