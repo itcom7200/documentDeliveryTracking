@@ -47,6 +47,7 @@ End Code
 
             <hr class="hr-set-margin" />
 
+
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
                     <img class="img-clover-book img-thumbnail" src="~/Content/Image/bookRichdad.jpg">
@@ -59,7 +60,7 @@ End Code
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
-                            <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp;: เรียนรวม5
+                            <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
                     </div>
@@ -76,8 +77,8 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
-                                                    <h5 class="text-green-opac font-track-round">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h5>
+                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Track & Trace</h2>
+                                                    <h5 class="text-header-track-and-trace font-track-round">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -180,6 +181,7 @@ End Code
 
             </div>
 
+
             <hr class="hr-set-margin" />
 
             <div class="row">
@@ -194,7 +196,7 @@ End Code
                                              target="_blank">คิดมุมกลับ ปรับชีวิตให้เป็นบวก = Flip it /เฮปเพลล์, ไมเคิล</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
-                            <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp;: เรียนรวม5
+                            <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
                     </div>
@@ -211,8 +213,8 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
-                                                    <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
+                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Track & Trace</h2>
+                                                    <h4 class="text-header-track-and-trace">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -298,7 +300,7 @@ End Code
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
-                            <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp;: เรียนรวม5
+                            <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
                     </div>
@@ -315,8 +317,8 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
-                                                    <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
+                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Track & Trace</h2>
+                                                    <h4 class="text-header-track-and-trace">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -413,7 +415,7 @@ End Code
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
-                            <b><img class="img-thumbnail" src="~/Content/Icon/iconCar.png"></b> &nbsp; &nbsp;: เรียนรวม5
+                            <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
                     </div>
@@ -430,8 +432,8 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
-                                                    <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
+                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Track & Trace</h2>
+                                                    <h4 class="text-header-track-and-trace">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -528,7 +530,7 @@ End Code
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br>
-                            <b><img class="img-thumbnail" src="~/Content/Icon/iconDoc.png"></b> &nbsp; &nbsp;:
+                            <img class="img-thumbnail" src="~/Content/Icon/iconDoc.png"> &nbsp; &nbsp;:
                             <a href="https://www.youtube.com/" target="_blank">Download</a>
 
                             <br><br>
@@ -547,8 +549,8 @@ End Code
                                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title text-header-track-and-trace" id="exampleModalScrollableTitle">Track & Trace</h2>
-                                                    <h4 class="text-green-opac">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
+                                                    <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Track & Trace</h2>
+                                                    <h4 class="text-header-track-and-trace">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -669,20 +671,19 @@ End Code
     </script>*@
 
 @*<script type="text/javascript">
-    $(document).ready(function () {
-        $("#baconButton").click(function () {
-            $.getJSON('https://baconipsum.com/api/?callback=?',
-                { 'type': 'meat-and-filler', 'start-with-lorem': '1', 'paras': '3' },
-                function (baconGoodness) {
-                    if (baconGoodness && baconGoodness.length > 0) {
-                        $("#baconIpsumOutput").html('');
-                        for (var i = 0; i < baconGoodness.length; i++)
-                            $("#baconIpsumOutput").append('<p>' + baconGoodness[i] + '</p><br />');
-                        $("#baconIpsumOutput").show();
-                    }
-                });
+        $(document).ready(function () {
+            $("#baconButton").click(function () {
+                $.getJSON('https://baconipsum.com/api/?callback=?',
+                    { 'type': 'meat-and-filler', 'start-with-lorem': '1', 'paras': '3' },
+                    function (baconGoodness) {
+                        if (baconGoodness && baconGoodness.length > 0) {
+                            $("#baconIpsumOutput").html('');
+                            for (var i = 0; i < baconGoodness.length; i++)
+                                $("#baconIpsumOutput").append('<p>' + baconGoodness[i] + '</p><br />');
+                            $("#baconIpsumOutput").show();
+                        }
+                    });
+            });
         });
-    });
 
-</script>*@
-
+    </script>*@
