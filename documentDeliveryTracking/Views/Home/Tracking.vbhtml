@@ -639,6 +639,46 @@ End Code
     </div>
 
 </div>
+<button class="btn" onclick="getTest(1)">Get Json</button>
+
+<script>
+    function getTest(idCompany) {
+        console.log("call function getTest");
+        $.ajax({
+            type: "Get",
+            url: "http://localhost:3000/companies",
+            //data: "{id: '" + idCompany + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: SuccessGetMeta,
+            error: ErrorGetMeta
+        });
+        
+    }
+
+    function SuccessGetMeta(what) {
+        // 
+        console.log(what);
+        resultSearch = $.parseJSON(data.d);
+        $.each(resultSearch, function (i, item) {    //.each คือคำสั่ง loop
+            var m = document.createElement('meta');
+            m.name = 'og:image';
+            m.content = resultSearch[i].ImgUrl;
+            document.head.appendChild(m);
+
+        });
+    }
+    function ErrorGetMeta(request, status, error) {
+
+        var m = document.createElement('meta');
+        m.name = 'og:image';
+        m.content = '../Images/NoImageBook.jpg';
+        document.head.appendChild(m);
+    }
+    
+</script>
+
+
 
 @*<button id="baconButton">give me bacon</button><br /><br />
 
