@@ -30,9 +30,9 @@
                     -->
                     <li>@Html.ActionLink("Tracking", "Tracking", "Home")</li>
                     <!--<li>@Html.ActionLink("new", "Newtracking", "Home")</li>-->
-                    <!--<li>@Html.ActionLink("Search", "Search", "Home")</li>-->
+                    <li>@Html.ActionLink("Search", "Search", "Home")</li>
                     <!--<li>@Html.ActionLink("AJAX", "Ajax", "Home")</li>-->
-                    <li>@Html.ActionLink("Tracking2", "tracking2", "Home")</li>
+                    @*<li>@Html.ActionLink("Tracking2", "tracking2", "Home")</li>*@
                 </ul>
             </div>
         </div>

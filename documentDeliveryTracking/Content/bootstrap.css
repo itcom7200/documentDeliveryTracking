@@ -1343,6 +1343,9 @@ mark,
 .text-green-opac {
     color: #72c02c;
 }
+.text-white {
+    color: #ffffff;
+}
 .text-primary {
   color: #337ab7;
 }
@@ -3189,9 +3192,9 @@ fieldset[disabled] .btn-primary.focus {
   background-color: #fff;
 }
 .btn-green-opac {
-    color: #ffffff;
-    background-color: #72C02C;
-    border-color: #5DC700;
+    color: #FFFFFF;
+    background-color: #5FB611;
+    border-color: #489503;
 }
 
     .btn-green-opac:hover,
@@ -3199,9 +3202,9 @@ fieldset[disabled] .btn-primary.focus {
     .btn-green-opac:active,
     .btn-green-opac.active,
     .open .dropdown-toggle.btn-green-opac {
-        color: #ffffff;
-        background-color: #56941F;
-        border-color: #5DC700;
+        color: #FFFFFF;
+        background-color: #357100;
+        border-color: #489503;
     }
 
     .btn-green-opac:active,
@@ -3225,14 +3228,15 @@ fieldset[disabled] .btn-primary.focus {
     .btn-green-opac.disabled.active,
     .btn-green-opac[disabled].active,
     fieldset[disabled] .btn-green-opac.active {
-        background-color: #72C02C;
-        border-color: #5DC700;
+        background-color: #5FB611;
+        border-color: #489503;
     }
 
     .btn-green-opac .badge {
-        color: #72C02C;
-        background-color: #ffffff;
+        color: #5FB611;
+        background-color: #FFFFFF;
     }
+
 .btn-success {
   color: #fff;
   background-color: #5cb85c;
@@ -6716,6 +6720,11 @@ button.close {
     min-width: 80px;
     height: auto;
 }
+.img-banner {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
 .btn-action {
     min-width: 85px;
     max-width: 85px;
@@ -6731,6 +6740,9 @@ button.close {
     font-size: 1.25em;
     
 }
+.font-discription {
+    font-size: 1.5em;
+}
 .hr-set-margin{
     margin-top : 10px;
     margin-bottom : 10px;
@@ -6738,6 +6750,30 @@ button.close {
 .text-header-track-and-trace {
     color: #808082;  /*   ’Õ–‰√¥’  */
 }
+.text-gray {
+    color: #808082;
+}
+.background-fullscreen {
+    /* The image used */
+    /*background-image: url("image/background-book.png");*/
+    background-color: #e8f3ec;
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fullscreen-block {
+    background-color: #006699;
+    width: 100vw;
+    height: 100vh;
+}
+.box {
+    text-align: center;
+    margin-top: 40px;
+}
+
 
 
 @media (max-width: 379px) {
