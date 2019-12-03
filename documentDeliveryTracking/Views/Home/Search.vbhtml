@@ -16,7 +16,9 @@ End Code
                     <br />
                     <div class="form-group row">
                         <div class="col-xs-12 col-sm-7 col-md-8" style="padding-right: 0px;">
-                            <input type="text" class="form-control input-lg" placeholder="Enter Your Tracking Number">
+                            <input type="text" class="form-control input-lg" 
+                                   placeholder="Enter Your Tracking Number"
+                                   value="59148965">
                         </div>
                         <div class="col-xs-12 col-sm-2">
                             <div class="visible-xs">
@@ -40,20 +42,13 @@ End Code
 <div class="container">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="row">
-                    <center>
-                        <h2>
-                            Contact
-                        </h2>
-                    </center>
-                </div>
+            <div class="col-sm-4 col-md-4">
+                <h2>Contact</h2>
                 <p>Use this area to provide additional information.</p>
                 <address>
-                    ID : 59121293<br />
-                    Name : สันติภาพ ตันประมวล<br />
-                    Default point : ตึกนวัตกรรม <br>
-
+                    ID : 59148965<br />
+                    Name : อภิวัฒน์ คงมาก<br />
+                    Default point : ลักษณานิเวศ 5 <br>
                 </address>
 
                 <address>
@@ -61,49 +56,42 @@ End Code
 
                 </address>
             </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <center>
-                        <h2>
-                            Tracking
-                        </h2>
-                    </center>
-                </div>
+            <div class="col-sm-7 col-md-5">
                 <br />
                 <div class="row">
-                    <div class="col-xs-4 col-md-4">
+                    <div class="col-xs-3 col-md-3 nopadding">
                         <div class="icon">
                             <img class="img-iconfix" src="~/Content/Icon/iconPlane.png">
                             <br><br>
                         </div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-xs-9">
                         <b class="lead text-green-opac">Document รอนำส่ง</b><br>
                         เจ้าหน้าที่: WU lineman <br>
                         วันที่: 11/11/2019 เวลา: 15:30 น.
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-4 col-md-4">
+                    <div class="col-xs-3 col-md-3 nopadding">
                         <div class="icon">
                             <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                             <br><br>
                         </div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-xs-9">
                         <b class="lead text-green-opac">ทำรายการเรียบร้อย</b><br>
                         เจ้าหน้าที่: staff WU   <br>
                         วันที่: 11/11/2019 เวลา: 11:56 น.
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-4 col-md-4">
+                    <div class="col-xs-3 col-md-3 nopadding">
                         <div class="icon-noline">
                             <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                             <br><br>
                         </div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-xs-9">
                         <b class="lead text-green-opac">รับคำร้องขอ</b><br>
                         สาขา: หอสมุดกลาง<br>
                         วันที่: 11/11/2019 เวลา: 10:56 น.

@@ -86,7 +86,7 @@ End Code
                                                 <div class="modal-body">
                                                     <!-- start body textbox -->
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon-noline">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -223,7 +223,7 @@ End Code
                                                     <!-- start body textbox -->
 
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconPlane.png">
                                                                 <br><br>
@@ -236,7 +236,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -249,7 +249,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon-noline">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -326,7 +326,7 @@ End Code
                                                 <div class="modal-body">
                                                     <!-- start body textbox -->
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconSuccess.png">
                                                                 <br><br>
@@ -339,7 +339,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -352,7 +352,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -365,7 +365,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon-noline">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -441,7 +441,7 @@ End Code
                                                 <div class="modal-body">
                                                     <!-- start body textbox -->
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconFail.png">
                                                                 <br><br>
@@ -454,7 +454,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -467,7 +467,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -480,7 +480,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon-noline">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -558,7 +558,7 @@ End Code
                                                 <div class="modal-body">
                                                     <!-- start body textbox -->
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconSuccess.png">
                                                                 <br><br>
@@ -571,7 +571,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -584,7 +584,7 @@ End Code
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-xs-4 col-md-3">
+                                                        <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                             <div class="icon-noline">
                                                                 <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
                                                                 <br><br>
@@ -639,7 +639,7 @@ End Code
     </div>
 
 </div>
-<button class="btn" onclick="getTest('18')">Get Json</button>
+@*<button class="btn" onclick="getTest('18')">Get Json</button>
 
 <script>
     function getTest(idCompany) {
@@ -669,7 +669,7 @@ End Code
         document.head.appendChild(m);
     }
 
-</script>
+</script>*@
 
 
 
