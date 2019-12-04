@@ -59,7 +59,8 @@ End Code
                             <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
-                            <b>Request Date:</b> 12/08/2528<br><br>
+                            <b>Request Date:</b> 12/08/2528<br><br />
+                            @*<b>Price:</b> 150 บาท <br>*@
                             <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
@@ -639,7 +640,7 @@ End Code
     </div>
 
 </div>
-@*<button class="btn" onclick="getTest('18')">Get Json</button>
+<button class="btn" onclick="getTest('18')">Get Json</button>
 
 <script>
     function getTest(idCompany) {
@@ -658,7 +659,7 @@ End Code
     }
 
     function SuccessGetMeta(what) {
-        console.log(what);
+        console.log(what);// parse JSON ยังไง
     }
 
     function ErrorGetMeta(request, status, error) {
@@ -669,7 +670,7 @@ End Code
         document.head.appendChild(m);
     }
 
-</script>*@
+</script>
 
 
 
