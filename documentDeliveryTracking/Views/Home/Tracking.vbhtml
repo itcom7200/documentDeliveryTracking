@@ -641,17 +641,15 @@ End Code
 
 </div>
 <button class="btn" onclick="getTest('18')">Get Json</button>
-<<<<<<< HEAD
-<p class="test"></p>
-=======
 
->>>>>>> 1e20cd8bbe62cbd0eb0cb09139248cee359c9a1e
+<p class="test"></p>
+
 <script>
     function getTest() {
         $.ajax({
             type: "POST",
             url: "http://localhost:62597/WebService1.asmx/GetBook",
-           // data: "id=" + idCompany,
+            // data: "id=" + idCompany,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: SuccessGetMeta,
@@ -660,7 +658,7 @@ End Code
 
     }
 
-<<<<<<< HEAD
+
     function SuccessGetMeta(data) {
         resultSearch = $.parseJSON(data.d);
         $.each(resultSearch, function (i, item) {    //.each คือคำสั่ง loop
@@ -672,24 +670,17 @@ End Code
             m.status = resultSearch[i].status;
             $(".test").html("Hello <b>world</b>!");
         });
-=======
-    function SuccessGetMeta(what) {
-        console.log(what);// parse JSON ยังไง
->>>>>>> 1e20cd8bbe62cbd0eb0cb09139248cee359c9a1e
     }
     function ErrorGetMeta(request, status, error) {
 
-        var m = document.createElement('meta');
-        m.name = 'og:image';
-        m.content = '../Images/NoImageBook.jpg';
-        document.head.appendChild(m);
+        alert("Error webservice");
+        //var m = document.createElement('meta');
+        //m.name = 'og:image';
+        //m.content = '../Images/NoImageBook.jpg';
+        //document.head.appendChild(m);
     }
 
 </script>
-<<<<<<< HEAD
-
-=======
->>>>>>> 1e20cd8bbe62cbd0eb0cb09139248cee359c9a1e
 
 
 
