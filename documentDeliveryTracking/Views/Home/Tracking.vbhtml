@@ -668,6 +668,7 @@ End Code
             m.requestDate = resultSearch[i].requestDate;
             m.ddPoint = resultSearch[i].ddPoint;
             m.status = resultSearch[i].status;
+            console.log(m.title + "" + m.barcode)
             $(".test").html("Hello <b>world</b>!");
         });
     }
