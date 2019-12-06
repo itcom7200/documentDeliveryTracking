@@ -639,16 +639,14 @@ End Code
     </div>
 
 </div>
-@*<button class="btn" onclick="getTest('18')">Get Json</button>
-
+<button class="btn" onclick="getTest('18')">Get Json</button>
+<p class="test"></p>
 <script>
-    function getTest(idCompany) {
-        console.log("call function getTest");
-        //console.log(idCompany);
+    function getTest() {
         $.ajax({
-            type: "Get",
-            url: "http://localhost:3000/companies",
-            data: "id=" + idCompany,
+            type: "POST",
+            url: "http://localhost:62597/WebService1.asmx/GetBook",
+           // data: "id=" + idCompany,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: SuccessGetMeta,
@@ -657,10 +655,18 @@ End Code
 
     }
 
-    function SuccessGetMeta(what) {
-        console.log(what);
+    function SuccessGetMeta(data) {
+        resultSearch = $.parseJSON(data.d);
+        $.each(resultSearch, function (i, item) {    //.each คือคำสั่ง loop
+            var m = document.createElement('meta');
+            m.title = resultSearch[i].title;
+            m.barcode = resultSearch[i].barcode;
+            m.requestDate = resultSearch[i].requestDate;
+            m.ddPoint = resultSearch[i].ddPoint;
+            m.status = resultSearch[i].status;
+            $(".test").html("Hello <b>world</b>!");
+        });
     }
-
     function ErrorGetMeta(request, status, error) {
 
         var m = document.createElement('meta');
@@ -669,7 +675,8 @@ End Code
         document.head.appendChild(m);
     }
 
-</script>*@
+</script>
+
 
 
 

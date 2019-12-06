@@ -1,4 +1,7 @@
-﻿Public Class HomeController
+﻿Imports System.Web.Script.Serialization
+Imports System.Web.Script.Services
+Imports System.Data
+Public Class HomeController
     Inherits System.Web.Mvc.Controller
 
     Function Index() As ActionResult
@@ -6,18 +9,15 @@
     End Function
 
     Function About() As ActionResult
-        ViewData("Message") = "Your application description page."
+        'test webservice
 
+
+        ViewData("Message") = "Your application description page."
         Return View()
     End Function
 
     Function Contact() As ActionResult
         ViewData("Message") = "Your contact page."
-
-        Return View()
-    End Function
-    Function Content() As ActionResult
-        ViewData("Message") = "Test content Page."
 
         Return View()
     End Function
@@ -40,43 +40,17 @@
         Return View()
     End Function
 
-    Function Content2() As ActionResult
-        ViewData("Message") = "Testing Jqury Ajax"
+    Function JsonResult() As ActionResult
+        Dim myService As New localhost.WebService1
+        Dim data = myService.GetBook()
 
-        Return View()
-    End Function
-    Function ajaxJson() As ActionResult
-        ViewData("Message") = "Testing ajaxJson"
-
-        Return View()
-    End Function
-
-    Function all() As ActionResult
-        ViewData("Message") = ""
+        ViewData("test") = data
 
         Return View()
     End Function
 
-    Function current() As ActionResult
-        ViewData("Message") = ""
 
-        Return View()
-    End Function
 
-    Function reject() As ActionResult
-        ViewData("Message") = ""
 
-        Return View()
-    End Function
-
-    Function complete() As ActionResult
-        ViewData("Message") = ""
-
-        Return View()
-    End Function
-
-    Function tracking2() As ActionResult
-        Return View()
-    End Function
 
 End Class
