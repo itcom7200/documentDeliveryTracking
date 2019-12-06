@@ -10,13 +10,13 @@ End Code
         <div class="container">
 
             <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-8">
+                <div class="col-xs-12 col-sm-7 col-md-8">
                     <h1 class="text">Document Delivery</h1>
                     <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
                     <br />
                     <div class="form-group row">
                         <div class="col-xs-12 col-sm-7 col-md-8" style="padding-right: 0px;">
-                            <input type="text" class="form-control input-lg" 
+                            <input type="text" class="form-control input-lg"
                                    placeholder="Enter Your Tracking Number"
                                    value="59148965">
                         </div>
@@ -27,7 +27,6 @@ End Code
                             <center><button class="btn btn-green-opac btn-lg">Enter</button></center>
                         </div>
                     </div>
-                    <br />
                     <br />
                     <br />
                     <br />
@@ -43,20 +42,22 @@ End Code
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-md-4">
-                <h2>Contact</h2>
+                <h2>Contact </h2>
                 <p>Use this area to provide additional information.</p>
                 <address>
-                    ID : 59148965<br />
-                    Name : อภิวัฒน์ คงมาก<br />
-                    Default point : ลักษณานิเวศ 5 <br>
+                    ID : 59121293<br />
+                    Name : สันติภาพ ตันประมวล<br />
+                    Default point : ตึกนวัตกรรม <br>
+
                 </address>
 
                 <address>
                     <strong>E-mail:</strong>   <a href="mailto:suntiparb.tu@mail.wu.ac.th">suntiparb.tu@mail.wu.ac.th</a><br />
 
                 </address>
+
             </div>
-            <div class="col-sm-7 col-md-5">
+            <div class="col-sm-7 col-md-5 col-sm-push-1">
                 <br />
                 <div class="row">
                     <div class="col-xs-3 col-md-3 nopadding">

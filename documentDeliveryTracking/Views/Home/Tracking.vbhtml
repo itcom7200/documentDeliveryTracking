@@ -59,7 +59,8 @@ End Code
                             <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
                                              target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                             <b>Barcode:</b> B59121210<br>
-                            <b>Request Date:</b> 12/08/2528<br><br>
+                            <b>Request Date:</b> 12/08/2528<br><br />
+                            @*<b>Price:</b> 150 บาท <br>*@
                             <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
                             <br><br>
                         </div>
@@ -640,7 +641,11 @@ End Code
 
 </div>
 <button class="btn" onclick="getTest('18')">Get Json</button>
+<<<<<<< HEAD
 <p class="test"></p>
+=======
+
+>>>>>>> 1e20cd8bbe62cbd0eb0cb09139248cee359c9a1e
 <script>
     function getTest() {
         $.ajax({
@@ -655,6 +660,7 @@ End Code
 
     }
 
+<<<<<<< HEAD
     function SuccessGetMeta(data) {
         resultSearch = $.parseJSON(data.d);
         $.each(resultSearch, function (i, item) {    //.each คือคำสั่ง loop
@@ -666,6 +672,10 @@ End Code
             m.status = resultSearch[i].status;
             $(".test").html("Hello <b>world</b>!");
         });
+=======
+    function SuccessGetMeta(what) {
+        console.log(what);// parse JSON ยังไง
+>>>>>>> 1e20cd8bbe62cbd0eb0cb09139248cee359c9a1e
     }
     function ErrorGetMeta(request, status, error) {
 
@@ -676,7 +686,10 @@ End Code
     }
 
 </script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e20cd8bbe62cbd0eb0cb09139248cee359c9a1e
 
 
 
