@@ -19,6 +19,12 @@ End Code
 
         </address>
 
+        <button class="btn" onclick="getTest()">Get Json</button>
+
+        <p class="test"></p>
+
+
+
 
 
     </div>
@@ -58,8 +64,8 @@ End Code
                 <div class="col-sm-8 col-lg-7">
                     <div class="col-xs-7 col-sm-12">
                         <div class="row">
-                            <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
-                                             target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
+                            <b>Title:</b> <a class="text-info title" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
+                                             target="_blank"></a><br>
                             <b>Barcode:</b> B59121210<br>
                             <b>Request Date:</b> 12/08/2528<br><br />
                             @*<b>Price:</b> 150 บาท <br>*@
@@ -187,7 +193,7 @@ End Code
 
             <hr class="hr-set-margin" />
 
-            
+
 
         </div>
 
@@ -197,6 +203,50 @@ End Code
     </div>
 
 </div>
+
+
+<script>
+    function getTest() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:62597/WebService1.asmx/GetBook",
+            // data: "id=" + idCompany,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: SuccessGetMeta,
+            error: ErrorGetMeta
+        });
+
+    }
+
+
+    function SuccessGetMeta(data) {
+        resultSearch = $.parseJSON(data.d);
+        $.each(resultSearch, function (i, item) {    //.each คือคำสั่ง loop
+            var m = document.createElement('meta');
+            m.cloverBook = resultSearch[i].cloverBook;
+            m.title = resultSearch[i].title;
+            m.barcode = resultSearch[i].barcode;
+            m.requestDate = resultSearch[i].requestDate;
+            m.ddType = resultSearch[i].ddType;
+            m.ddPoint = resultSearch[i].ddPoint;
+            m.status = resultSearch[i].status;
+            m.deliveryDate = resultSearch[i].deliveryDate;
+            m.deliveryTime = resultSearch[i].deliveryTime;
+            $(".test").html("Hello <b>world</b>!<br>");
+            $(".title").html(m.title);
+        });
+    }
+    function ErrorGetMeta(request, status, error) {
+
+        alert("Error webservice");
+        //var m = document.createElement('meta');
+        //m.name = 'og:image';
+        //m.content = '../Images/NoImageBook.jpg';
+        //document.head.appendChild(m);
+    }
+
+</script>
 
 
 
