@@ -19,7 +19,7 @@ End Code
 </div>
 
 <script language="javascript" type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function () { 
         $.ajaxSetup({
             cache: false,
             dataType: "html",
