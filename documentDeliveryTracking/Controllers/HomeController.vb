@@ -28,6 +28,12 @@ Public Class HomeController
         Return View()
     End Function
 
+    Function trackingAjax() As ActionResult
+        ViewData("Message") = "DD Ajax test"
+
+        Return View()
+    End Function
+
     Function Search() As ActionResult
         ViewData("Message") = "Search Document Delivery Tracking"
 

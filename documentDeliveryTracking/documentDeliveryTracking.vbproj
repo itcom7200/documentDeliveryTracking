@@ -240,6 +240,7 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <Content Include="Views\Home\JsonResult.vbhtml" />
+    <Content Include="Views\Home\trackingAjax.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
