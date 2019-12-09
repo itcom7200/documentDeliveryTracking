@@ -18,10 +18,9 @@ End Code
             <strong>E-mail:</strong>   <a href="mailto:suntiparb.tu@mail.wu.ac.th">suntiparb.tu@mail.wu.ac.th</a><br />
 
         </address>
-
         <button class="btn" onclick="getTest()">Get Json</button>
 
-        <p class="test"></p>
+
 
 
 
@@ -51,26 +50,28 @@ End Code
 
 
 
-        <div class="container-fluid">
+        <div class="container-fluid content">
 
             <hr class="hr-set-margin" />
 
-
             <div class="row">
                 <div class="col-xs-5 col-sm-3 col-lg-3">
-                    <img class="cloverBook img-clover-book img-thumbnail" src="~/Content/Image/bookRichdad.jpg">
+                    <div class="cloverBook"></div>
                     <br><br>
                 </div>
                 <div class="col-sm-8 col-lg-7">
                     <div class="col-xs-7 col-sm-12">
                         <div class="row">
-                            <b>Title:</b> <a class="text-info title" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
-                                             target="_blank"></a><br>
-                            <b>Barcode:</b> B59121210<br>
-                            <b>Request Date:</b> 12/08/2528<br><br />
+                            <div class="title"></div>
+                            <div class="barcode"></div>
+                            <div class="requestDate"></div>
+                            
+                            
                             @*<b>Price:</b> 150 บาท <br>*@
-                            <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
-                            <br><br>
+                            <div class="ddType">
+                                
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -191,7 +192,10 @@ End Code
             </div>
 
 
-            <hr class="hr-set-margin" />
+
+
+
+
 
 
 
@@ -222,6 +226,7 @@ End Code
 
     function SuccessGetMeta(data) {
         resultSearch = $.parseJSON(data.d);
+        console.log(resultSearch);
         $.each(resultSearch, function (i, item) {    //.each คือคำสั่ง loop
             var m = document.createElement('meta');
             m.cloverBook = resultSearch[i].cloverBook;
@@ -233,8 +238,14 @@ End Code
             m.status = resultSearch[i].status;
             m.deliveryDate = resultSearch[i].deliveryDate;
             m.deliveryTime = resultSearch[i].deliveryTime;
-            $(".test").html("Hello <b>world</b>!<br>");
-            $(".title").html(m.title);
+            var cloverBookPath = '<img class="img-clover-book img-thumbnail" src="~/' + m.cloverBook + '">';
+            $(".cloverBook").html(cloverBookPath);
+            $(".title").html('<b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682" target = "_blank" >'+ m.title +'</a > <br>')
+            $(".barcode").html('<b>Barcode:</b> ' + m.barcode + '<br>');
+            $(".requestDate").html('<b>Request Date:</b>' + m.requestDate + '<br><br />');
+            $(".ddType").html('<img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: '+m.ddPoint+' <br><br>');
+            
+           
         });
     }
     function ErrorGetMeta(request, status, error) {
