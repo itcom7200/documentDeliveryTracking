@@ -9,10 +9,8 @@ Public Class HomeController
     End Function
 
     Function About() As ActionResult
-        'test webservice
-
-
         ViewData("Message") = "Your application description page."
+
         Return View()
     End Function
 
