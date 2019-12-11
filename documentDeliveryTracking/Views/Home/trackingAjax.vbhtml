@@ -12,13 +12,13 @@ End Code
         </address>
 
         <address>
-            <strong>E-mail:</strong>   <a href="mailto:suntiparb.tu@mail.wu.ac.th">suntiparb.tu@mail.wu.ac.th</a><br />
+            <strong>E-mail:</strong>   @*<a href="mailto:suntiparb.tu@mail.wu.ac.th">*@suntiparb.tu@mail.wu.ac.th</a><br />
         </address>
 
-        <button onclick="testLoop()">1</button>
+        @*<button onclick="testLoop()">1</button>
         <div id="main">
 
-        </div>
+        </div>*@
 
 
 
@@ -216,14 +216,14 @@ End Code
     $(".buttonReject").hide();
     $("#QRcode").hide();
 
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:62597/WebService1.asmx/GetBook",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: getTitle,
-        error: failTitle
-    });
+    //$.ajax({
+    //    type: "POST",
+    //    url: "http://localhost:62597/WebService1.asmx/GetBook",
+    //    contentType: "application/json; charset=utf-8",
+    //    dataType: "json",
+    //    success: getTitle,
+    //    error: failTitle
+    //});
 
     function getTest() {
         $.ajax({
@@ -241,72 +241,72 @@ End Code
     }
 
 
-    //function SuccessGetMeta(data) {
-    //    resultSearch = $.parseJSON(data.d);
-    //    console.log(resultSearch);
-    //    $.each(resultSearch, function (i, item) {
-    //        console.log(i);
-    //        var m = document.createElement('meta');
-    //        m.cloverBook = resultSearch[i].cloverBook;
-    //        m.title = resultSearch[i].title;
-    //        m.barcode = resultSearch[i].barcode;
-    //        m.requestDate = resultSearch[i].requestDate;
-    //        m.ddType = resultSearch[i].ddType;
-    //        m.ddPoint = resultSearch[i].ddPoint;
-    //        m.status = resultSearch[i].status;
-    //        m.waitingDate = resultSearch[i].waitingDate;
-    //        m.waitingTime = resultSearch[i].waitingTime;
-    //        m.requestStep = resultSearch[i].requestStep;
-    //        m.libBranch = resultSearch[i].libBranch;
-    //        m.requestTime = resultSearch[i].requestTime;
+    function SuccessGetMeta(data) {
+        resultSearch = $.parseJSON(data.d);
+        console.log(resultSearch);
+        $.each(resultSearch, function (i, item) {
+            console.log(i);
+            var m = document.createElement('meta');
+            m.cloverBook = resultSearch[i].cloverBook;
+            m.title = resultSearch[i].title;
+            m.barcode = resultSearch[i].barcode;
+            m.requestDate = resultSearch[i].requestDate;
+            m.ddType = resultSearch[i].ddType;
+            m.ddPoint = resultSearch[i].ddPoint;
+            m.status = resultSearch[i].status;
+            m.waitingDate = resultSearch[i].waitingDate;
+            m.waitingTime = resultSearch[i].waitingTime;
+            m.requestStep = resultSearch[i].requestStep;
+            m.libBranch = resultSearch[i].libBranch;
+            m.requestTime = resultSearch[i].requestTime;
 
-    //        var cloverBookPath = '<img class="img-clover-book img-thumbnail" src="/' + m.cloverBook + '">';
-    //        var ddTypePath = '<img class="img-thumbnail" src="/' + m.ddType + '"> &nbsp; &nbsp;: ' + m.ddPoint + ' <br><br>';
-    //        $(".cloverBook").html(cloverBookPath);
-    //        $(".title").html('<b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682" target = "_blank" >' + m.title + '</a > <br>')
-    //        $(".barcode").html('<b>Barcode:</b> ' + m.barcode + '<br>');
-    //        $(".requestDate").html('<b>Request Date:</b>' + m.requestDate + '<br><br />');
-    //        $(".ddType").html(ddTypePath);
-    //        $(".buttonStatus").html('<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalScrollable3">สถานะ: ' + m.status + '</button >');
-    //        $(".deliveryRound").html('รอบที่จัดส่ง: ' + m.waitingDate + ' เวลา: ' + m.waitingTime + ' น.');
-    //        $(".libBranch").html('<b>สาขา: </b>' + m.libBranch);
-    //        $(".requestTime").html('<b>วันที่: </b>' + m.requestDate + '<b> เวลา: </b>' + m.requestTime + ' น.');
+            var cloverBookPath = '<img class="img-clover-book img-thumbnail" src="/' + m.cloverBook + '">';
+            var ddTypePath = '<img class="img-thumbnail" src="/' + m.ddType + '"> &nbsp; &nbsp;: ' + m.ddPoint + ' <br><br>';
+            $(".cloverBook").html(cloverBookPath);
+            $(".title").html('<b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682" target = "_blank" >' + m.title + '</a > <br>')
+            $(".barcode").html('<b>Barcode:</b> ' + m.barcode + '<br>');
+            $(".requestDate").html('<b>Request Date:</b>' + m.requestDate + '<br><br />');
+            $(".ddType").html(ddTypePath);
+            $(".buttonStatus").html('<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalScrollable3">สถานะ: ' + m.status + '</button >');
+            $(".deliveryRound").html('รอบที่จัดส่ง: ' + m.waitingDate + ' เวลา: ' + m.waitingTime + ' น.');
+            $(".libBranch").html('<b>สาขา: </b>' + m.libBranch);
+            $(".requestTime").html('<b>วันที่: </b>' + m.requestDate + '<b> เวลา: </b>' + m.requestTime + ' น.');
 
 
-    //        $(".buttonEdit").show();
-    //        $(".buttonReject").show();
-    //        $("#QRcode").show();
-    //    });
-    //}
+            $(".buttonEdit").show();
+            $(".buttonReject").show();
+            $("#QRcode").show();
+        });
+    }
     function ErrorGetMeta(request, status, error) {
         alert("Error webservice");
     }
 
-    function testLoop() {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:62597/WebService1.asmx/GetBook",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: getTitle,
-            error: failTitle
-        });
-    }
-    function getTitle(title) {
-        resultTitle = $.parseJSON(title.d);
-        $.each(resultTitle, function (i, item) {
-            var s = "<p>" + resultTitle[i].title + "</p><br>";
-            //var m = document.createElement('meta');
-            //m.cloverBook = resultTitle[i].cloverBook;
-            $("#main").append(s);
-        });
-    }
+    //function testLoop() {
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "http://localhost:62597/WebService1.asmx/GetBook",
+    //        contentType: "application/json; charset=utf-8",
+    //        dataType: "json",
+    //        success: getTitle,
+    //        error: failTitle
+    //    });
+    //}
+    //function getTitle(title) {
+    //    resultTitle = $.parseJSON(title.d);
+    //    $.each(resultTitle, function (i, item) {
+    //        var s = "<p>" + resultTitle[i].title + "</p><br>";
+    //        //var m = document.createElement('meta');
+    //        //m.cloverBook = resultTitle[i].cloverBook;
+    //        $("#main").append(s);
+    //    });
+    //}
 
 
     
-    function failTitle(request, status, error) {
-        alert("failTitle");
-    }
+    //function failTitle(request, status, error) {
+    //    alert("failTitle");
+    //}
 
 
 </script>

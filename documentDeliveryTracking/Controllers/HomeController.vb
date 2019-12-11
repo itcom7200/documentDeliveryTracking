@@ -45,10 +45,12 @@ Public Class HomeController
     End Function
 
     Function JsonResult() As ActionResult
-        Dim myService As New localhost.WebService1
-        Dim data = myService.GetBook()
+        'Dim myService As New localhost.WebService1
+        'Dim data = myService.GetBook()
 
-        ViewData("test") = data
+        'ViewData("test") = data
+
+        ViewData("Message") = "Testing Jqury Ajax"
 
         Return View()
     End Function
