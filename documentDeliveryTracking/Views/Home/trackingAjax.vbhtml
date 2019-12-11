@@ -208,17 +208,22 @@ End Code
     $(".buttonReject").hide();
     $("#QRcode").hide();
 
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:62597/WebService1.asmx/GetBook",
-        // data: "id=" + idCompany,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: SuccessGetMeta,
-        //success: testLoop,
-        error: ErrorGetMeta
+    $('.btn-group').on('click', '.btn', function () {
+        $(this).addClass('active').siblings().removeClass('active');
     });
+
+    
     function getTest() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:62597/WebService1.asmx/GetBook",
+            // data: "id=" + idCompany,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: SuccessGetMeta,
+            //success: testLoop,
+            error: ErrorGetMeta
+        });
        
 
     }
