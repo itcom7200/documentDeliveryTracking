@@ -640,7 +640,7 @@ End Code
     </div>
 
 </div>
-<button class="btn" onclick="getTest('18')">Get Json</button>
+@*<button class="btn" onclick="getTest('18')">Get Json</button>*@
 
 <p class="test"></p>
 

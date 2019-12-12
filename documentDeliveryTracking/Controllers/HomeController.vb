@@ -45,7 +45,7 @@ Public Class HomeController
     End Function
 
     Function JsonResult() As ActionResult
-        'Dim myService As New localhost.WebService1
+        'Dim myService As New localhost.WebService1   
         'Dim data = myService.GetBook()
 
         'ViewData("test") = data

@@ -1,4 +1,5 @@
 ﻿@Code
+    'Layout = ""
     ViewData("Title") = "JsonResult"
 End Code
 <div class="row">
@@ -11,7 +12,7 @@ End Code
         </address>
 
         <address>
-            <strong>E-mail:</strong>   <a href="mailto:suntiparb.tu@mail.wu.ac.th">suntiparb.tu@mail.wu.ac.th</a><br />
+            <strong>E-mail:</strong>   @*<a href="mailto:suntiparb.tu@mail.wu.ac.th">*@suntiparb.tu@mail.wu.ac.th</a><br />
         </address>
     </div>
 
@@ -196,18 +197,23 @@ End Code
             $.each(resultSearch, function (i, item) {
                 let row = '<div class="row">';
                 let closeRow = '</div>';
-                let colCloverBook = '<div class="col-xs-5 col-sm-3 col-lg-3"><img class="img-clover-book img-thumbnail" src="/Content/Image/bookRichdad.jpg"><br><br></div>';
+                let colCloverBook = '<div class="col-xs-5 col-sm-3 col-lg-3"><img class="img-clover-book img-thumbnail" src="/'+resultSearch[i].cloverBook+'"><br><br></div>';
                 let colTracking = '<div class="col-sm-8 col-lg-7">';
                 let colInfo = '<div class="col-xs-7 col-sm-12">';
                 let title = '<b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682" target="_blank">'+ resultSearch[i].title+ '</a><br>';
-                let barcode = '<b>Barcode:</b> B59121210<br><b>Request Date:</b> 12/08/2528<br><br />';
+                let barcode = '<b>Barcode:</b> '+resultSearch[i].barcode+'<br><b>Request Date:</b> 12/08/2528<br><br />';
                 let iconType = '<img class="img-thumbnail" src="/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5<br><br>';
                 let colStatus = '<div class="col-xs-12">';
                 let colButton = '<div class="col-xs-8 col-sm-6">';
                 let ButtonStatus = '<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalScrollable'+i+'">สถานะ: กำลังร้องขอรายการ</button >';
                 let divModel = '<div class="modal fade" id="exampleModalScrollable'+i+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable" role="document">';
+                let divModelContent = '<div class="modal-content"><div class="modal-header"><h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Track & Trace</h2>';
+                let closeModel = '<h5 class="text-header-track-and-trace font-track-round">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+                let modelBody = '<div class="modal-body"><div class="row"><div class="col-xs-3 col-sm-2 col-md-2 nopadding"><div class="icon-noline">';
+                let imgIcon = '<img class="img-iconfix" src="/Content/Icon/iconTime.png"><br><br></div></div><div class="col-xs-8">';
+                let infoTracking = '<b class="lead text-green-opac">รับคำร้องขอ</b><br> สาขา: หอสมุดกลาง<br> วันที่: 11/11/2019 เวลา: 10:56 น.</div></div></div></div></div></div></div></div>';
                 let hrSet = '<hr class="hr-set-margin" />';
-                let contentStatus = colStatus + row + colButton +row + ButtonStatus + divModel + closeRow + closeRow +closeRow
+                let contentStatus = colStatus + row + colButton + row + ButtonStatus + divModel + divModelContent + closeModel + modelBody + imgIcon + infoTracking + closeRow + closeRow + closeRow;
                 let contentTracking = colTracking + colInfo + row + title + barcode + iconType + closeRow + closeRow + contentStatus + closeRow;
                 let content = row + colCloverBook + contentTracking + closeRow + hrSet;
                 $("#main").append(content);
