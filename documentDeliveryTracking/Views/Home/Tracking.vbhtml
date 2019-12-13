@@ -1,5 +1,5 @@
 ﻿@Code
-    'Layout = ""
+    Layout = ""
     ViewData("Title") = "Tracking"
 End Code
 <div class="row">
@@ -176,7 +176,7 @@ End Code
                         </div>
                     </div>
                 </div>
-                <div class="visible-lg col-lg-2 nopadding">
+                <div class="visible-lg col-xs-2 nopadding">
                     <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                 </div>
 

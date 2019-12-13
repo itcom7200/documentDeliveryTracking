@@ -100,9 +100,10 @@ End Code
                 </div>
             </div>
             <div class="visible-lg col-md-4">
-                <br /><br />
+                <br />
                 <div class="row">
                     <div class="col-xs-7">
+                        <p class="text-center">Keep Tracking</p>
                         <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                     </div>
                 </div>

@@ -2,7 +2,6 @@
 Imports System.Web.Script.Services
 Imports System.Data
 Imports Newtonsoft.Json
-Imports documentDeliveryTracking.Class1
 
 Public Class HomeController
     Inherits System.Web.Mvc.Controller
@@ -58,7 +57,22 @@ Public Class HomeController
         Return View()
     End Function
 
+    Function viewAll() As ActionResult
 
+        Return View()
+    End Function
+    Function viewCurrent() As ActionResult
+
+        Return View()
+    End Function
+    Function viewReject() As ActionResult
+
+        Return View()
+    End Function
+    Function viewComplete() As ActionResult
+
+        Return View()
+    End Function
 
 
 

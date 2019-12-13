@@ -241,6 +241,10 @@
     </Content>
     <Content Include="Views\Home\JsonResult.vbhtml" />
     <Content Include="Views\Home\trackingAjax.vbhtml" />
+    <Content Include="Views\Home\viewAll.vbhtml" />
+    <Content Include="Views\Home\viewCurrent.vbhtml" />
+    <Content Include="Views\Home\viewReject.vbhtml" />
+    <Content Include="Views\Home\viewComplete.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
