@@ -57,7 +57,7 @@ End Code
                 </address>
 
             </div>
-            <div class="col-sm-7 col-md-5 col-sm-push-1">
+            <div class="col-sm-7 col-md-4">
                 <br />
                 <div class="row">
                     <div class="col-xs-3 col-md-3 nopadding">
@@ -96,6 +96,14 @@ End Code
                         <b class="lead text-green-opac">รับคำร้องขอ</b><br>
                         สาขา: หอสมุดกลาง<br>
                         วันที่: 11/11/2019 เวลา: 10:56 น.
+                    </div>
+                </div>
+            </div>
+            <div class="visible-lg col-md-4">
+                <br /><br />
+                <div class="row">
+                    <div class="col-xs-7">
+                        <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                     </div>
                 </div>
             </div>

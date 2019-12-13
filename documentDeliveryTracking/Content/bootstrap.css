@@ -6720,7 +6720,7 @@ button.close {
 }
 .img-qrcode-maxsize {
     display: inline-block;
-    max-width: 170px;
+    max-width: 100%;
     height: auto;
 }
 .img-clover-book { 
