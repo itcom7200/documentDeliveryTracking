@@ -19,10 +19,10 @@ End Code
     <div class="col-md-8">
         <h2>Document Delivery Tracking</h2>
         <div class="btn-group">
-            <button class="btn btn-primary active">ALL</button>
-            <button class="btn btn-primary">Current</button>
-            <button class="btn btn-primary">Reject</button>
-            <button class="btn btn-primary">Complete</button>
+            <button id="getAll" class="btn btn-primary active">ALL</button>
+            <button id="getCurrent" class="btn btn-primary">Current</button>
+            <button id="getReject" class="btn btn-primary">Reject</button>
+            <button id="getComplete" class="btn btn-primary">Complete</button>
         </div>
 
         <div class="container-fluid nopadding">
@@ -44,6 +44,39 @@ End Code
     </div>
 </div>
 
+<div id="result">
+
+</div>
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $('.btn-group').on('click', '.btn', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+
+        $("#getAll").click(function () {
+            $.get("Tracking", function (data) {
+                $("#result").html(data);
+            });
+        });
+
+        $("#getCurrent").click(function () {
+            $.get("Index", function (data) {
+                $("#result").html(data);
+            });
+        });
+
+
+        
+        /*$.get("Tracking", function (data) {
+            $("#result").html(data);
+            //  alert("Data: " + data + "\nStatus: " + status);
+        });*/
+    });
+</script>*@
+
+
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('.btn-group').on('click', '.btn', function () {
@@ -63,7 +96,7 @@ End Code
 
         function getContent(data) {
             resultSearch = $.parseJSON(data.d);
-            $.each(resultSearch, function (i, item) {
+            $.each(resultSearch, function (i, item) {   
 
                 switch (resultSearch[i].cloverBook) {
                     case null:

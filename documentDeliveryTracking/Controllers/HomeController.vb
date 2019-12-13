@@ -1,6 +1,9 @@
 ﻿Imports System.Web.Script.Serialization
 Imports System.Web.Script.Services
 Imports System.Data
+Imports Newtonsoft.Json
+Imports documentDeliveryTracking.Class1
+
 Public Class HomeController
     Inherits System.Web.Mvc.Controller
 
@@ -45,10 +48,10 @@ Public Class HomeController
     End Function
 
     Function JsonResult() As ActionResult
-        'Dim myService As New localhost.WebService1   
-        'Dim data = myService.GetBook()
+        Dim myService As New localhost.WebService1
+        Dim strJSON = myService.GetBook()
 
-        'ViewData("test") = data
+        ViewData("test") = strJSON
 
         ViewData("Message") = "Testing Jqury Ajax"
 
