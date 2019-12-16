@@ -46,11 +46,30 @@ Public Class HomeController
         Return View()
     End Function
 
+    Public Class Container
+        Public cloverBook As String
+        Public title As String
+    End Class
+
     Function JsonResult() As ActionResult
         Dim myService As New localhost.WebService1
         Dim strJSON = myService.GetBook()
 
         ViewData("test") = strJSON
+
+        Dim clover1 As String
+        Dim title1 As String
+
+
+        Dim resultSearch() = Newtonsoft.Json.JsonConvert.DeserializeObject(Of Container())(strJSON)
+        For Each result As Container In resultSearch
+            If result IsNot Nothing Then
+                clover1 = result.cloverBook
+                title1 = result.title
+
+
+            End If
+        Next
 
         ViewData("Message") = "Testing Jqury Ajax"
 
@@ -70,6 +89,11 @@ Public Class HomeController
         Return View()
     End Function
     Function viewComplete() As ActionResult
+
+        Return View()
+    End Function
+
+    Function viewTrackingSearch() As ActionResult
 
         Return View()
     End Function

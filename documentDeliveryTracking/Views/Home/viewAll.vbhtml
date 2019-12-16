@@ -13,8 +13,8 @@ End Code
                 <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
                                  target="_blank">พ่อรวยสอนลูก : เงินสี่ด้าน / คิโยซากิ, โรเบิร์ต ที</a><br>
                 <b>Barcode:</b> B59121210<br>
-                <b>Request Date:</b> 12/08/2528<br><br />
-                @*<b>Price:</b> 150 บาท <br>*@
+                <b>Request Date:</b> 12/08/2528<br>
+                <b>ค่าบริการ:</b> 5 บาท <br><br>
                 <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
                 <br><br>
             </div>
@@ -356,7 +356,7 @@ End Code
 
 </div>
 
-<hr class="hr-set-margin" />
+@*<hr class="hr-set-margin" />
 
 <div class="row">
     <div class="col-xs-5 col-sm-3 col-lg-3">
@@ -571,4 +571,4 @@ End Code
     <div class="visible-lg col-lg-2 nopadding">
         <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
     </div>
-</div>
+</div>*@

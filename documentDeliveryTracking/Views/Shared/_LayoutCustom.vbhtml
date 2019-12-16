@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @*@Scripts.Render("~/Content/fontawesome.js")*@ 
+    @*@Scripts.Render("~/Content/fontawesome.js")*@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,7 +28,7 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Content", "Content", "Home")</li>
                     -->
-                    <li>@Html.ActionLink("Tracking", "Ajax", "Home")</li>
+                    <li>@Html.ActionLink("Tracking", "Tracking", "Home")</li>
                     <!--<li>@Html.ActionLink("new", "Newtracking", "Home")</li>-->
                     <li>@Html.ActionLink("Search", "Search", "Home")</li>
                     <!--<li>@Html.ActionLink("AJAX", "Ajax", "Home")</li>-->
@@ -37,16 +37,18 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+
+    @RenderBody()
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
 
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required:=False)
+
 </body>
 </html>

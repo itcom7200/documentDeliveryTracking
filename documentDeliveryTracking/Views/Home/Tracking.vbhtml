@@ -1,5 +1,5 @@
 ﻿@Code
-    Layout = ""
+    'Layout = Nothing
     ViewData("Title") = "Tracking"
 End Code
 <div class="row">

@@ -245,6 +245,8 @@
     <Content Include="Views\Home\viewCurrent.vbhtml" />
     <Content Include="Views\Home\viewReject.vbhtml" />
     <Content Include="Views\Home\viewComplete.vbhtml" />
+    <Content Include="Views\Shared\_LayoutCustom.vbhtml" />
+    <Content Include="Views\Home\viewTrackingSearch.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
