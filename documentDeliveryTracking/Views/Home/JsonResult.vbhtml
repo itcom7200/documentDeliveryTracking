@@ -175,6 +175,12 @@ End Code
 
     </div>
 </div>
+<div class="container">
+    <p>
+        @ViewData("title")<br>
+        @ViewData("cloverBook")
+    </p>
+</div>
 
 <script type="text/javascript">
     $(document).ready(function () {

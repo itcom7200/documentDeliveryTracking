@@ -2,6 +2,7 @@
 Imports System.Web.Script.Services
 Imports System.Data
 Imports Newtonsoft.Json
+Imports documentDeliveryTracking.trackingBook
 
 Public Class HomeController
     Inherits System.Web.Mvc.Controller
@@ -46,33 +47,23 @@ Public Class HomeController
         Return View()
     End Function
 
-    Public Class Container
-        Public cloverBook As String
-        Public title As String
-    End Class
 
     Function JsonResult() As ActionResult
         Dim myService As New localhost.WebService1
-        Dim strJSON = myService.GetBook()
+        Dim responceTracking = myService.GetBook()
 
-        ViewData("test") = strJSON
+        Dim responce() = Newtonsoft.Json.JsonConvert.DeserializeObject(Of trackingBook())(responceTracking)
 
-        Dim clover1 As String
-        Dim title1 As String
+        'Dim resultTracking(,) As String
 
+        For Each tracking As trackingBook In responce
+            Dim cloverBook = tracking.cloverBook
 
-        Dim resultSearch() = Newtonsoft.Json.JsonConvert.DeserializeObject(Of Container())(strJSON)
-        For Each result As Container In resultSearch
-            If result IsNot Nothing Then
-                clover1 = result.cloverBook
-                title1 = result.title
-
-
-            End If
         Next
 
-        ViewData("Message") = "Testing Jqury Ajax"
-
+        'ViewData("cloverBook") = cloverBook
+        'ViewData("title") = title
+        'ViewData("resultTracking") = resultTracking()()
         Return View()
     End Function
 

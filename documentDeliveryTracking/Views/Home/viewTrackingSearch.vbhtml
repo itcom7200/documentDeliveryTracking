@@ -4,22 +4,20 @@
 End Code
 
 <div class="col-sm-4 col-md-4">
-    <h2>ติดต่อเจ้าหน้าที่ </h2>
-    <p>หากมีข้อสงสัย หรือต้องการติดต่อสอบถามหนังสือของท่าน</p>
+    <h2>Contact</h2>
+    <p>หากมีข้อสงสัย กรุณาติดต่อ</p>
     <address>
         @*ID : 59121293<br />*@
-        ชื่อเจ้าหน้าที่: สันติภาพ ตันประมวล<br />
-        เบอร์โทรศัพท์: 0808841358 <br>
-        Line id: wustaff_lineman
-
-    </address>
-
-    <address>
-        <strong>E-mail:</strong>   <a href="mailto:suntiparb.tu@mail.wu.ac.th">suntiparb.tu@mail.wu.ac.th</a><br />
-
+        Staff   : สันติภาพ ตันประมวล<br />
+        Line id : wustaff_lineman<br>
+        Tel     : 0808841358 <br>
+        <b>Point   : เรียนรวม5</b><br>
+        
     </address>
 
 </div>
+<!--  contact -->
+
 <div class="col-sm-7 col-md-4">
     <br />
     <div class="row">
