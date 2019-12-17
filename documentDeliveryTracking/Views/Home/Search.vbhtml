@@ -83,25 +83,36 @@ End Code
                         var row4 = '<b class="lead text-green-opac">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime+' น.</div></div>';
                         var resultRow = row1 + row2 + row3 + row4;
                         break;
+
                     case "1": // rejectRequest
                         var row1 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
                         var row2 = '<div class="icon-noline"><img class="img-iconfix" src="/Content/Icon/iconCancle.png">';
                         var row3 = '<br><br></div></div><div class="col-xs-9">';
-                        var row4 = '<b class="lead text-danger">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
+                        var row4 = '<b class="lead text-danger">' + resultSearch[i].requestStep + '</b><br> หมายเหตุ: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
                         var resultRow = row1 + row2 + row3 + row4;
                         break;
                     case "2": // requestSuccess
                         var row1 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
-                        var row2 = '<div class="icon-noline"><img class="img-iconfix" src="/Content/Icon/iconCancle.png">';
+                        var row2 = '<div class="icon"><img class="img-iconfix" src="/Content/Icon/iconPlane.png">';
                         var row3 = '<br><br></div></div><div class="col-xs-9">';
-                        var row4 = '<b class="lead text-danger">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
-                        var resultRow = row1 + row2 + row3 + row4;
+                        var row4 = '<b class="lead text-green-opac">' + resultSearch[i].processStep + '</b><br> เจ้าหน้าที่: ' + resultSearch[i].staffDelivery + '<br>วันที่: ' + resultSearch[i].waitingDate + ' เวลา: ' + resultSearch[i].waitingTime + ' น.</div></div>';
+                        var row5 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
+                        var row6 = '<div class="icon"><img class="img-iconfix" src="/Content/Icon/iconTime.png">';
+                        var row7 = '<br><br></div></div><div class="col-xs-9">';
+                        var row8 = '<b class="lead text-green-opac">' + resultSearch[i].processStep + '</b><br> เจ้าหน้าที่: ' + resultSearch[i].staffLib + '<br>วันที่: ' + resultSearch[i].processDate + ' เวลา: ' + resultSearch[i].processTime + ' น.</div></div>';
+                        var row9 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
+                        var row10 = '<div class="icon-noline"><img class="img-iconfix" src="/Content/Icon/iconTime.png">';
+                        var row11 = '<br><br></div></div><div class="col-xs-9">';
+                        var row12 = '<b class="lead text-green-opac">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
+
+                        var resultRow = row1 + row2 + row3 + row4 + row5 + row6 + row7 + row8 + row9 +row10 + row11 +row12 ;
+
                         break;
                     case "3": //requestNotComplete
                         var row1 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
                         var row2 = '<div class="icon"><img class="img-iconfix" src="/Content/Icon/iconCancle.png">';
                         var row3 = '<br><br></div></div><div class="col-xs-9">';
-                        var row4 = '<b class="lead text-danger">' + resultSearch[i].processStep + '</b><br> สาเหตุ: ' + resultSearch[i].staffLib + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
+                        var row4 = '<b class="lead text-danger">' + resultSearch[i].processStep + '</b><br> สาเหตุ: ' + resultSearch[i].staffLib + '<br>วันที่: ' + resultSearch[i].processDate + ' เวลา: ' + resultSearch[i].processTime + ' น.</div></div>';
                         var row5 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
                         var row6 = '<div class="icon-noline"><img class="img-iconfix" src="/Content/Icon/iconTime.png">';
                         var row7 = '<br><br></div></div><div class="col-xs-9">';
