@@ -2,6 +2,7 @@
     Layout = Nothing
 End Code
 
+<hr class="hr-set-margin" />
 
 <div class="row">
     <div class="col-xs-5 col-sm-3 col-lg-3">
