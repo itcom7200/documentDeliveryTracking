@@ -87,8 +87,6 @@ End Code
                 $(this).addClass('active').siblings().removeClass('active');
             });
 
-
-
             $.ajax({
                 type: "POST",
                 url: "http://localhost:62597/WebService1.asmx/GetBook",
@@ -110,7 +108,6 @@ End Code
                         default:
                             cloverBookCheck = resultSearch[i].cloverBook;
                     }
-                    //console.log(resultSearch[i].barcode)
 
                     switch (resultSearch[i].ddType) {
                         case "Docs":
@@ -119,34 +116,10 @@ End Code
                             locationDelivery = resultSearch[i].ddPoint;
                             break;
                         case "File":
-                            barcode = '<b>????: </b>' + resultSearch[i].barcode;
+                            barcode = '<b>eISBN: </b>' + resultSearch[i].barcode;
                             iconType = '/Content/Icon/iconDoc.png';
                             locationDelivery = '<a href="'+ resultSearch[i].ddPoint +'" target="_blank">Download</a>';
                     }
-
-                    switch (resultSearch[i].status) {
-                        case "จัดส่งเรียบร้อยแล้ว":
-                            buttonEdit = '';
-                            buttonReject = '';
-                            colorStatus = 'btn-success';
-                            break;
-                        case "จัดส่งไม่สำเร็จ":
-                            buttonEdit = '';
-                            buttonReject = '';
-                            colorStatus = 'btn-danger';
-                            break;
-                        case "กำลังร้องขอรายการ":
-                            buttonEdit = '<button type="button" class="buttonEdit btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit'+i+'"><img src="/Content/Icon/IconEdit.png"></button>';
-                            buttonReject = '<button type="button" class="buttonReject btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject' + i +'"><img src="/Content/Icon/IconReject.png"></button>';
-                            colorStatus = 'btn-warning';
-                            break;
-                        case "Document รอนำส่ง":
-                            buttonEdit = '';
-                            buttonReject = '';
-                            colorStatus = 'btn-warning';
-                    }
-
-                    //console.log(resultSearch[i].status)
 
                     switch (resultSearch[i].status) {
                         case "0": // startRequest
@@ -287,7 +260,7 @@ End Code
                     var content2 = '<div class="col-sm-8 col-lg-7"><div class="col-xs-7 col-sm-12"><div class="row"><b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682" target="_blank">' + resultSearch[i].title +'</a><br>';
                     var content3 =  barcode +'<br><b>Request Date:</b> '+ resultSearch[i].requestDate +'<br /><br><img class="img-thumbnail" src="'+ iconType +'"> &nbsp; &nbsp;: '+locationDelivery+'<br><br></div></div>';
                     var content4 = '<div class="col-xs-12"><div class="row"><div class="col-xs-8 col-sm-6"><div class="row"><button type="button" class="btn '+colorStatus+'" data-toggle="modal" data-target="#exampleModalScrollable'+i+'">สถานะ: '+ deliverStatus +'</button>'+ model +'</div></div>';
-                    var content5 = '<div class="col-xs-4"><div class="row">'+ buttonEdit +' &nbsp;';
+                    var content5 = '<div class="col-xs-4"><div class="row">'+ buttonEdit +'<!-- ใส่modalEdit --> &nbsp;';
                     var content6 =  buttonReject+'</div></div></div></div></div>';
                     var content7 = '<div class="visible-lg col-lg-2 nopadding"><img class="img-qrcode-maxsize" src="/Content/Image/lineQR.JPG"></div></div> ';
                     var content = content1 + content2 + content3 + content4 + content5 + content6 +content7 ;
