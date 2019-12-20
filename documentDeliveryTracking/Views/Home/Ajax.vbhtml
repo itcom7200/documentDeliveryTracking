@@ -50,6 +50,11 @@ End Code
         $('.btn-group').on('click', '.btn', function () {
             $(this).addClass('active').siblings().removeClass('active');
         });
+
+        $('#btnTime').on('click', '.btn', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+        
         
         $("#getAll").click(function () {
             $.get("viewAll", function (data) {

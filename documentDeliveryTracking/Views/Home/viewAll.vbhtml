@@ -84,12 +84,14 @@ End Code
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="test1">Text:</label>
-                                            <input type="text" class="form-control" id="usr">
+                                        <div id="btnTime" class="btn-group">
+                                            <button class="btn btn-primary">12.00 วันพุธ</button>
+                                            <button class="btn btn-primary">12.00 วันพฤหัส</button>
+                                            <button class="btn btn-primary">12.00 วันศุกร์</button>
+                                            
                                         </div>
                                         <div class="form-group">
-                                            <label for="test2">Text:</label>
+                                            <label for="test2">Note:</label>
                                             <input type="text" class="form-control" id="pwd">
                                         </div>
                                     </div>
@@ -357,6 +359,16 @@ End Code
     <hr />
 
 </div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#btnTime').on('click', '.btn', function () {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+    })
+    
+</script>
 
 @*<hr class="hr-set-margin" />
 
