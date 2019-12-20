@@ -5,42 +5,40 @@ End Code
 
 <div class="background-fullscreen">
     <div class="container">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-7 col-md-8">
-                    <h1 class="text">Document Delivery</h1>
-                    <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
-                    <br />
-                    <div class="form-group row">
-                        <div class="col-xs-12 col-sm-7 col-md-8" style="padding-right: 0px;">
-                            <input type="text" class="form-control input-lg"
-                                   placeholder="Enter Your Tracking Number"
-                                   value="59148965">
-                        </div>
-                        <div class="col-xs-12 col-sm-2">
-                            <div class="visible-xs">
-                                <br />
-                            </div>
-                            <center><button id="Enter" class="btn btn-green-opac btn-lg">Enter</button></center>
-                        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-7 col-md-8">
+                <h1 class="text">Document Delivery</h1>
+                <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
+                <br />
+                <div class="form-group row">
+                    <div class="col-xs-12 col-sm-7 col-md-8" style="padding-right: 0px;">
+                        <input type="text" class="form-control input-lg"
+                               placeholder="Enter Your Tracking Number"
+                               value="59148965">
                     </div>
-                    <br />
-                    <br />
-                    <br />
+                    <div class="col-xs-12 col-sm-2">
+                        <div class="visible-xs">
+                            <br />
+                        </div>
+                        <center><button id="Enter" class="btn btn-green-opac btn-lg">Enter</button></center>
+                    </div>
                 </div>
-                <div class="col-sm-4 col-md-3 visible-sm visible-md visible-lg">
-                    <img class="img-banner" src="~/Content/Image/img-Bikeman.png">
-                </div>
+                <br />
+                <br />
+                <br />
+            </div>
+            <div class="col-sm-4 col-md-3 visible-sm visible-md visible-lg">
+                <img class="img-banner" src="~/Content/Image/DeliveryMan.png">
             </div>
         </div>
+
     </div>
 </div>
 <div class="container">
     <div class="container">
         <div class="row">
             <div id="main">
-                
+
             </div>
         </div>
 
@@ -69,7 +67,7 @@ End Code
             resultSearch = $.parseJSON(data.d);
             $.each(resultSearch, function (i, item) {
                 let contact1 = '<div class="col-sm-4 col-md-4"><h2>Contact</h2><p>หากมีข้อสงสัย กรุณาติดต่อ</p>';
-                let contact2 = '<address>Staff: '+ resultSearch[i].staffName +'<br />Line id: '+resultSearch[i].staffLine;
+                let contact2 = '<address>Staff: ' + resultSearch[i].staffName + '<br />Line id: ' + resultSearch[i].staffLine;
                 let contact3 = '<br>Tel: ' + resultSearch[i].staffTel + ' <br><b>Point: ' + resultSearch[i].ddPoint + '</b><br></address></div >';
                 let contact = contact1 + contact2 + contact3;
 
@@ -80,7 +78,7 @@ End Code
                         var row1 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
                         var row2 = '<div class="icon-noline"><img class="img-iconfix" src="/Content/Icon/iconTime.png">';
                         var row3 = '<br><br></div></div><div class="col-xs-9">';
-                        var row4 = '<b class="lead text-green-opac">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime+' น.</div></div>';
+                        var row4 = '<b class="lead text-green-opac">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
                         var resultRow = row1 + row2 + row3 + row4;
                         break;
 
@@ -105,7 +103,7 @@ End Code
                         var row11 = '<br><br></div></div><div class="col-xs-9">';
                         var row12 = '<b class="lead text-green-opac">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
 
-                        var resultRow = row1 + row2 + row3 + row4 + row5 + row6 + row7 + row8 + row9 +row10 + row11 +row12 ;
+                        var resultRow = row1 + row2 + row3 + row4 + row5 + row6 + row7 + row8 + row9 + row10 + row11 + row12;
 
                         break;
                     case "3": //requestNotComplete
@@ -139,7 +137,7 @@ End Code
                         var row15 = '<br><br></div></div><div class="col-xs-9">';
                         var row16 = '<b class="lead text-green-opac">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
 
-                        var resultRow = row1 + row2 + row3 + row4 + row5 + row6 + row7 + row8 + row9 + row10 + row11 + row12 +row13 + row14 + row15 +row16;
+                        var resultRow = row1 + row2 + row3 + row4 + row5 + row6 + row7 + row8 + row9 + row10 + row11 + row12 + row13 + row14 + row15 + row16;
                         break;
                     case "5":
                         var row1 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
@@ -160,9 +158,9 @@ End Code
                         var row16 = '<b class="lead text-green-opac">' + resultSearch[i].requestStep + '</b><br> สาขา: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
 
                         var resultRow = row1 + row2 + row3 + row4 + row5 + row6 + row7 + row8 + row9 + row10 + row11 + row12 + row13 + row14 + row15 + row16;
-                        
+
                 }
-                
+
                 let track = '<div class="col-sm-7 col-md-4"><br />' + resultRow + '</div>';
 
                 let QRcode1 = '<div class="visible-lg col-md-4"><br /><div class="row"><div class="col-xs-6"><p class="text-center">Keep Tracking</p>';
@@ -176,7 +174,7 @@ End Code
                 $("#main").html(content);
             });
 
-            
+
 
         }
 

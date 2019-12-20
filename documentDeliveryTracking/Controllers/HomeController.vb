@@ -53,17 +53,22 @@ Public Class HomeController
         Dim responceTracking = myService.GetBook()
 
         Dim responce() = Newtonsoft.Json.JsonConvert.DeserializeObject(Of trackingBook())(responceTracking)
+        Dim dt As New DataTable
+        dt.Columns.Add("id")
+        dt.Columns.Add("cloverBook")
+        dt.Columns.Add("title")
 
-        'Dim resultTracking(,) As String
+
+        Dim i As Integer = 0
 
         For Each tracking As trackingBook In responce
-            Dim cloverBook = tracking.cloverBook
-
+            'Dim cloverBook = tracking.cloverBook
+            dt.Rows.Add(i, tracking.cloverBook, tracking.title)
         Next
 
         'ViewData("cloverBook") = cloverBook
         'ViewData("title") = title
-        'ViewData("resultTracking") = resultTracking()()
+        ViewData.Model = dt.AsEnumerable
         Return View()
     End Function
 

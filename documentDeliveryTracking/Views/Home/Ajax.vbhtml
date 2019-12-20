@@ -28,9 +28,8 @@ End Code
 
         <div class="container-fluid nopadding">
 
-            
-
             <div id="main">
+
 
             </div>
 
