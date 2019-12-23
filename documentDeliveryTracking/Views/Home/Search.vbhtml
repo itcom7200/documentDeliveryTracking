@@ -11,12 +11,12 @@ End Code
                 <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
                 <br />
                 <div class="form-group row">
-                    <div class="col-xs-12 col-sm-7 col-md-8" style="padding-right: 0px;">
+                    <div class="col-xs-12 col-sm-7 col-md-8">
                         <input type="text" class="form-control input-lg"
                                placeholder="Enter Your Tracking Number"
                                value="59148965">
                     </div>
-                    <div class="col-xs-12 col-sm-2">
+                    <div class="col-xs-12 col-sm-2" style="padding-left: 0px;">
                         <div class="visible-xs">
                             <br />
                         </div>

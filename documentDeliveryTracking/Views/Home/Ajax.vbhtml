@@ -30,9 +30,7 @@ End Code
 
             <div id="main">
 
-
             </div>
-
 
         </div>
 
@@ -40,22 +38,36 @@ End Code
 </div>
 
 
-<!-- $.get("page") -->
 <script type="text/javascript">
     $(document).ready(function () {
         $.get("viewAll", function (data) {
             $("#main").html(data);
+
         });
 
         $('.btn-group').on('click', '.btn', function () {
+            
             $(this).addClass('active').siblings().removeClass('active');
+
+
+            switch (this.id) {
+                case "getAll":
+                    var getId = "getAll";
+                    break;
+                case "getCurrent":
+                    var getId = "getCurrent";
+                    break;
+                case "getReject":
+                    var getId = "getReject";
+                    break;
+                case "getComplete":
+                    var getId = "getComplete";
+                    break;
+            }
+            console.log(getId);
+
         });
 
-        $('#btnTime').on('click', '.btn', function () {
-            $(this).addClass('active').siblings().removeClass('active');
-        });
-        
-        
         $("#getAll").click(function () {
             $.get("viewAll", function (data) {
                 $("#main").html(data);
