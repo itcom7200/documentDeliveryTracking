@@ -3,6 +3,7 @@ Imports System.Web.Script.Services
 Imports System.Data
 Imports Newtonsoft.Json
 Imports documentDeliveryTracking.trackingBook
+Imports System.Web.Http
 
 Public Class HomeController
     Inherits System.Web.Mvc.Controller
@@ -90,6 +91,11 @@ Public Class HomeController
     End Function
 
     Function viewTrackingSearch() As ActionResult
+
+        Return View()
+    End Function
+
+    Function testAPI() As ActionResult
 
         Return View()
     End Function
