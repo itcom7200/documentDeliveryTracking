@@ -64,7 +64,7 @@ End Code
                     var getId = "getComplete";
                     break;
             }
-            console.log(getId);
+            //console.log(getId);
 
         });
 

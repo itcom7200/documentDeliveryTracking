@@ -132,7 +132,7 @@ End Code
                 <b>Barcode:</b> B59121210<br>
                 <b>Request Date:</b> 12/08/2528<br><br>
                 <img class="img-thumbnail" src="~/Content/Icon/iconDoc.png"> &nbsp; &nbsp;:
-                <a href="https://www.youtube.com/" target="_blank">Download</a>
+                <a href="~/Content/Docs/file_picture_1576209831.pdf" target="_blank">Download</a>
 
                 <br><br>
             </div>

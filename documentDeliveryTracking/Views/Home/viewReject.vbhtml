@@ -117,7 +117,6 @@ End Code
 
 </div>
 
-
 <hr class="hr-set-margin" />
 
 <div class="row">
