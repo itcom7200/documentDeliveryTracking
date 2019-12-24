@@ -9,11 +9,10 @@ End Code
             <b>ID : </b>59121293<br />
             <b>Name : </b>สันติภาพ ตันประมวล<br />
             <b>Default point : </b>ตึกนวัตกรรม <br>
-            @*<b>ที่อยู่ในการจัดส่ง</b> :*@
         </address>
 
         <address>
-            <strong>E-mail:</strong>   @*<a href="mailto:suntiparb.tu@mail.wu.ac.th">*@suntiparb.tu@mail.wu.ac.th</a><br />
+            <strong>E-mail: </strong>@*<a href="mailto:suntiparb.tu@mail.wu.ac.th">*@suntiparb.tu@mail.wu.ac.th</a><br />
         </address>
     </div>
 

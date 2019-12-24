@@ -100,6 +100,14 @@ Public Class HomeController
         Return View()
     End Function
 
+    Function newSearch(name As String) As ActionResult
+
+        Dim massage As String = "Hello " & name
+
+        ViewData("Message") = massage
+        Return View()
+    End Function
+
 
 
 End Class

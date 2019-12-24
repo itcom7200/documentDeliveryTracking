@@ -260,6 +260,7 @@
     <Content Include="Views\Test\Test.vbhtml" />
     <Content Include="Views\Test\viewAll.vbhtml" />
     <Content Include="Views\Home\testAPI.vbhtml" />
+    <Content Include="Views\Home\newSearch.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
