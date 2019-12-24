@@ -70,7 +70,7 @@ End Code
                     <div class="row">
                         <!-- Button trigger modal (Edit model)  -->
                         <button type="button" class="btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit1">
-                            <img src="~/Content/Icon/IconEdit.png">
+                            <img src="~/Content/Icon/IconEdit2.png">
                         </button>
 
                         <!-- Modal -->
@@ -84,12 +84,13 @@ End Code
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="test1">Text:</label>
-                                            <input type="text" class="form-control" id="usr">
+                                        <div id="btnTime" class="btn-group">
+                                            <button class="btn btn-primary">12.00 วันพุธ</button>
+                                            <button class="btn btn-primary">12.00 วันพฤหัส</button>
+                                            <button class="btn btn-primary">12.00 วันศุกร์</button>
                                         </div>
                                         <div class="form-group">
-                                            <label for="test2">Text:</label>
+                                            <label for="test2">Note:</label>
                                             <input type="text" class="form-control" id="pwd">
                                         </div>
                                     </div>
@@ -103,7 +104,7 @@ End Code
                         </div><!-- div close modal-->
                         <!-- Button trigger modal (Reject model)  -->
                         <button type="button" class="btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject1">
-                            <img src="~/Content/Icon/IconReject.png">
+                            <img src="~/Content/Icon/IconReject2.png">
                         </button>
 
                         <!-- Modal -->
@@ -245,3 +246,11 @@ End Code
 
 
 
+<script type="text/javascript"> 
+    $(document).ready(function () {
+        $('#btnTime').on('click', '.btn', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    });
+
+</script>

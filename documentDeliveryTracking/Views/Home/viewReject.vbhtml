@@ -159,7 +159,7 @@ End Code
                                         <div class="row">
                                             <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
                                                 <div class="icon">
-                                                    <img class="img-iconfix" src="~/Content/Icon/iconTime.png">
+                                                    <img class="img-iconfix" src="~/Content/Icon/iconCancle.png">
                                                     <br><br>
                                                 </div>
                                             </div>

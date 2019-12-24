@@ -70,7 +70,7 @@ End Code
                     <div class="row">
                         <!-- Button trigger modal (Edit model)  -->
                         <button type="button" class="btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit1">
-                            <img src="~/Content/Icon/IconEdit.png">
+                            <img src="~/Content/Icon/IconEdit2.png">
                         </button>
 
                         <!-- Modal -->
@@ -105,7 +105,7 @@ End Code
                         </div><!-- div close modal-->
                         <!-- Button trigger modal (Reject model)  -->
                         <button type="button" class="btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject1">
-                            <img src="~/Content/Icon/IconReject.png">
+                            <img src="~/Content/Icon/IconReject2.png">
                         </button>
 
                         <!-- Modal -->
@@ -366,7 +366,7 @@ End Code
         $('#btnTime').on('click', '.btn', function () {
             $(this).addClass('active').siblings().removeClass('active');
         });
-    })
+    });
 
 </script>
 

@@ -87,7 +87,7 @@ End Code
 
                     case "1": // rejectRequest
                         var row1 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
-                        var row2 = '<div class="icon-noline"><img class="img-iconfix" src="/Content/Icon/iconCancle.png">';
+                        var row2 = '<div class="icon-noline"><img class="img-iconfix" src="/Content/Icon/iconFail.png">';
                         var row3 = '<br><br></div></div><div class="col-xs-9">';
                         var row4 = '<b class="lead text-danger">' + resultSearch[i].requestStep + '</b><br> หมายเหตุ: ' + resultSearch[i].libBranch + '<br>วันที่: ' + resultSearch[i].requestDate + ' เวลา: ' + resultSearch[i].requestTime + ' น.</div></div>';
                         var resultRow = row1 + row2 + row3 + row4;
@@ -144,7 +144,7 @@ End Code
                         break;
                     case "5":
                         var row1 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
-                        var row2 = '<div class="icon"><img class="img-iconfix" src="/Content/Icon/iconFail.png">';
+                        var row2 = '<div class="icon"><img class="img-iconfix" src="/Content/Icon/iconCancle.png">';
                         var row3 = '<br><br></div></div><div class="col-xs-9">';
                         var row4 = '<b class="lead text-danger">' + resultSearch[i].deliverStep + '</b><br> สาเหตุ: ' + resultSearch[i].userName + '<br>วันที่: ' + resultSearch[i].deliverDate + ' เวลา: ' + resultSearch[i].deliverTime + ' น.</div></div>';
                         var row5 = '<div class="row"><div class="col-xs-3 col-md-3 nopadding">';
