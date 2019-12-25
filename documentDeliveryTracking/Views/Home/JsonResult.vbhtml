@@ -12,8 +12,6 @@ End Code
                 <h1 class="text">Document Delivery</h1>
                 <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
                 <br />
-                
-
                 <br />
                 <br />
                 <br />

@@ -35,6 +35,10 @@ Namespace localhost
         
         Private GetBookOperationCompleted As System.Threading.SendOrPostCallback
         
+        Private SearchTrackingOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private getValueOperationCompleted As System.Threading.SendOrPostCallback
+        
         Private useDefaultCredentialsSetExplicitly As Boolean
         
         '''<remarks/>
@@ -78,6 +82,12 @@ Namespace localhost
         
         '''<remarks/>
         Public Event GetBookCompleted As GetBookCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event SearchTrackingCompleted As SearchTrackingCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event getValueCompleted As getValueCompletedEventHandler
         
         '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
@@ -130,6 +140,60 @@ Namespace localhost
             If (Not (Me.GetBookCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent GetBookCompleted(Me, New GetBookCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SearchTracking", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function SearchTracking() As String
+            Dim results() As Object = Me.Invoke("SearchTracking", New Object(-1) {})
+            Return CType(results(0),String)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub SearchTrackingAsync()
+            Me.SearchTrackingAsync(Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub SearchTrackingAsync(ByVal userState As Object)
+            If (Me.SearchTrackingOperationCompleted Is Nothing) Then
+                Me.SearchTrackingOperationCompleted = AddressOf Me.OnSearchTrackingOperationCompleted
+            End If
+            Me.InvokeAsync("SearchTracking", New Object(-1) {}, Me.SearchTrackingOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnSearchTrackingOperationCompleted(ByVal arg As Object)
+            If (Not (Me.SearchTrackingCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent SearchTrackingCompleted(Me, New SearchTrackingCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getValue", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function getValue(ByVal id As String) As String
+            Dim results() As Object = Me.Invoke("getValue", New Object() {id})
+            Return CType(results(0),String)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub getValueAsync(ByVal id As String)
+            Me.getValueAsync(id, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub getValueAsync(ByVal id As String, ByVal userState As Object)
+            If (Me.getValueOperationCompleted Is Nothing) Then
+                Me.getValueOperationCompleted = AddressOf Me.OngetValueOperationCompleted
+            End If
+            Me.InvokeAsync("getValue", New Object() {id}, Me.getValueOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OngetValueOperationCompleted(ByVal arg As Object)
+            If (Not (Me.getValueCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent getValueCompleted(Me, New getValueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -188,6 +252,60 @@ Namespace localhost
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class GetBookCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    Public Delegate Sub SearchTrackingCompletedEventHandler(ByVal sender As Object, ByVal e As SearchTrackingCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class SearchTrackingCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    Public Delegate Sub getValueCompletedEventHandler(ByVal sender As Object, ByVal e As getValueCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class getValueCompletedEventArgs
         Inherits System.ComponentModel.AsyncCompletedEventArgs
         
         Private results() As Object

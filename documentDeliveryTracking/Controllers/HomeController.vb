@@ -99,13 +99,49 @@ Public Class HomeController
 
         Return View()
     End Function
+    Function newSearch(trackingId As String) As ActionResult
 
-    Function newSearch(name As String) As ActionResult
+        If trackingId IsNot Nothing Then
+            Dim myservice As New localhost.WebService1
+            Dim serviceGetValue = myservice.getValue(trackingId)
 
-        Dim massage As String = "Hello " & name
+            Dim responceGetValue() = Newtonsoft.Json.JsonConvert.DeserializeObject(Of getValue())(serviceGetValue)
 
-        ViewData("Message") = massage
-        Return View()
+            For Each value As getValue In responceGetValue
+
+                ViewData("id") = value.id
+                ViewData("staffName") = value.staffName
+                ViewData("staffTel") = value.staffTel
+                ViewData("staffLine") = value.staffLine
+                ViewData("ddType") = value.ddType
+                ViewData("ddPoint") = value.ddPoint
+                ViewData("status") = value.status
+                ViewData("requestStep") = value.requestStep
+                ViewData("libBranch") = value.libBranch
+                ViewData("requestDate") = value.requestDate
+                ViewData("requestTime") = value.requestTime
+                ViewData("processStep") = value.processStep
+                ViewData("staffLib") = value.staffLib
+                ViewData("processDate") = value.processDate
+                ViewData("processTime") = value.processTime
+                ViewData("waitingStep") = value.waitingStep
+                ViewData("staffDelivery") = value.staffDelivery
+                ViewData("waitingDate") = value.waitingDate
+                ViewData("waitingTime") = value.waitingTime
+                ViewData("deliverStep") = value.deliverStep
+                ViewData("userName") = value.userName
+                ViewData("deliverDate") = value.deliverDate
+                ViewData("deliverTime") = value.deliverTime
+
+            Next
+
+            Return View()
+        Else
+
+            Return View()
+
+        End If
+
     End Function
 
 

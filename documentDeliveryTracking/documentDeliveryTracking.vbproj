@@ -191,14 +191,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\localhost\searchTracking.asmx.vb">
-      <DependentUpon>searchTracking.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Web References\localhost\Webservice.asmx.vb">
-      <DependentUpon>Webservice.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -245,10 +237,6 @@
     <Content Include="Views\Home\Tracking.vbhtml" />
     <Content Include="Views\Home\Search.vbhtml" />
     <Content Include="Views\Home\Ajax.vbhtml" />
-    <Content Include="Web References\localhost\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </Content>
     <Content Include="Views\Home\JsonResult.vbhtml" />
     <Content Include="Views\Home\trackingAjax.vbhtml" />
     <Content Include="Views\Home\viewAll.vbhtml" />
@@ -261,6 +249,10 @@
     <Content Include="Views\Test\viewAll.vbhtml" />
     <Content Include="Views\Home\testAPI.vbhtml" />
     <Content Include="Views\Home\newSearch.vbhtml" />
+    <Content Include="Web References\localhost\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
@@ -275,8 +267,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <None Include="Web References\localhost\WebService1.disco" />
-    <Content Include="Web References\localhost\searchTracking.asmx" />
-    <Content Include="Web References\localhost\Webservice.asmx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -303,10 +293,13 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:62597/WebService1.asmx%3fop=GetBook">
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:62597/WebService1.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\localhost\</RelPath>
-      <UpdateFromURL>http://localhost:62597/WebService1.asmx%3fop=GetBook</UpdateFromURL>
+      <UpdateFromURL>http://localhost:62597/WebService1.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -314,9 +307,6 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>documentDeliveryTracking_localhost_WebService1</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
