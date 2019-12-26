@@ -36,27 +36,31 @@ End Code
     </div>
 </div>
 
-<div id="info" class="container">
+@if ViewData("id") = "0" Then
+    ViewData("name") = "If name"
+    Select Case ViewData("name")
+        Case "If name"
+            ViewData("hidden") = "hidden"
+    End Select
+
+
+Else
+    ViewData("name") = ViewData("staffName")
+
+End If
+
+<div id="@ViewData("hidden")" class="container">
     <div class="container">
         <div class="row">
-
             <div id="main">
                 <div class="col-sm-4 col-md-4">
                     <h2>Contact</h2>
                     <p>หากมีข้อสงสัย กรุณาติดต่อ</p>
                     <address>
-                        @if ViewData("id") = "0" Then
-                            ViewData("name") = "If name"
-                        Else
-                            ViewData("name") = ViewData("staffName")
-
-                        End If
-
-                        <b>
-                            Staff : @ViewData("name")<br />
-                            <b>IDline: </b>@ViewData("staffTel")<br />
-                            <b>Tel: </b>@ViewData("staffLine")<br />
-                            <b>DDpoint: </b>@ViewData("staffName")<br />
+                        <b>Staff : </b>@ViewData("name")<br />
+                        <b>IDline: </b>@ViewData("staffLine")<br />
+                        <b>Tel: </b>@ViewData("staffTel")<br />
+                        <b>DDpoint: </b>@ViewData("staffName")<br />
 
                     </address>
                 </div>
@@ -128,7 +132,8 @@ End Code
 
     <script type="text/javascript">
         $(document).ready(function () {
-
+            $("#hidden").hide();
         });
     </script>
+
     <div Class="container">

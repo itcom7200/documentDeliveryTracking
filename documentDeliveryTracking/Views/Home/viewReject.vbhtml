@@ -26,7 +26,7 @@ End Code
                     <div class="row">
                         <!-- Button -->
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalScrollable1">
-                            สถานะ: จัดส่งไม่สำเร็จ
+                            สถานะ: ทำการส่งไม่สำเร็จ
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModalScrollable1" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -49,7 +49,7 @@ End Code
                                                 </div>
                                             </div>
                                             <div class="col-xs-8">
-                                                <b class="lead text-danger">จัดส่งไม่สำเร็จ</b><br>
+                                                <b class="lead text-danger">ทำการส่งไม่สำเร็จ</b><br>
                                                 สาเหตุ: ไม่มีผู้รับ Document<br>
                                                 วันที่: 11/11/2019 เวลา: 16:00 น.
                                             </div>

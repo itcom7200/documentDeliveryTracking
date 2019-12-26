@@ -10,19 +10,20 @@ End Code
                 <h1 class="text">Document Delivery</h1>
                 <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
                 <br />
-                <div class="form-group row">
+                <form class="form-group row">
                     <div class="col-xs-12 col-sm-7 col-md-8">
                         <input id="inputId" type="text" class="form-control input-lg"
                                placeholder="Enter Your Tracking Number"
-                               value="1">
+                               name="trackingID"
+                               value="@ViewData("Message")">
                     </div>
                     <div class="col-xs-12 col-sm-2" style="padding-left: 0px;">
                         <div class="visible-xs">
                             <br />
                         </div>
-                        <center><button id="Enter" class="btn btn-green-opac btn-lg">Enter</button></center>
+                        <center><button type="submit" id="Enter" class="btn btn-green-opac btn-lg">Enter</button></center>
                     </div>
-                </div>
+                </form>
                 <br />
                 <br />
                 <br />
@@ -50,9 +51,13 @@ End Code
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $("#Enter").click(function () {
-            var inputId = $("#inputId").val();
+        var inputId = $("#inputId").val();
 
+        if (inputId != "") {
+            ajax();
+        }
+        
+        function ajax() {
             $.ajax({
                 type: "POST",
                 url: "http://localhost:62597/WebService1.asmx/getValue",
@@ -62,8 +67,10 @@ End Code
                 success: getContent,
                 error: failGetContent
             });
-            
-        });
+        }
+        
+
+
 
 
         function getContent(data) {

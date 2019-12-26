@@ -95,7 +95,9 @@ Public Class HomeController
         Return View()
     End Function
 
-    Function testAPI() As ActionResult
+    Function testAPI(trackingId As String) As ActionResult
+
+        ViewData("Message") = trackingId
 
         Return View()
     End Function
