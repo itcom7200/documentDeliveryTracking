@@ -41,6 +41,9 @@ End Code
             <div id="main">
 
             </div>
+            <div id="testQR">
+
+            </div>
         </div>
 
 
@@ -173,8 +176,8 @@ End Code
 
                 let track = '<div class="col-sm-7 col-md-4"><br />' + resultRow + '</div>';
 
-                let QRcode1 = '<div class="visible-lg col-md-4"><br /><div class="row"><div class="col-xs-6"><p class="text-center">Keep Tracking</p>';
-                let QRcode2 = '<img class="img-qrcode-maxsize" src="/Content/Image/lineQR.JPG"></div></div></div>';
+                let QRcode1 = '<div class="visible-lg col-md-4"><br /><div class="row"><div class="col-xs-12 text-center"><p class="text-center">Keep Tracking</p>';
+                let QRcode2 = '<div id="QRcode" class="img-qrcode-maxsize"></div></div></div></div>';
                 let QRcode = QRcode1 + QRcode2;
 
 
@@ -182,8 +185,19 @@ End Code
 
 
                 $("#main").html(content);
+                genQRcode();
             });
 
+        }
+        function genQRcode() {
+            var GenQRcode = "http://localhost:49777/Home/testAPI?trackingID=" + inputId;
+            if (GenQRcode !== "") {
+                var qrcode = new QRCode(document.getElementById('QRcode'), {
+                    text: GenQRcode,
+                    width: 100,
+                    height: 100
+                });
+            }
         }
 
         function failGetContent() {
