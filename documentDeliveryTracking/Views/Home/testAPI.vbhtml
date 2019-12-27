@@ -7,23 +7,19 @@ End Code
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-7 col-md-8">
-                <h1 class="text">Document Delivery</h1>
+                <h1 class="text">Walai DD Tracking</h1>
                 <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
                 <br />
-                <form class="form-group row">
-                    <div class="col-xs-12 col-sm-7 col-md-8">
-                        <input id="inputId" type="text" class="form-control input-lg"
-                               placeholder="Enter Your Tracking Number"
-                               name="trackingID"
-                               value="@ViewData("Message")">
-                    </div>
-                    <div class="col-xs-12 col-sm-2" style="padding-left: 0px;">
-                        <div class="visible-xs">
-                            <br />
+                <div class="search-container">
+                    <form class="form-group row">
+                        <div class="col-xs-9 col-sm-7 col-md-8" style="padding-right: 00px;">
+                            <input type="text" id="inputId" name="trackingId" class="form-control input-lg" placeholder="Enter Your Tracking Number" value="@ViewData("Message")">
                         </div>
-                        <center><button type="submit" id="Enter" class="btn btn-green-opac btn-lg">Enter</button></center>
-                    </div>
-                </form>
+                        <div class="col-xs-3 col-sm-2" style="padding-left: 0px;">
+                            <center><button type="submit" id="Enter" class="btn btn-green-opac btn-lg">Go</button></center>
+                        </div>
+                    </form>
+                </div>
                 <br />
                 <br />
                 <br />
@@ -41,9 +37,6 @@ End Code
             <div id="main">
 
             </div>
-            <div id="testQR">
-
-            </div>
         </div>
 
 
@@ -56,10 +49,12 @@ End Code
 
         var inputId = $("#inputId").val();
 
-        if (inputId != "") {
+        console.log("inputId : " + inputId);
+
+        if (inputId !== "") {
             ajax();
         }
-        
+
         function ajax() {
             $.ajax({
                 type: "POST",
@@ -71,19 +66,32 @@ End Code
                 error: failGetContent
             });
         }
-        
-
-
 
 
         function getContent(data) {
             resultSearch = $.parseJSON(data.d);
             $.each(resultSearch, function (i, item) {
-                let contact1 = '<div class="col-sm-4 col-md-4"><h2>Contact</h2><p>หากมีข้อสงสัย กรุณาติดต่อ</p>';
+
+                let QRcode1 = '<p></p>';
+                let QRcode2 = '<div><div id="QRcode" class="img-qrcode-maxsize hidden-xs"></div></div>';
+                var QRcode = QRcode1 + QRcode2;
+
+                let contact1 = '<div class="col-sm-4 col-md-3"><hr class="visible-xs hr-set-margin" /><h2>Contact</h2><p>หากมีข้อสงสัย กรุณาติดต่อ</p>';
                 let contact2 = '<address>Staff: ' + resultSearch[i].staffName + '<br />Line id: ' + resultSearch[i].staffLine;
-                let contact3 = '<br>Tel: ' + resultSearch[i].staffTel + ' <br><b>Point: ' + resultSearch[i].ddPoint + '</b><br></address></div >';
+                let contact3 = '<br>Tel: ' + resultSearch[i].staffTel + ' <br><b>DD Point: ' + resultSearch[i].ddPoint + '</b></address>' + QRcode + '</div >';
                 let contact = contact1 + contact2 + contact3;
 
+                console.log(resultSearch[i].ddType)
+                switch (resultSearch[i].ddType) {
+                    case "Docs":
+
+                        break;
+
+                    case "File":
+
+                        break;
+
+                }
                 console.log(resultSearch[i].status)
 
                 switch (resultSearch[i].status) {
@@ -173,15 +181,15 @@ End Code
                         var resultRow = row1 + row2 + row3 + row4 + row5 + row6 + row7 + row8 + row9 + row10 + row11 + row12 + row13 + row14 + row15 + row16;
 
                 }
+                let trackAndTrace = '<div class="row"><div class="col-xs-2 col-md-2 nopadding"></div><div class="col-xs-9"><h2>Track & Trace</h2><br></div></div>';
+                //let trackAndTrace = '<div class="row"><h2 class="text-center">Track & Trace</h2></div>';
 
-                let track = '<div class="col-sm-7 col-md-4"><br />' + resultRow + '</div>';
-
-                let QRcode1 = '<div class="visible-lg col-md-4"><br /><div class="row"><div class="col-xs-12 text-center"><p class="text-center">Keep Tracking</p>';
-                let QRcode2 = '<div id="QRcode" class="img-qrcode-maxsize"></div></div></div></div>';
-                let QRcode = QRcode1 + QRcode2;
+                let track = '<div class="col-sm-7 col-md-6">' + trackAndTrace + resultRow + '</div>';
 
 
-                let content = contact + track + QRcode;
+
+
+                let content = track + contact;
 
 
                 $("#main").html(content);
@@ -194,8 +202,8 @@ End Code
             if (GenQRcode !== "") {
                 var qrcode = new QRCode(document.getElementById('QRcode'), {
                     text: GenQRcode,
-                    width: 100,
-                    height: 100
+                    width: 110,
+                    height: 110
                 });
             }
         }
