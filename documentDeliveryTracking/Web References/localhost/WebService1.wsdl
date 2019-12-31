@@ -22,6 +22,30 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SearchTracking">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchTrackingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchTrackingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -36,6 +60,18 @@
   <wsdl:message name="GetBookSoapOut">
     <wsdl:part name="parameters" element="tns:GetBookResponse" />
   </wsdl:message>
+  <wsdl:message name="SearchTrackingSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchTracking" />
+  </wsdl:message>
+  <wsdl:message name="SearchTrackingSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchTrackingResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValueSoapIn">
+    <wsdl:part name="parameters" element="tns:getValue" />
+  </wsdl:message>
+  <wsdl:message name="getValueSoapOut">
+    <wsdl:part name="parameters" element="tns:getValueResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -44,6 +80,14 @@
     <wsdl:operation name="GetBook">
       <wsdl:input message="tns:GetBookSoapIn" />
       <wsdl:output message="tns:GetBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTracking">
+      <wsdl:input message="tns:SearchTrackingSoapIn" />
+      <wsdl:output message="tns:SearchTrackingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <wsdl:input message="tns:getValueSoapIn" />
+      <wsdl:output message="tns:getValueSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -66,6 +110,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SearchTracking">
+      <soap:operation soapAction="http://tempuri.org/SearchTracking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <soap:operation soapAction="http://tempuri.org/getValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -80,6 +142,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetBook">
       <soap12:operation soapAction="http://tempuri.org/GetBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTracking">
+      <soap12:operation soapAction="http://tempuri.org/SearchTracking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValue">
+      <soap12:operation soapAction="http://tempuri.org/getValue" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -6710,7 +6710,7 @@ button.close {
 .icon-noline {
     width: 60px;
     margin: 0px 25px;
-    background: url(../Content/Icon/พื้นหลังว่าง) center repeat-y;
+    //background: url(../Content/Icon/EIEI.jpg) center repeat-y;
     height: 100%;
     //position: absolute;
     left: 130px;
@@ -6720,7 +6720,7 @@ button.close {
 }
 .img-qrcode-maxsize {
     display: inline-block;
-    max-width: 170px;
+    max-width: 100%;
     height: auto;
 }
 .img-clover-book { 

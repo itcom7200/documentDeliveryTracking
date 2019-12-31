@@ -7,7 +7,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Content/qrcode.js")
     @*@Scripts.Render("~/Content/fontawesome.js")*@
 </head>
 <body>
@@ -29,25 +28,27 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Content", "Content", "Home")</li>
                     -->
-                    <li>@Html.ActionLink("Tracking", "Ajax", "Home")</li>
+                    <li>@Html.ActionLink("Tracking", "Tracking", "Home")</li>
                     <!--<li>@Html.ActionLink("new", "Newtracking", "Home")</li>-->
-                    <li>@Html.ActionLink("Search", "testAPI", "Home")</li>
+                    <li>@Html.ActionLink("Search", "Search", "Home")</li>
                     <!--<li>@Html.ActionLink("AJAX", "Ajax", "Home")</li>-->
-                    @*<li>@Html.ActionLink("Test Ajax page", "Test", "Test")</li>*@
+                    @*<li>@Html.ActionLink("Tracking2", "tracking2", "Home")</li>*@
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+
+    @RenderBody()
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
 
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required:=False)
+
 </body>
 </html>

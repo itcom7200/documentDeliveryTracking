@@ -1,4 +1,5 @@
 ﻿@Code
+    'Layout = Nothing
     ViewData("Title") = "Tracking"
 End Code
 <div class="row">
@@ -43,7 +44,7 @@ End Code
 
 
 
-        <div class="container-fluid">
+        <div class="container-fluid nopadding">
 
             <hr class="hr-set-margin" />
 
@@ -67,7 +68,7 @@ End Code
                     </div>
                     <div class="col-xs-12">
                         <div class="row">
-                            <div class="col-xs-8 col-sm-6">
+                            <div class="col-xs-8 col-sm-6 col-lg-7">
                                 <div class="row">
                                     <!-- Button -->
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalScrollable3">
@@ -175,7 +176,7 @@ End Code
                         </div>
                     </div>
                 </div>
-                <div class="visible-lg col-lg-2">
+                <div class="visible-lg col-xs-2 nopadding">
                     <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                 </div>
 
@@ -203,7 +204,7 @@ End Code
                     </div>
                     <div class="col-xs-12">
                         <div class="row">
-                            <div class="col-xs-7 col-sm-6">
+                            <div class="col-xs-8 col-sm-6 col-lg-7">
                                 <div class="row">
                                     <!-- Button -->
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalScrollable2">
@@ -280,7 +281,7 @@ End Code
                         </div>
                     </div>
                 </div>
-                <div class="visible-lg col-lg-2">
+                <div class="visible-lg col-lg-2 nopadding">
                     <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                 </div>
                 <hr />
@@ -395,7 +396,7 @@ End Code
                         </div>
                     </div>
                 </div>
-                <div class="visible-lg col-lg-2">
+                <div class="visible-lg col-lg-2 nopadding">
                     <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                 </div>
                 <hr />
@@ -510,7 +511,7 @@ End Code
                         </div>
                     </div>
                 </div>
-                <div class="visible-lg col-lg-2">
+                <div class="visible-lg col-lg-2 nopadding">
                     <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                 </div>
                 <hr />
@@ -614,7 +615,7 @@ End Code
                         </div>
                     </div>
                 </div>
-                <div class="visible-lg col-lg-2">
+                <div class="visible-lg col-lg-2 nopadding">
                     <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
                 </div>
             </div>
@@ -640,7 +641,7 @@ End Code
     </div>
 
 </div>
-<button class="btn" onclick="getTest('18')">Get Json</button>
+@*<button class="btn" onclick="getTest('18')">Get Json</button>*@
 
 <p class="test"></p>
 
