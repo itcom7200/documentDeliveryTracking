@@ -133,7 +133,7 @@ End Code
         </div>
     </div>
     <div class="visible-lg col-xs-2 nopadding">
-        <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
+        <img class="img-qrcode-maxsize" src="~/Content/Image/genQR.png">
     </div>
 
 
@@ -238,7 +238,7 @@ End Code
         </div>
     </div>
     <div class="visible-lg col-lg-2 nopadding">
-        <img class="img-qrcode-maxsize" src="~/Content/Image/lineQR.JPG">
+        <img class="img-qrcode-maxsize" src="~/Content/Image/genQR.png">
     </div>
     <hr />
 
