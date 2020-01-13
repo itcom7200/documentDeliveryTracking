@@ -10,23 +10,18 @@ End Code
 
 <script>
     $(document).ready(function () {
-        //var QRcode = "http://localhost:49777/Home/testAPI";
-        //$("#demo").qrcode({
-            
-        //    //render:"table",
-        //    width: 128,
-        //    height: 128,
-        //    text: QRcode
-        //});
+        
 
-        var GenQRcode = "http://localhost:49777/Home/testAPI";
+        var GenQRcode = "https://th.kerryexpress.com/th/track/?track=KUBO000109346";
         if (GenQRcode !== "") {
-            var qrcode = new QRCode(document.getElementById('demo'), {
+            new QRCode(document.getElementById("demo"), {
                 text: GenQRcode,
                 width: 100,
                 height: 100
             });
         }
+
+        
 
 
 

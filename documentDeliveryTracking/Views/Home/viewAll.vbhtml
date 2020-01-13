@@ -155,7 +155,7 @@ End Code
                                  target="_blank">คิดมุมกลับ ปรับชีวิตให้เป็นบวก = Flip it /เฮปเพลล์, ไมเคิล</a><br>
                 <b>Barcode:</b> B59121210<br>
                 <b>Request Date:</b> 12/08/2528<br><br>
-                <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
+                <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: อาคารเรียนรวม
                 <br><br>
             </div>
         </div>
