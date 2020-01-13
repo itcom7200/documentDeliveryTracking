@@ -37,6 +37,7 @@ End Code
     <div class="container">
         <div class="row">
             <div id="main">
+                
 
             </div>
         </div>
@@ -47,14 +48,14 @@ End Code
 
 
 
+
 <script type="text/javascript">
     $(document).ready(function () {
-
         var myObj, i, j, x = "";
 
         myObj = {
             "name": "John",
-            "age": 30,
+            "id": "59121293",
             "content": [
                 { "step": "Request", "detail": ["ห้องสมุดแพทย์", "11/11/2019", "09:00"] },
                 { "step": "Accept", "detail": ["Staff WU", "11/11/2019", "10:30"] },
@@ -69,17 +70,11 @@ End Code
                 x += myObj.content[i].detail[j] + "<br>";
             }
         }
-        
-        console.log(x);
+
+        //console.log(x);
         var contentRow = x;
-        
+
         $("#main").append(contentRow);
-
-
-        
-
-
-
 
 
     });
