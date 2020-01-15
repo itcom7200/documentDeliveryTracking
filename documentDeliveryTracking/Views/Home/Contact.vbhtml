@@ -51,7 +51,6 @@ End Code
 
 <script type="text/javascript">
     $(document).ready(function () {
-        var myObj, i, j, x = "";
 
         myObj = {
             "tracking": {
@@ -92,28 +91,46 @@ End Code
             "tracking": [
                 {
                     "id": "59121293",
-                    "staff": "สันติภาพ ตันประมวล",
+                    "staff": "สันติภาพ",
                     "lineStaff": "itcom7200",
                     "telStaff": "0808841358",
                     "ddPoint": "เรียนรวม 5",
                     "checkpoints": [
                         {
-                            "icon":"iconTime.png",
+                            "icon": "iconSuccess.png",
+                            "color": "text-green-opac",
+                            "head": "จัดส่งเรียบร้อยแล้ว",
+                            "text": "ผู้รับ",
+                            "message": "Freddy Merquery",
+                            "date": "11/11/2019",
+                            "time": "13:30"
+                        },
+                        {
+                            "icon": "iconTime.png",
+                            "color": "text-green-opac",
+                            "head": "Documentรอนำส่ง",
+                            "text": "เจ้าหน้าที่",
+                            "message": "WULineman",
+                            "date": "11/11/2019",
+                            "time": "13:30"
+                        },
+                        {
+                            "icon": "iconTime.png",
+                            "color": "text-green-opac",
+                            "head": "ทำรายการเรียบร้อยแล้ว",
+                            "text": "เจ้าหน้าที่",
+                            "message": "Suntiparb",
+                            "date": "11/11/2019",
+                            "time": "12:00"
+                        },
+                        {
+                            "icon": "iconTime.png",
                             "color": "text-green-opac",
                             "head": "รับคำร้องขอ",
                             "text": "สาขา",
                             "message": "หอสมุดกลาง",
                             "date": "11/11/2019",
                             "time": "10:56"
-                        },
-                        {
-                            "icon": "iconSuccess.png",
-                            "color": "text-green-opac",
-                            "head": "ทำรายการเรียบร้อยแล้ว",
-                            "text": "เจ้าหน้าที่",
-                            "message": "Suntiparb Tunparmuan",
-                            "date": "11/11/2019",
-                            "time": "12:00"
                         }
                     ]
                 }
@@ -123,23 +140,76 @@ End Code
 
         }
 
-
+        var showIcon = "";
         let { tracking } = testJson;
         $.each(tracking, function (i) {
-            //console.log(`รายการที่ ${i+1}`);
-            
-            $.each(tracking[i].checkpoints, function (x) {
-                
-                console.log(`icon: ${tracking[i].checkpoints[x].icon}`);
 
+            $.each(tracking[i].checkpoints, function (x) {
+
+                var checkline = tracking[i].checkpoints[x].head;
+
+                var line = "";
+
+                switch (checkline) {
+                    case "รับคำร้องขอ":
+                        line = "icon-noline";
+                        break;
+                    default:
+                        line = "icon";
+                }
+
+                let HTML = `<div class="row">
+                                <div class="col-xs-3 col-md-3 nopadding">
+                                    <div class="${line}">
+                                        <img class="img-iconfix" src="/Content/Icon/${tracking[i].checkpoints[x].icon}">
+                                        <br><br>
+                                    </div>
+                                </div>
+                                <div class="col-xs-9">
+                                    <b class="lead ${tracking[i].checkpoints[x].color}">${tracking[i].checkpoints[x].head}</b><br>
+                                    ${tracking[i].checkpoints[x].text}: ${tracking[i].checkpoints[x].message}<br>
+                                    วันที่: ${tracking[i].checkpoints[x].date} เวลา: ${tracking[i].checkpoints[x].time} น.
+                                </div>
+                            </div>`;
+
+                showIcon += HTML;
             });
         });
 
-
+        
+        var QRcode = '<div><div id="QRcode" class="img-qrcode-maxsize hidden-xs"></div></div>';
         
 
 
+        let contact1 = '<div class="col-sm-4 col-md-3"><hr class="visible-xs hr-set-margin" /><h2>Contact</h2><p>หากมีข้อสงสัย กรุณาติดต่อ</p>';
+        let contact2 = '<address>Staff: ' + tracking[0].staff + '<br />Line id: ' + tracking[0].lineStaff;
+        let contact3 = '<br>Tel: ' + tracking[0].telStaff + ' <br><b>DD Point: ' + tracking[0].ddPoint + '</b></address>' + QRcode + '</div >';
+        let contact = contact1 + contact2 + contact3;
 
+        let trackAndTrace = '<div class="row"><div class="col-xs-2 col-md-2 nopadding"></div><div class="col-xs-9"><h2>Track & Trace</h2><br></div></div>';
+
+        let track = '<div class="col-sm-7 col-md-6">' + trackAndTrace + showIcon + '</div>';
+
+        let result = track + contact;
+
+        //genQRcode();
+
+        $("#main").html(result);
+
+        genQRcode();
+
+        function genQRcode() {
+            var GenQRcode = `https://www.facebook.com/`;
+            console.log(GenQRcode);
+            if (GenQRcode !== "") {
+                new QRCode(document.getElementById('QRcode'), {
+                    text: GenQRcode,
+                    width: 110,
+                    height: 110
+                });
+            }
+        }
+        
     });
 </script>
 
