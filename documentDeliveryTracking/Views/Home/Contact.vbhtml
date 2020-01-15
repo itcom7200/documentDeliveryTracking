@@ -37,7 +37,7 @@ End Code
     <div class="container">
         <div class="row">
             <div id="main">
-                
+
 
             </div>
         </div>
@@ -54,27 +54,90 @@ End Code
         var myObj, i, j, x = "";
 
         myObj = {
-            "name": "John",
-            "id": "59121293",
-            "content": [
-                { "step": "Request", "detail": ["ห้องสมุดแพทย์", "11/11/2019", "09:00"] },
-                { "step": "Accept", "detail": ["Staff WU", "11/11/2019", "10:30"] },
-                { "step": "Ready Delivery", "detail": ["WU Lineman", "11/11/2019", "11:30"] }
-            ]
-        }
-
-
-        for (i in myObj.content) {
-            x += "<h2>" + myObj.content[i].step + "</h2>";
-            for (j in myObj.content[i].detail) {
-                x += myObj.content[i].detail[j] + "<br>";
+            "tracking": {
+                "id": "53aa7b5c415a670000000021",
+                "created_at": "2016-09-26T07:33:48+00:00",
+                "updated_at": "2016-09-27T10:45:00+00:00",
+                "tracking_number": "98234627343",
+                "slug": "kerry-logistics",
+                "active": true,
+                "expected_delivery": "2016-09-30",
+                "tag": "InTransit",
+                "checkpoints": [
+                    {
+                        "slug": "kerry-logistics",
+                        "location": "US",
+                        "message": "Order Processed: Ready for deliver",
+                        "country_iso3": "USA",
+                        "tag": "InfoReceived",
+                        "checkpoint_time": "2016-09-26T19:40:00",
+                        "state": null
+                    },
+                    {
+                        "slug": "kerry-logistics",
+                        "location": "US",
+                        "message": "Departure Scan",
+                        "country_iso3": "USA",
+                        "tag": "InTransit",
+                        "checkpoint_time": "2016-09-27T10:13:13",
+                        "state": "QC"
+                    }
+                ]
             }
+
+
         }
 
-        //console.log(x);
-        var contentRow = x;
+        testJson = {
+            "tracking": [
+                {
+                    "id": "59121293",
+                    "staff": "สันติภาพ ตันประมวล",
+                    "lineStaff": "itcom7200",
+                    "telStaff": "0808841358",
+                    "ddPoint": "เรียนรวม 5",
+                    "checkpoints": [
+                        {
+                            "icon":"iconTime.png",
+                            "color": "text-green-opac",
+                            "head": "รับคำร้องขอ",
+                            "text": "สาขา",
+                            "message": "หอสมุดกลาง",
+                            "date": "11/11/2019",
+                            "time": "10:56"
+                        },
+                        {
+                            "icon": "iconSuccess.png",
+                            "color": "text-green-opac",
+                            "head": "ทำรายการเรียบร้อยแล้ว",
+                            "text": "เจ้าหน้าที่",
+                            "message": "Suntiparb Tunparmuan",
+                            "date": "11/11/2019",
+                            "time": "12:00"
+                        }
+                    ]
+                }
 
-        $("#main").append(contentRow);
+            ]
+
+
+        }
+
+
+        let { tracking } = testJson;
+        $.each(tracking, function (i) {
+            //console.log(`รายการที่ ${i+1}`);
+            
+            $.each(tracking[i].checkpoints, function (x) {
+                
+                console.log(`icon: ${tracking[i].checkpoints[x].icon}`);
+
+            });
+        });
+
+
+        
+
 
 
     });
