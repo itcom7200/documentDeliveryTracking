@@ -1,5 +1,4 @@
 ﻿@Code
-
     ViewData("Title") = "Contact"
 End Code
 
@@ -37,7 +36,13 @@ End Code
     <div class="container">
         <div class="row">
             <div id="main">
-
+                <div class="col-sm-7 col-md-6">
+                    <div class="row">
+                        <div class="col-xs-2 col-md-2 nopadding"></div>
+                        <div class="col-xs-9"><h2>Track &amp; Trace</h2><br></div>
+                    </div>
+                    <div class="row"></div>
+                </div>
 
             </div>
         </div>
@@ -209,7 +214,6 @@ End Code
                 });
             }
         }
-        
     });
 </script>
 

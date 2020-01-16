@@ -245,8 +245,6 @@
     <Content Include="Views\Home\viewComplete.vbhtml" />
     <Content Include="Views\Shared\_LayoutCustom.vbhtml" />
     <Content Include="Views\Home\viewTrackingSearch.vbhtml" />
-    <Content Include="Views\Test\Test.vbhtml" />
-    <Content Include="Views\Test\viewAll.vbhtml" />
     <Content Include="Views\Home\testAPI.vbhtml" />
     <Content Include="Views\Home\newSearch.vbhtml" />
     <Content Include="Web References\localhost\Reference.map">
@@ -254,6 +252,7 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <Content Include="Views\Home\Contact.vbhtml" />
+    <Content Include="Views\Test\Index.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
