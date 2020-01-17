@@ -39,7 +39,7 @@ End Code
                 <div class="col-sm-7 col-md-6">
                     <div class="row">
                         <div class="col-xs-2 col-md-2 nopadding"></div>
-                        <div class="col-xs-9"><h2>Track &amp; Trace</h2><br></div>
+                        <div class="col-xs-9"><h2>Track & Trace</h2><br></div>
                     </div>
                     <div class="row"></div>
                 </div>
@@ -91,6 +91,7 @@ End Code
 
 
         }
+
 
         testJson = {
             "tracking": [
@@ -144,14 +145,21 @@ End Code
 
 
         }
+        
+        
 
         var showIcon = "";
         let { tracking } = testJson;
+        
         $.each(tracking, function (i) {
 
             $.each(tracking[i].checkpoints, function (x) {
 
                 var checkline = tracking[i].checkpoints[x].head;
+                //console.log(tracking[i].checkpoints.length); เช็คความยาวของตัว obj
+
+                
+                //console.log(checkline);
 
                 var line = "";
 
@@ -181,9 +189,9 @@ End Code
             });
         });
 
-        
+
         var QRcode = '<div><div id="QRcode" class="img-qrcode-maxsize hidden-xs"></div></div>';
-        
+
 
 
         let contact1 = '<div class="col-sm-4 col-md-3"><hr class="visible-xs hr-set-margin" /><h2>Contact</h2><p>หากมีข้อสงสัย กรุณาติดต่อ</p>';
@@ -205,7 +213,7 @@ End Code
 
         function genQRcode() {
             var GenQRcode = `https://www.facebook.com/`;
-            console.log(GenQRcode);
+            //console.log(GenQRcode);
             if (GenQRcode !== "") {
                 new QRCode(document.getElementById('QRcode'), {
                     text: GenQRcode,

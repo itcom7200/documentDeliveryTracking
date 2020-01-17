@@ -253,6 +253,7 @@
     </Content>
     <Content Include="Views\Home\Contact.vbhtml" />
     <Content Include="Views\Test\Index.vbhtml" />
+    <Content Include="Views\Test\Php.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>

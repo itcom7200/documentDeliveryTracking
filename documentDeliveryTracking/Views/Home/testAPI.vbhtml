@@ -70,6 +70,7 @@ End Code
 
         function getContent(data) {
             resultSearch = $.parseJSON(data.d);
+            console.log(resultSearch);
             $.each(resultSearch, function (i, item) {
 
                 let QRcode1 = '<p></p>';

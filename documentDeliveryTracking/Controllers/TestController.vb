@@ -11,6 +11,13 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function Php() As ActionResult
+
+            ViewData("Message") = "Hello world!"
+
+            Return View()
+        End Function
+
 
 
 
