@@ -11,9 +11,16 @@ Namespace Controllers
             Return View()
         End Function
 
-        Function Php() As ActionResult
+        Function Search(trackingId As String) As ActionResult
 
-            ViewData("Message") = "Hello world!"
+            ViewData("trackingID") = trackingId
+
+            Return View()
+        End Function
+
+        Function Font() As ActionResult
+
+            ViewData("Message") = "Testing FontAwesome"
 
             Return View()
         End Function

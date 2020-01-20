@@ -6698,6 +6698,7 @@ button.close {
 }
 .icon {
     width: 60px;
+    /*width: 54px;*/
     margin: 0px 25px;
     background: url(../Content/Icon/iconLine.png) center repeat-y;
     height: 100%;
@@ -6708,6 +6709,7 @@ button.close {
     overflow: hidden
 }
 .icon-noline {
+    /*width: 54px;*/
     width: 60px;
     margin: 0px 25px;
     //background: url(../Content/Icon/EIEI.jpg) center repeat-y;

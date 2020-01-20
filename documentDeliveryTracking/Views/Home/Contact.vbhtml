@@ -57,41 +57,6 @@ End Code
 <script type="text/javascript">
     $(document).ready(function () {
 
-        myObj = {
-            "tracking": {
-                "id": "53aa7b5c415a670000000021",
-                "created_at": "2016-09-26T07:33:48+00:00",
-                "updated_at": "2016-09-27T10:45:00+00:00",
-                "tracking_number": "98234627343",
-                "slug": "kerry-logistics",
-                "active": true,
-                "expected_delivery": "2016-09-30",
-                "tag": "InTransit",
-                "checkpoints": [
-                    {
-                        "slug": "kerry-logistics",
-                        "location": "US",
-                        "message": "Order Processed: Ready for deliver",
-                        "country_iso3": "USA",
-                        "tag": "InfoReceived",
-                        "checkpoint_time": "2016-09-26T19:40:00",
-                        "state": null
-                    },
-                    {
-                        "slug": "kerry-logistics",
-                        "location": "US",
-                        "message": "Departure Scan",
-                        "country_iso3": "USA",
-                        "tag": "InTransit",
-                        "checkpoint_time": "2016-09-27T10:13:13",
-                        "state": "QC"
-                    }
-                ]
-            }
-
-
-        }
-
 
         testJson = {
             "tracking": [
@@ -170,7 +135,7 @@ End Code
                     default:
                         line = "icon";
                 }
-
+                
                 let HTML = `<div class="row">
                                 <div class="col-xs-3 col-md-3 nopadding">
                                     <div class="${line}">

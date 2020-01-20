@@ -15,8 +15,8 @@ End Code
                         <div class="col-xs-9 col-sm-9 col-md-8" style="padding-right: 00px;">
                             <input type="text" id="inputId" name="trackingId" class="form-control input-lg" placeholder="Enter Your Tracking Number" value="@ViewData("Message")">
                         </div>
-                        <div class="col-xs-3 col-sm-3" style="padding-left: 0px;">
-                            <center><button type="submit" id="Enter" class="btn btn-green-opac btn-lg">Go</button></center>
+                        <div class="col-xs-3 col-sm-3" style="padding-left: 10px;">
+                            <button type="submit" id="Enter" class="btn btn-green-opac btn-lg">Go</button>
                         </div>
                     </form>
                 </div>
