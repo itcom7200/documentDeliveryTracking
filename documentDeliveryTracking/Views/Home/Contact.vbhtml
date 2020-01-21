@@ -121,8 +121,9 @@ End Code
             $.each(tracking[i].checkpoints, function (x) {
 
                 var checkline = tracking[i].checkpoints[x].head;
-                //console.log(tracking[i].checkpoints.length); เช็คความยาวของตัว obj
+                console.log(`5678  ${ tracking[i].checkpoints.length }`); //เช็คความยาวของตัว obj
 
+                console.log(`test ${checkline.length}`);
                 
                 //console.log(checkline);
 
@@ -187,6 +188,8 @@ End Code
                 });
             }
         }
+
+        
     });
 </script>
 

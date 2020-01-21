@@ -10,7 +10,6 @@ End Code
             ID : 59121293<br />
             Name : สันติภาพ ตันประมวล<br />
             Default point : ตึกนวัตกรรม <br>
-
         </address>
 
         <address>
@@ -46,7 +45,7 @@ End Code
 
         <div class="container-fluid nopadding">
 
-            <hr class="hr-set-margin" />
+            <hr class="hr-set-margin"/>
 
 
             <div class="row">

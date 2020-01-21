@@ -14,7 +14,7 @@ End Code
                 <div class="search-container">
                     <form class="form-group row">
                         <div class="col-xs-9 col-sm-9 col-md-8" style="padding-right: 00px;">
-                            <input type="text" id="inputId" name="trackingId" class="form-control input-lg" placeholder="Enter Your Tracking Number" value="@ViewData("trackingID")">
+                            <input type="text" id="inputId" name="trackingId" class="form-control input-lg" placeholder="Enter Your Tracking Number" value="@ViewData("trackingID")" >
                         </div>
                         <div class="col-xs-3 col-sm-3" style="padding-left: 10px;">
                             <button type="submit" id="Enter" class="btn btn-green-opac btn-lg">Go</button>
@@ -99,12 +99,40 @@ End Code
 
         function getContent(data) {
 
-            var rowResult = "";
+            switch (data.length) {
+                case 0:
+                    // ตรวจสอบว่า เป็น 0 หรือไม่
+                    renderNotFound();
+                    break;
+                default:
+                    //console.log("เจอแย้ว");
+                    renderData(data);
+                    // code block
+                    break;
+            }
             
+            
+        }
+
+        function renderNotFound() {
+
+            layout = `<div class="col-sm-12">
+                            <div class="row">
+                                 <div class="col-xs-12 text-center"></br><h2>Data Not Found!</h2><br><br><br></div>
+                            </div>
+                     </div>`;
+            
+            $("#main").append(layout);
+        }
+
+        function renderData(data) {
+
+            var rowResult = "";
+
             $.each(data, function (i) {
                 //console.log(data[i]);
                 var { id, staff, lineStaff, telStaff, ddPoint, checkpoints } = data[i];
-                
+
 
                 $.each(checkpoints, function (x) {
 
@@ -164,12 +192,11 @@ End Code
 
             });
 
-            
+
 
             $("#main").append(layout);
 
             genQRcode();
-            
         }
 
         function failGetContent() {
