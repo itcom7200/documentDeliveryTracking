@@ -103,6 +103,7 @@ End Code
                 case 0:
                     // ตรวจสอบว่า เป็น 0 หรือไม่
                     renderNotFound();
+                    // code block
                     break;
                 default:
                     //console.log("เจอแย้ว");
@@ -138,11 +139,11 @@ End Code
 
                     //console.log(checkpoints[x].icon);
 
-                    var checkline = checkpoints[x].head;
+                    var checkstatus = checkpoints[x].head;
 
                     var line = "";
 
-                    switch (checkline) {
+                    switch (checkstatus) {
                         case "รับคำร้องขอ":
                             line = "icon-noline";
                             break;

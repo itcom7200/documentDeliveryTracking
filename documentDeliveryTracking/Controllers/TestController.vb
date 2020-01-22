@@ -18,6 +18,13 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function testSearch(trackingId As String) As ActionResult
+
+            ViewData("trackingID") = trackingId
+
+            Return View()
+        End Function
+
         Function Font() As ActionResult
 
             ViewData("Message") = "Testing FontAwesome"
