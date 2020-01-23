@@ -18,10 +18,10 @@ End Code
     <div class="col-md-8">
         <h2>Document Delivery Tracking</h2>
         <div class="btn-group">
-            <button id="getAll" class="btn btn-primary active">ALL</button>
-            <button id="getCurrent" class="btn btn-primary">Current</button>
+            <button id="getCurrent" class="btn btn-primary active">Current</button>
             <button id="getReject" class="btn btn-primary">Reject</button>
             <button id="getComplete" class="btn btn-primary">Complete</button>
+            <button id="getAll" class="btn btn-primary">All</button>
         </div>
 
         <div class="container-fluid nopadding">
@@ -41,6 +41,7 @@ End Code
         $.ajax({
             "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
             "method": "GET",
+            "timeout": 0,
             "success": ajaxSuccess1,
             "error": ajaxError
         });
@@ -48,7 +49,6 @@ End Code
         $('.btn-group').on('click', '.btn', function () {
 
             $(this).addClass('active').siblings().removeClass('active');
-
 
             switch (this.id) {
                 case "getAll":
@@ -69,19 +69,106 @@ End Code
         });
 
         function ajaxSuccess1(data) {
-            console.log(data);
+            //console.log(data);
 
-            var rowHTML, resultRow = "";
+            var rowHTML, resultRow, loop = "";
             
             $.each(data, function (i) {
+                //console.log(i);
                 var { TITLE, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DDSENDPOINTNAME, DDADDRESS,
                     DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL } = data[i];
 
                 //var msec = Date.parse(REQUESTDATE);
                 //var d = new Date(msec);
 
-                var location, iconType, btnColor = "";
+                var location, iconType, btnColor, editBtn, deleteBtn = "";
 
+                //console.log(`จาก Function $.each : ${i}`);
+
+                var year = REQUESTDATE.substring(0, 4);
+                var month = REQUESTDATE.substring(4, 6);
+                var date = REQUESTDATE.substring(6, 8);
+
+                
+                
+                //console.log(`${date}/${month}/${year}`);
+                
+
+                switch (EDITFLAG) {
+                    case "0": // can edit
+                        editBtn = `<!-- Button trigger modal (Edit model)  -->
+                        <button type="button" class="btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit">
+                            <img src="/Content/Icon/IconEdit2.png">
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edit your Request</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="btnTime" class="btn-group">
+                                            <button class="btn btn-primary">12.00 วันพุธ</button>
+                                            <button class="btn btn-primary">12.00 วันพฤหัส</button>
+                                            <button class="btn btn-primary">12.00 วันศุกร์</button>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="test2">Note:</label>
+                                            <input type="text" class="form-control" id="pwd">
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                                        <button type="button" class="btn " data-dismiss="modal">Cancle</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- div close modal-->`;
+                        break;
+                    case "1": // Active
+                        editBtn = "";
+                        break;
+                }
+
+                switch (DELETEFLAG) {
+                    case "0": // can delete
+                        deleteBtn = `<!-- Button trigger modal (Reject model)  -->
+                        <button type="button" class="btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject">
+                            <img src="/Content/Icon/IconReject2.png">
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalReject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Reject Confirms</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to do this !
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Reject</button>
+                                        <button type="button" class="btn " data-dismiss="modal">Cancle</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- div close modal-->`;
+                        break;
+                    case "1": // Active
+                        deleteBtn = "";
+                        break;
+                }
 
                 switch (DDRECSTATUS) {
                     case "0": // Reject
@@ -96,11 +183,11 @@ End Code
 
                 }
 
-
+                
                 switch (DDSENDPOINTNAME) {
                     case null: // Point to Home
-                        location = `${DDADDRESS} ${DDDISTRICTNAME}`;
-                        //location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
+                        //location = `${DDADDRESS} ${DDDISTRICTNAME}`;
+                        location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
                         iconType = "iconHome.png";
                         break;
                     default: // Point to Point
@@ -109,7 +196,7 @@ End Code
                         
                 }
 
-                console.log(location);
+                //console.log(location);
 
                 rowHTML = `<hr class="hr-set-margin" />
 
@@ -124,18 +211,18 @@ End Code
                 <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
                                  target="_blank">${TITLE}</a><br>
                 <b>Barcode:</b>${BARCODE}<br>
-                <b>Request Date:</b> ${REQUESTDATE}<br><br>
+                <b>Request Date:</b> ${date}/${month}/${year} <br><br>
                 <img class="img-thumbnail" src="/Content/Icon/${iconType}"> &nbsp; &nbsp;: ${location}
                 <br><br>
             </div>
         </div>
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-xs-7 col-sm-6">
+                <div class="col-xs-7 col-sm-6 col-lg-7">
                     <div class="row">
                         <!-- Button -->
-                        <button type="button" class="btn ${btnColor}" data-toggle="modal" data-target="#exampleModalScrollable">
-                            ${DDCURRENTPROCESS}
+                        <button type="button" class="btn ${btnColor} btn-block" data-toggle="modal" data-target="#exampleModalScrollable">
+                            <b>${DDCURRENTPROCESS}</b>
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -214,12 +301,13 @@ End Code
                 </div>
 
                 <div class="col-xs-5">
-
+                    ${editBtn}
+                    ${deleteBtn}
                 </div>
             </div>
         </div>
     </div>
-    <div id="QRcode" class="visible-lg col-lg-2 nopadding">
+    <div id="QRcode${i}" class="visible-lg col-lg-2 nopadding">
         
     </div>
     <hr />
@@ -227,24 +315,38 @@ End Code
 </div>
 `;
 
-                resultRow += rowHTML;
+                //resultRow += rowHTML;
 
 
+                loop = `QRcode${i}`;
+
+
+                $("#main").append(rowHTML);
+
+                var GenQRcode = "http://localhost:49777/Home/testAPI/"+i;
+                if (GenQRcode !== "") {
+                    new QRCode(document.getElementById(loop), {
+                        text: GenQRcode,
+                        width: 110,
+                        height: 110
+                    });
+                }
             })
 
             //console.log(resultRow);
 
-            $("#main").append(resultRow);
+            
 
-            genQRcode();
+            
+
         }
 
         function ajaxError() {
             console.log("Can't connect webservice");
-
         }
 
-        function genQRcode() {
+        function genQRcode(number) {
+            console.log(`จาก GenQR ${number}`);
             var GenQRcode = "http://localhost:49777/Home/testAPI";
             if (GenQRcode !== "") {
                 new QRCode(document.getElementById('QRcode'), {
