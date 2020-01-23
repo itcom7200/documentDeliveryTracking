@@ -87,14 +87,23 @@ End Code
 
         function ajax(inputID) {
             $.ajax({
-                type: "GET",
-                url: "http://localhost:3000/tracking",
-                data: `id=${inputID}`,
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: ajaxSuccess,
-                error: ajaxError
+                //type: "GET",
+                //url: "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
+                ////data: `id=${inputID}`,
+                ////contentType: "application/json; charset=utf-8",
+                ////dataType: "json",
+                //success: ajaxSuccess1,
+                //error: ajaxError
+                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
+                "method": "GET",
+                "timeout": 0,
+                "success": ajaxSuccess1,
+                "error": ajaxError
             });
+
+        }
+        function ajaxSuccess1(data) {
+            console.log(data);
 
         }
 

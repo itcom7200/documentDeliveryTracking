@@ -256,6 +256,7 @@
     <Content Include="Views\Test\Font.vbhtml" />
     <Content Include="Views\Test\Search.vbhtml" />
     <Content Include="Views\Test\testSearch.vbhtml" />
+    <Content Include="Views\Test\rqTracking.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>

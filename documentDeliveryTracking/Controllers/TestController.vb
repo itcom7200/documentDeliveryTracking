@@ -32,6 +32,13 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function rqTracking() As ActionResult
+
+            ViewData("Message") = "NDDRequest"
+
+            Return View()
+        End Function
+
 
 
 
