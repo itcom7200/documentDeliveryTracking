@@ -1,6 +1,7 @@
 ﻿@Code
-    ViewData("Title") = "rqTracking"
+    ViewData("Title") = "wait"
 End Code
+
 <div class="row">
     <div class="col-md-4">
         <h2>Contact </h2>
@@ -8,13 +9,13 @@ End Code
             <b>ID : </b>59121293<br />
             <b>Name : </b>สันติภาพ ตันประมวล<br />
             <b>Default point : </b>ตึกนวัตกรรม <br>
-            <div class="col-xs-12 nopadding">
+            @*<div class="col-xs-12 nopadding">
                 <div class="col-xs-1 nopadding"> <img class="img-thumbnail" src="/Content/Icon/iconHome.png"></div>
                 <div class="col-xs-9">
                     : ตึกนวัตกรรม<br>
                     :<b> DeliverDate 11/11/2020 12.30 </b>
                 </div>
-            </div>
+            </div>*@
 
         </address>
 
@@ -24,7 +25,7 @@ End Code
     </div>
 
     <div class="col-md-8">
-        <h2>Document Delivery Tracking</h2>
+        <h2>NDDREQUEST</h2>
         <div class="btn-group">
             <button id="getCurrent" class="btn btn-primary active">Current</button>
             <button id="getReject" class="btn btn-primary">Reject</button>
@@ -43,16 +44,11 @@ End Code
     </div>
 </div>
 
+
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $.ajax({
-            "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
-            "method": "GET",
-            "timeout": 0,
-            "success": ajaxSuccess1,
-            "error": ajaxError
-        });
+        var resultMaster = "";
 
         $('.btn-group').on('click', '.btn', function () {
 
@@ -60,51 +56,159 @@ End Code
 
             switch (this.id) {
                 case "getAll":
-                    var getId = "getAll";
+                    getId = null;
                     break;
                 case "getCurrent":
-                    var getId = "getCurrent";
+                    getId = "1";
                     break;
                 case "getReject":
-                    var getId = "getReject";
+                    getId = "0";
                     break;
                 case "getComplete":
-                    var getId = "getComplete";
+                    getId = "2";
                     break;
             }
+
             //console.log(getId);
+            $("#main").empty();
+
+            $.each(resultMaster, function (i) {
+
+                //console.log(resultMaster);
+                var { DDRECSTATUS } = resultMaster[i];
+
+                //console.log(DDRECSTATUS.__proto__);
+
+                switch (getId) {
+                    case DDRECSTATUS:
+                        //console.log(`ID = ${getId} & REC = ${DDRECSTATUS} จาก click id ตรงกัน`);
+                        renderData(resultMaster[i]);
+                        break;
+                    case null:
+                        //console.log(`ID = ${getId} & REC = ${DDRECSTATUS} จาก click ALL`);
+                        renderData(resultMaster[i]);
+                        break;
+                    default:
+                        //console.log(`ไม่ตรงกัน`);
+                        //$("#main").append('ไม่มีข้อมูล');
+                        break;
+                }
+            });
+            
 
         });
 
-        function ajaxSuccess1(data) {
-            console.log(data);
+        async function ajax() {
+            var result = "";
+            await $.ajax({
+                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
+                "method": "GET",
+                "timeout": 0,
+                "success": function (data) {
+                    result = data;
+                    resultMaster = data;
+                    //console.log(`Log จาก ajax`);
+                    //console.log(result);
+                },
+                "error": function () {
+                    result = "Webservice ERROR!";
+                }
+            });
 
-            var rowHTML, resultRow, loop = "";
-            
+            return result;
+
+        }
+
+        function filterDataDefault(data) {
+
+            //console.log(`Log จาก filterData`);
+
+            //console.log(data);
+
             $.each(data, function (i) {
-                //console.log(i);
-                var { TITLE, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, DDSENDPOINTNAME, DDADDRESS,
-                    DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL } = data[i];
+                var { DDRECSTATUS } = data[i];
+                var defaultID = "1"; // current process id
 
-                //var msec = Date.parse(REQUESTDATE);
-                //var d = new Date(msec);
+                switch (defaultID) {
+                    case DDRECSTATUS:
+                        //console.log(`ID = ${defaultID} & REC = ${DDRECSTATUS} จาก default`); //
+                        //console.log(`ข้อมูลก้อนที่ ${i} นำไป render`);
+                        //console.log(data[i]);
+                        renderData(data[i],i);
 
-                var location, iconType, btnColor, editBtn, deleteBtn = "";
+                        break;
+                    default:
+                        console.log(`ไม่ตรงกัน`);
+                        break;
+                }
+            });
+            
+        }
 
-                //console.log(`จาก Function $.each : ${i}`);
+        function renderData(data,i) {
+            //console.log(`จะ render ละนะ`);
+            //console.log(data);
+            
 
-                var reqYear = REQUESTDATE.substring(0, 4);
-                var reqMonth = REQUESTDATE.substring(4, 6);
-                var reqDate = REQUESTDATE.substring(6, 8);
+            var { TITLE, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, DDSENDPOINTNAME, DDADDRESS,
+                DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL } = data;
+            //console.log(TITLE);
 
-                
-                
-                //console.log(`${date}/${month}/${year}`);
-                
+            var reqYear = REQUESTDATE.substring(0, 4);
+            var reqMonth = REQUESTDATE.substring(4, 6);
+            var reqDate = REQUESTDATE.substring(6, 8);
 
-                switch (EDITFLAG) {
-                    case "0": // can edit
-                        editBtn = `<!-- Button trigger modal (Edit model)  -->
+            var btnColor, location, iconType, divSendpoint = '';
+
+            switch (DDRECSTATUS) {
+                case "0": // Reject
+                    btnColor = "btn-danger";
+                    break;
+                case "1": // Active
+                    btnColor = "btn-warning";
+                    break;
+                case "2": // Close
+                    btnColor = "btn-success";
+                    break;
+
+            }
+
+            switch (DDSENDPOINTNAME) {
+                case null: // Point to Home
+                    location = `${DDADDRESS} ${DDDISTRICTNAME}`;
+                    //location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
+                    iconType = "iconHome.png";
+
+                    divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
+                    <div class="col-xs-9">
+                         ${location}
+                    </div>`;
+
+                    break;
+
+                default: // Point to Point
+                    var deliverYear = DELIVERDATE.substring(0, 4);
+                    var deliverMonth = DELIVERDATE.substring(4, 6);
+                    var deliverDate = DELIVERDATE.substring(6, 8);
+
+                    var deliverHour = DELIVERTIME.substring(0, 2);
+                    var deliverMin = DELIVERTIME.substring(2, 4);
+
+                    location = `${DDSENDPOINTNAME} <!--<br><br> <b>กำหนดส่ง</b>--> <br> ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} น.`;
+                    iconType = "iconCar.png";
+
+                    divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
+                    <div class="col-xs-9">
+                         ${DDSENDPOINTNAME}<br>
+                         11/11/2020 12.30 <br>
+                    </div>`;
+
+            }
+
+
+            switch (EDITFLAG) {
+                case "0": // can edit
+                    editBtn = `<!-- Button trigger modal (Edit model)  -->
                         <button type="button" class="btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit">
                             <img src="/Content/Icon/IconEdit2.png">
                         </button>
@@ -139,15 +243,15 @@ End Code
                                 </div>
                             </div>
                         </div><!-- div close modal-->`;
-                        break;
-                    case "1": // Active
-                        editBtn = "";
-                        break;
-                }
+                    break;
+                case "1": // Active
+                    editBtn = "";
+                    break;
+            }
 
-                switch (DELETEFLAG) {
-                    case "0": // can delete
-                        deleteBtn = `<!-- Button trigger modal (Reject model)  -->
+            switch (DELETEFLAG) {
+                case "0": // can delete
+                    deleteBtn = `<!-- Button trigger modal (Reject model)  -->
                         <button type="button" class="btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject">
                             <img src="/Content/Icon/IconReject2.png">
                         </button>
@@ -172,50 +276,16 @@ End Code
                                 </div>
                             </div>
                         </div><!-- div close modal-->`;
-                        break;
-                    case "1": // Active
-                        deleteBtn = "";
-                        break;
-                }
-                    
-                switch (DDRECSTATUS) {
-                    case "0": // Reject
-                        btnColor = "btn-danger";
-                        break;
-                    case "1": // Active
-                        btnColor = "btn-warning";
-                        break;
-                    case "2": // Close
-                        btnColor = "btn-success";
-                        break;
+                    break;
+                case "1": // Active
+                    deleteBtn = "";
+                    break;
+            }
 
-                }
+            
 
-                
-                switch (DDSENDPOINTNAME) {
-                    case null: // Point to Home
-                        //location = `${DDADDRESS} ${DDDISTRICTNAME}`;
-                        location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
-                        iconType = "iconHome.png";
-                        
-                        break;
 
-                    default: // Point to Point
-                        var deliverYear = DELIVERDATE.substring(0, 4);
-                        var deliverMonth = DELIVERDATE.substring(4, 6);
-                        var deliverDate = DELIVERDATE.substring(6, 8);
-
-                        var deliverHour = DELIVERTIME.substring(0, 2);
-                        var deliverMin = DELIVERTIME.substring(2, 4);
-
-                        location = `${DDSENDPOINTNAME} <!--<br><br> <b>กำหนดส่ง</b>--> <br> ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} น.`;
-                        iconType = "iconCar.png";
-                        
-                }
-
-                //console.log(location);
-
-                rowHTML = `<hr class="hr-set-margin" />
+            let htmlLayout = `<hr class="hr-set-margin" />
 
 <div class="row">
     <div class="col-xs-5 col-sm-3 col-lg-3">
@@ -227,17 +297,12 @@ End Code
             <div class="row">
                 <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
                                  target="_blank">${TITLE}</a><br>
-                <b>Barcode:</b>${BARCODE}<br>
+                <b>Barcode:</b> ${BARCODE}<br>
                 <b>Request Date:</b> ${reqDate}/${reqMonth}/${reqYear} <br><br>
-                <!--<img class="img-thumbnail" src="/Content/Icon/${iconType}"> &nbsp; &nbsp;: ${location} -->
-            <div class="col-xs-12 nopadding">
-                <div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/iconHome.png"></div>
-                <div class="col-xs-9">
-                    : ตึกนวัตกรรม<br>
-                    :<b> DeliverDate </b> 11/11/2020 12.30 <br><br>
+                <div class="col-xs-12 nopadding">
+                    ${divSendpoint}
                 </div>
-            </div> 
-                <br><br>
+                <br><br><br>
             </div>
         </div>
         <div class="col-xs-12">
@@ -331,47 +396,21 @@ End Code
             </div>
         </div>
     </div>
-    <div id="QRcode${i}" class="visible-lg col-lg-2 nopadding">
-        
+    <div id="QRcode" class="visible-lg col-xs-2 nopadding">
+        <!--<img class="img-qrcode-maxsize" src="/Content/Image/genQR.png">-->
     </div>
-    <hr />
-
-</div>
-`;
-
-                //resultRow += rowHTML;
 
 
-                loop = `QRcode${i}`;
+</div>`;
 
 
-                $("#main").append(rowHTML);
-
-                var GenQRcode = "http://localhost:49777/Home/testAPI/"+i;
-                if (GenQRcode !== "") {
-                    new QRCode(document.getElementById(loop), {
-                        text: GenQRcode,
-                        width: 110,
-                        height: 110
-                    });
-                }
-            })
-
-            //console.log(resultRow);
-
-            
-
-            
+            $("#main").append(htmlLayout);
 
         }
 
-        function ajaxError() {
-            console.log("Can't connect webservice");
-        }
+        function genQR() {
 
-        function genQRcode(number) {
-            console.log(`จาก GenQR ${number}`);
-            var GenQRcode = "http://localhost:49777/Home/testAPI";
+            var GenQRcode = "http://localhost:49777/Home/testAPI/";
             if (GenQRcode !== "") {
                 new QRCode(document.getElementById('QRcode'), {
                     text: GenQRcode,
@@ -382,9 +421,22 @@ End Code
         }
 
 
+        
+        async function main() {
+
+            let data = await ajax();
+            await filterDataDefault(data);
+            genQR();
+
+            //console.log(`จาก Main `);
+            //console.log(resultMaster);
+        }   
+
+        main();
+
+
+
     });
-
-
-
+    
 </script>
 

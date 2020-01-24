@@ -17,8 +17,15 @@ End Code
                 <b>Barcode:</b> B59121210<br>
                 <b>Request Date:</b> 12/08/2528<br><br>
                 @*<b>ค่าบริการ:</b> 5 บาท <br><br>*@
-                <img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5
-                <br><br>
+                @*<img class="img-thumbnail" src="~/Content/Icon/iconCar.png"> &nbsp; &nbsp;: เรียนรวม5*@
+                <div class="col-xs-12 nopadding">
+                    <div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/iconHome.png"></div>
+                    <div class="col-xs-9">
+                         ตึกนวัตกรรม<br>
+                         11/11/2020 12.30 <br>
+                    </div>
+                </div>
+                <br><br><br>
             </div>
         </div>
         <div class="col-xs-12">

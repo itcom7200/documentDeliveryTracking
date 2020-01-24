@@ -39,6 +39,19 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function requesttracking() As ActionResult
+
+            ViewData("Message") = "NDDRequest"
+
+            Return View()
+        End Function
+
+        Function wait() As ActionResult
+
+            ViewData("Message") = "NDDRequest"
+
+            Return View()
+        End Function
 
 
 

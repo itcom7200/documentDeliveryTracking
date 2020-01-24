@@ -257,6 +257,8 @@
     <Content Include="Views\Test\Search.vbhtml" />
     <Content Include="Views\Test\testSearch.vbhtml" />
     <Content Include="Views\Test\rqTracking.vbhtml" />
+    <Content Include="Views\Test\requesttracking.vbhtml" />
+    <Content Include="Views\Test\wait.vbhtml" />
     <None Include="Web References\localhost\WebService1.wsdl" />
   </ItemGroup>
   <ItemGroup>
