@@ -48,7 +48,7 @@ End Code
 <script type="text/javascript">
     $(document).ready(function () {
 
-        var resultMaster = "";
+        var resultMaster,numI = "";
 
         $('.btn-group').on('click', '.btn', function () {
 
@@ -82,11 +82,13 @@ End Code
                 switch (getId) {
                     case DDRECSTATUS:
                         //console.log(`ID = ${getId} & REC = ${DDRECSTATUS} จาก click id ตรงกัน`);
-                        renderData(resultMaster[i]);
+                        numI = i;
+                        renderData(resultMaster[i],i);
                         break;
                     case null:
                         //console.log(`ID = ${getId} & REC = ${DDRECSTATUS} จาก click ALL`);
-                        renderData(resultMaster[i]);
+                        numI = i;
+                        renderData(resultMaster[i],i);
                         break;
                     default:
                         //console.log(`ไม่ตรงกัน`);
@@ -101,7 +103,8 @@ End Code
         async function ajax() {
             var result = "";
             await $.ajax({
-                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
+                "url": "http://localhost:3000/test", // mockup json-server
+                //"url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
                 "method": "GET",
                 "timeout": 0,
                 "success": function (data) {
@@ -134,18 +137,19 @@ End Code
                         //console.log(`ID = ${defaultID} & REC = ${DDRECSTATUS} จาก default`); //
                         //console.log(`ข้อมูลก้อนที่ ${i} นำไป render`);
                         //console.log(data[i]);
+                        numI = i;
                         renderData(data[i],i);
 
                         break;
                     default:
-                        console.log(`ไม่ตรงกัน`);
+                        //console.log(`ไม่ตรงกัน`);
                         break;
                 }
             });
             
         }
 
-        function renderData(data,i) {
+        async function renderData(data,i) {
             //console.log(`จะ render ละนะ`);
             //console.log(data);
             
@@ -396,7 +400,7 @@ End Code
             </div>
         </div>
     </div>
-    <div id="QRcode" class="visible-lg col-xs-2 nopadding">
+    <div id="QRcode${i}" class="visible-lg col-xs-2 nopadding">
         <!--<img class="img-qrcode-maxsize" src="/Content/Image/genQR.png">-->
     </div>
 
@@ -405,14 +409,14 @@ End Code
 
 
             $("#main").append(htmlLayout);
-
+            await genQR();
         }
 
         function genQR() {
-
+            //console.log(numI);
             var GenQRcode = "http://localhost:49777/Home/testAPI/";
             if (GenQRcode !== "") {
-                new QRCode(document.getElementById('QRcode'), {
+                new QRCode(document.getElementById(`QRcode${numI}`), {
                     text: GenQRcode,
                     width: 110,
                     height: 110
@@ -426,7 +430,7 @@ End Code
 
             let data = await ajax();
             await filterDataDefault(data);
-            genQR();
+            
 
             //console.log(`จาก Main `);
             //console.log(resultMaster);
