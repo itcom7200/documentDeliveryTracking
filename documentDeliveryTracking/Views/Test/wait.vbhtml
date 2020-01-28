@@ -10,12 +10,12 @@ End Code
             <b>Name : </b>สันติภาพ ตันประมวล<br />
             <b>Default point : </b>ตึกนวัตกรรม <br>
             @*<div class="col-xs-12 nopadding">
-                <div class="col-xs-1 nopadding"> <img class="img-thumbnail" src="/Content/Icon/iconHome.png"></div>
-                <div class="col-xs-9">
-                    : ตึกนวัตกรรม<br>
-                    :<b> DeliverDate 11/11/2020 12.30 </b>
-                </div>
-            </div>*@
+                    <div class="col-xs-1 nopadding"> <img class="img-thumbnail" src="/Content/Icon/iconHome.png"></div>
+                    <div class="col-xs-9">
+                        : ตึกนวัตกรรม<br>
+                        :<b> DeliverDate 11/11/2020 12.30 </b>
+                    </div>
+                </div>*@
 
         </address>
 
@@ -48,7 +48,7 @@ End Code
 <script type="text/javascript">
     $(document).ready(function () {
 
-        var resultMaster,numI = "";
+        var resultMaster, numI = "";
 
         $('.btn-group').on('click', '.btn', function () {
 
@@ -83,12 +83,12 @@ End Code
                     case DDRECSTATUS:
                         //console.log(`ID = ${getId} & REC = ${DDRECSTATUS} จาก click id ตรงกัน`);
                         numI = i;
-                        renderData(resultMaster[i],i);
+                        renderData(resultMaster[i], i);
                         break;
                     case null:
                         //console.log(`ID = ${getId} & REC = ${DDRECSTATUS} จาก click ALL`);
                         numI = i;
-                        renderData(resultMaster[i],i);
+                        renderData(resultMaster[i], i);
                         break;
                     default:
                         //console.log(`ไม่ตรงกัน`);
@@ -96,7 +96,7 @@ End Code
                         break;
                 }
             });
-            
+
 
         });
 
@@ -122,7 +122,7 @@ End Code
 
         }
 
-        function filterDataDefault(data) {
+        async function filterDataDefault(data) {
 
             //console.log(`Log จาก filterData`);
 
@@ -139,7 +139,7 @@ End Code
                         //console.log(`ข้อมูลก้อนที่ ${i} นำไป render`);
                         //console.log(data[i]);
                         numI = i;
-                        renderData(data[i],i);
+                        renderData(data[i], i);
 
                         break;
                     default:
@@ -147,13 +147,13 @@ End Code
                         break;
                 }
             });
-            
+
         }
 
-        async function renderData(data,i) {
+        async function renderData(data, i) {
             //console.log(`จะ render ละนะ`);
             //console.log(data);
-            
+
 
             var { TITLE, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, REQUESTCODE, DDPOINTNAME, DDADDRESS,
                 DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL, DDTYPEID } = data;
@@ -212,7 +212,7 @@ End Code
 
             switch (DDTYPEID) {
                 case 1: // P2F
-                    
+
                     break;
                 case 2:  //P2P
                     var deliverYear = DELIVERDATE.substring(0, 4);
@@ -239,7 +239,7 @@ End Code
             }
 
 
-             
+
 
 
             switch (EDITFLAG) {
@@ -319,9 +319,10 @@ End Code
             }
 
             // เรียก อีก function เพื่อ ajax & loopRow
-            getRowData(REQUESTCODE);
-            
 
+            let resultRow =  await getRowData(REQUESTCODE); 
+
+            //console.log(a);
 
             let htmlLayout = `<hr class="hr-set-margin" />
 
@@ -364,58 +365,7 @@ End Code
                                     </div>
                                     <div class="modal-body">
                                         <!-- start body textbox -->
-                                        <div class="row">
-                                            <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
-                                                <div class="icon">
-                                                    <img class="img-iconfix" src="/Content/Icon/iconSuccess.png">
-                                                    <br><br>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <b class="lead text-green-opac">จัดส่งเรียบร้อยแล้ว</b><br>
-                                                ผู้รับ: คุณ สวัสดี วันจันทร์<br>
-                                                วันที่: 11/11/2019 เวลา: 16:00 น.
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
-                                                <div class="icon">
-                                                    <img class="img-iconfix" src="/Content/Icon/iconTime.png">
-                                                    <br><br>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <b class="lead text-green-opac">Document รอนำส่ง</b><br>
-                                                เจ้าหน้าที่: WU lineman<br>
-                                                วันที่: 11/11/2019 เวลา: 15:30 น.
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
-                                                <div class="icon">
-                                                    <img class="img-iconfix" src="/Content/Icon/iconTime.png">
-                                                    <br><br>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <b class="lead text-green-opac">ทำรายการเรียบร้อย</b><br>
-                                                เจ้าหน้าที่: staff wu <br>
-                                                วันที่: 11/11/2019 เวลา: 11:56 น.
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-3 col-sm-2 col-md-2 nopadding">
-                                                <div class="icon-noline">
-                                                    <img class="img-iconfix" src="/Content/Icon/iconTime.png">
-                                                    <br><br>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-8">
-                                                <b class="lead text-green-opac">รับคำร้องขอ</b><br>
-                                                สาขา: หอสมุดกลาง<br>
-                                                วันที่: 11/11/2019 เวลา: 10:56 น.
-                                            </div>
-                                        </div>
+                                        ${resultRow}
 
                                     </div> <!-- modal-body -->
 
@@ -443,7 +393,7 @@ End Code
 
 
             $("#main").append(htmlLayout);
-            await genQR(); 
+            await genQR();
         }
 
         function genQR() {
@@ -458,8 +408,11 @@ End Code
             }
         }
 
-        function getRowData(id) {
-            $.ajax({
+        async function getRowData(id) {
+
+            var requestCodeData = '';
+
+            await $.ajax({
                 data: `requestcode=${id}`,
                 "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDTrackinginfo",
                 "method": "GET",
@@ -467,32 +420,96 @@ End Code
                 "success": function (data) {
                     //result = data;
                     //resultMaster = data;
-                    console.log(`Log จาก ajax`);
-                    console.log(data);
+                    //console.log(`Log จาก ajax`);
+                    requestCodeData = data;
                 },
                 "error": function () {
                     console.log("Webservice ERROR!");
                 }
             });
 
-            
+            var icon, line, row, resultRow = '';
+
+            $.each(requestCodeData.tracking, function (i) {
+
+                var { DDHISDATE, DDHISTIME, USERFLAG, ACTPERSONID, DDACTDETAIL, ICONFLAG, ACTPERSON } = requestCodeData.tracking[i];
+
+                switch (ICONFLAG) {
+                    case 0:
+                        icon = "iconTime.png";
+                        break;
+                    case 1:
+                        icon = "iconFail.png";
+                        break;
+                    case 2:
+                        icon = "iconCancle.png";
+                        break;
+                    case 3:
+                        icon = "iconInfo.png";
+                        break;
+                    case 4:
+                        icon = "iconPlane.png";
+                        break;
+                }
+
+                switch (DDACTDETAIL) {
+                    case "Waiting for Accept":
+                        line = "icon-noline";
+                        break;
+                    default:
+                        line = "icon";
+                }
+
+                let hisYear = DDHISDATE.substring(0, 4);
+                let hisMonth = DDHISDATE.substring(4, 6);
+                let hisDate = DDHISDATE.substring(6, 8);
+
+                let hisTime = DDHISTIME.substring(0, 2);
+                let hisMin = DDHISTIME.substring(2, 4);
+
+                var row = `<div class="row">
+                            <div class="col-xs-3 col-md-3 nopadding">
+                                <div class="${line}">
+                                    <img class="img-iconfix" src="/Content/Icon/${icon}">
+                                    <br><br>
+                                </div>
+                            </div>
+                            <div class="col-xs-9">
+                                <b class="lead text-green-opac">${DDACTDETAIL}</b><br>
+                                By ${ACTPERSON} <br>
+                                Date ${hisDate}/${hisMonth}/${hisYear} Time ${hisTime}:${hisMin} น. 
+                                
+                            </div>
+
+                        </div>`;
+
+                resultRow += row;
+
+
+
+
+            });
+
+            return resultRow;
+
+
 
         }
 
-        
+
         async function main() {
 
             let data = await ajax();
             console.log(data);
             await filterDataDefault(data);
 
-        }   
+        }
 
         main();
 
 
 
     });
-    
+
 </script>
 
