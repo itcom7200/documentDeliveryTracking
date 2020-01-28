@@ -59,13 +59,13 @@ End Code
                     getId = null;
                     break;
                 case "getCurrent":
-                    getId = "1";
+                    getId = 1;
                     break;
                 case "getReject":
-                    getId = "0";
+                    getId = 0;
                     break;
                 case "getComplete":
-                    getId = "2";
+                    getId = 2;
                     break;
             }
 
@@ -103,8 +103,8 @@ End Code
         async function ajax() {
             var result = "";
             await $.ajax({
-                "url": "http://localhost:3000/test", // mockup json-server
-                //"url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/59121293",
+                //"url": "http://localhost:3000/test", // mockup json-server
+                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/13",
                 "method": "GET",
                 "timeout": 0,
                 "success": function (data) {
@@ -130,7 +130,8 @@ End Code
 
             $.each(data, function (i) {
                 var { DDRECSTATUS } = data[i];
-                var defaultID = "1"; // current process id
+
+                var defaultID = 1; // current process id
 
                 switch (defaultID) {
                     case DDRECSTATUS:
@@ -154,8 +155,8 @@ End Code
             //console.log(data);
             
 
-            var { TITLE, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, DDSENDPOINTNAME, DDADDRESS,
-                DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL } = data;
+            var { TITLE, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, REQUESTCODE, DDPOINTNAME, DDADDRESS,
+                DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL, DDTYPEID } = data;
             //console.log(TITLE);
 
             var reqYear = REQUESTDATE.substring(0, 4);
@@ -165,32 +166,55 @@ End Code
             var btnColor, location, iconType, divSendpoint = '';
 
             switch (DDRECSTATUS) {
-                case "0": // Reject
+                case 0: // Reject
                     btnColor = "btn-danger";
                     break;
-                case "1": // Active
+                case 1: // Active
                     btnColor = "btn-warning";
                     break;
-                case "2": // Close
+                case 2: // Close
                     btnColor = "btn-success";
                     break;
 
             }
 
-            switch (DDSENDPOINTNAME) {
-                case null: // Point to Home
-                    location = `${DDADDRESS} ${DDDISTRICTNAME}`;
-                    //location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
-                    iconType = "iconHome.png";
+            //switch (DDSENDPOINTNAME) {
+            //    case null: // Point to Home
+            //        location = `${DDADDRESS} ${DDDISTRICTNAME}`;
+            //        //location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
+            //        iconType = "iconHome.png";
 
-                    divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
-                    <div class="col-xs-9">
-                         ${location}
-                    </div>`;
+            //        divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
+            //        <div class="col-xs-9">
+            //             ${location}
+            //        </div>`;
 
+            //        break;
+
+            //    default: // Point to Point
+            //        var deliverYear = DELIVERDATE.substring(0, 4);
+            //        var deliverMonth = DELIVERDATE.substring(4, 6);
+            //        var deliverDate = DELIVERDATE.substring(6, 8);
+
+            //        var deliverHour = DELIVERTIME.substring(0, 2);
+            //        var deliverMin = DELIVERTIME.substring(2, 4);
+
+            //        location = `${DDSENDPOINTNAME} <!--<br><br> <b>กำหนดส่ง</b>--> <br> ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} น.`;
+            //        iconType = "iconCar.png";
+
+            //        divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
+            //        <div class="col-xs-9">
+            //             ${DDSENDPOINTNAME}<br>
+            //             11/11/2020 12.30 <br>
+            //        </div>`;
+
+            //}
+
+            switch (DDTYPEID) {
+                case 1: // P2F
+                    
                     break;
-
-                default: // Point to Point
+                case 2:  //P2P
                     var deliverYear = DELIVERDATE.substring(0, 4);
                     var deliverMonth = DELIVERDATE.substring(4, 6);
                     var deliverDate = DELIVERDATE.substring(6, 8);
@@ -198,16 +222,24 @@ End Code
                     var deliverHour = DELIVERTIME.substring(0, 2);
                     var deliverMin = DELIVERTIME.substring(2, 4);
 
-                    location = `${DDSENDPOINTNAME} <!--<br><br> <b>กำหนดส่ง</b>--> <br> ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} น.`;
+                    location = `${DDPOINTNAME} <br><br> <!--<b>กำหนดส่ง</b> --> <br> ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} น.`;
                     iconType = "iconCar.png";
 
                     divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
                     <div class="col-xs-9">
-                         ${DDSENDPOINTNAME}<br>
+                         ${DDPOINTNAME}<br>
                          11/11/2020 12.30 <br>
                     </div>`;
 
+                    break;
+                case 3: //P2H
+
+
+                    break;
             }
+
+
+             
 
 
             switch (EDITFLAG) {
@@ -286,6 +318,8 @@ End Code
                     break;
             }
 
+            // เรียก อีก function เพื่อ ajax & loopRow
+            getRowData(REQUESTCODE);
             
 
 
@@ -409,7 +443,7 @@ End Code
 
 
             $("#main").append(htmlLayout);
-            await genQR();
+            await genQR(); 
         }
 
         function genQR() {
@@ -424,16 +458,34 @@ End Code
             }
         }
 
+        function getRowData(id) {
+            $.ajax({
+                data: `requestcode=${id}`,
+                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDTrackinginfo",
+                "method": "GET",
+                "timeout": 0,
+                "success": function (data) {
+                    //result = data;
+                    //resultMaster = data;
+                    console.log(`Log จาก ajax`);
+                    console.log(data);
+                },
+                "error": function () {
+                    console.log("Webservice ERROR!");
+                }
+            });
+
+            
+
+        }
 
         
         async function main() {
 
             let data = await ajax();
+            console.log(data);
             await filterDataDefault(data);
-            
 
-            //console.log(`จาก Main `);
-            //console.log(resultMaster);
         }   
 
         main();

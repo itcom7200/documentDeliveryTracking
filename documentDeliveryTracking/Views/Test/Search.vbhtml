@@ -206,7 +206,7 @@ End Code
 
 
         function genQRcode() {
-            var GenQRcode = `https://www.facebook.com/`;
+            var GenQRcode = `https://www.facebook.com/`; // ลิ้งที่หน้าตอนเสร็จ
             if (GenQRcode !== "") {
                 new QRCode(document.getElementById('QRcode'), {
                     text: GenQRcode,

@@ -53,6 +53,13 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function requestcode(trackingId As String) As ActionResult
+
+            ViewData("trackingID") = trackingId
+
+            Return View()
+        End Function
+
 
 
     End Class
