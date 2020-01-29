@@ -145,6 +145,9 @@ End Code
                         case 4:
                             icon = "iconPlane.png";
                             break;
+                        case 5:
+                            icon = "iconSuccess.png";
+                            break;
                     }
 
                     switch (DDACTDETAIL) {
@@ -163,7 +166,7 @@ End Code
                     let hisMin = DDHISTIME.substring(2, 4);
 
                     var row = `<div class="row">
-                            <div class="col-xs-3 col-md-3 nopadding">
+                            <div  class="col-xs-3 col-md-3 nopadding">
                                 <div class="${line}">
                                     <img class="img-iconfix" src="/Content/Icon/${icon}">
                                     <br><br>
@@ -173,7 +176,6 @@ End Code
                                 <b class="lead text-green-opac">${DDACTDETAIL}</b><br>
                                 By ${ACTPERSON} <br>
                                 Date ${hisDate}/${hisMonth}/${hisYear} Time ${hisTime}:${hisMin} น. 
-                                
                             </div>
 
                         </div>`;

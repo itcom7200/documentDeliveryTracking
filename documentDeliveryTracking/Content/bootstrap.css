@@ -6696,11 +6696,38 @@ button.close {
     width: 60px;
     
 }
+.img-iconfix-request {
+    width: 55px;
+}
 .icon {
     width: 60px;
     /*width: 54px;*/
     margin: 0px 25px;
     background: url(../Content/Icon/iconLine.png) center repeat-y;
+    //position: absolute;
+    left: 130px;
+    top: 0px;
+    overflow: hidden;
+    height: 90px;
+    //max-height: 100px;
+}
+.icon-request {
+    width: 55px;
+    /*width: 54px;*/
+    margin: 0px 25px;
+    background: url(../Content/Icon/iconLine.png) center repeat-y;
+    //position: absolute;
+    left: 130px;
+    top: 0px;
+    overflow: hidden;
+    height: 90px;
+    //max-height: 100px;
+}
+.icon-noline {
+    /*width: 54px;*/
+    width: 60px;
+    margin: 0px 25px;
+    //background: url(../Content/Icon/EIEI.jpg) center repeat-y;
     height: 100%;
     //position: absolute;
     left: 130px;
@@ -6708,7 +6735,7 @@ button.close {
     height: 100%;
     overflow: hidden
 }
-.icon-noline {
+.icon-noline-request {
     /*width: 54px;*/
     width: 60px;
     margin: 0px 25px;

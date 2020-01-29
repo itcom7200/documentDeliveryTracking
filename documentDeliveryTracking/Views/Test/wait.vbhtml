@@ -25,7 +25,7 @@ End Code
     </div>
 
     <div class="col-md-8">
-        <h2>NDDREQUEST</h2>
+        <h2>Document Delivery Tracking</h2>
         <div class="btn-group">
             <button id="getCurrent" class="btn btn-primary active">Current</button>
             <button id="getReject" class="btn btn-primary">Reject</button>
@@ -103,8 +103,9 @@ End Code
         async function ajax() {
             var result = "";
             await $.ajax({
-                //"url": "http://localhost:3000/test", // mockup json-server
-                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/13",
+                //"url": "http://localhost:3000/test", // mockup json-server 'http://localhost:3000/tracking'
+                //"url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/13",
+                "url": "http://localhost:3000/tracking",
                 "method": "GET",
                 "timeout": 0,
                 "success": function (data) {
@@ -138,7 +139,7 @@ End Code
                         //console.log(`ID = ${defaultID} & REC = ${DDRECSTATUS} จาก default`); //
                         //console.log(`ข้อมูลก้อนที่ ${i} นำไป render`);
                         //console.log(data[i]);
-                        numI = i;
+                        
                         renderData(data[i], i);
 
                         break;
@@ -155,7 +156,7 @@ End Code
             //console.log(data);
 
 
-            var { TITLE, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, REQUESTCODE, DDPOINTNAME, DDADDRESS,
+            var { TITLE, BIBID, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, REQUESTCODE, DDPOINTNAME, DDADDRESS,
                 DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL, DDTYPEID } = data;
             //console.log(TITLE);
 
@@ -163,7 +164,7 @@ End Code
             var reqMonth = REQUESTDATE.substring(4, 6);
             var reqDate = REQUESTDATE.substring(6, 8);
 
-            var btnColor, location, iconType, divSendpoint = '';
+            var btnColor, location, iconType, divSendpoint, messageType = '';
 
             switch (DDRECSTATUS) {
                 case 0: // Reject
@@ -212,6 +213,7 @@ End Code
 
             switch (DDTYPEID) {
                 case 1: // P2F
+                    messageType = "File delivery";
 
                     break;
                 case 2:  //P2P
@@ -222,18 +224,20 @@ End Code
                     var deliverHour = DELIVERTIME.substring(0, 2);
                     var deliverMin = DELIVERTIME.substring(2, 4);
 
+                    messageType = "Point to point";
+
                     location = `${DDPOINTNAME} <br><br> <!--<b>กำหนดส่ง</b> --> <br> ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} น.`;
                     iconType = "iconCar.png";
 
-                    divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
+                    divSendpoint = `<div class="col-xs-2 col-sm-1 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
                     <div class="col-xs-9">
                          ${DDPOINTNAME}<br>
-                         11/11/2020 12.30 <br>
+                         ${deliverDate}/${deliverMin}/${deliverYear} ${deliverHour}:${deliverMin} <br>
                     </div>`;
 
                     break;
                 case 3: //P2H
-
+                    messageType = "Point to home";
 
                     break;
             }
@@ -320,7 +324,8 @@ End Code
 
             // เรียก อีก function เพื่อ ajax & loopRow
 
-            let resultRow =  await getRowData(REQUESTCODE); 
+            //let resultRow =  await getRowData(REQUESTCODE);
+            let resultRow = '1';
 
             //console.log(a);
 
@@ -334,10 +339,10 @@ End Code
     <div class="col-sm-8 col-lg-7">
         <div class="col-xs-7 col-sm-12">
             <div class="row">
-                <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=b00006682"
+                <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=${BIBID}"
                                  target="_blank">${TITLE}</a><br>
                 <b>Barcode:</b> ${BARCODE}<br>
-                <b>Request Date:</b> ${reqDate}/${reqMonth}/${reqYear} <br><br>
+                <b>Fee: </b> ${reqDate} <!-- /${reqMonth}/${reqYear} --> <br><br>
                 <div class="col-xs-12 nopadding">
                     ${divSendpoint}
                 </div>
@@ -348,6 +353,7 @@ End Code
             <div class="row">
                 <div class="col-xs-7 col-sm-6 col-lg-7">
                     <div class="row">
+                        
                         <!-- Button -->
                         <button type="button" class="btn ${btnColor} btn-block" data-toggle="modal" data-target="#exampleModalScrollable">
                             <b>${DDCURRENTPROCESS}</b>
@@ -358,7 +364,7 @@ End Code
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h2 class="modal-title text-green-opac" id="exampleModalScrollableTitle">Track & Trace</h2>
-                                        <h4 class="text-header-track-and-trace">รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น.</h4>
+                                        <h4 class="text-header-track-and-trace"><!-- รอบที่จัดส่ง: 11/11/2019 เวลา: 15:30 น. --> Type: ${messageType}</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -380,7 +386,7 @@ End Code
                 <div class="col-xs-5">
                     ${editBtn}
                     ${deleteBtn}
-                </div>
+                </div> 
             </div>
         </div>
     </div>
@@ -393,14 +399,14 @@ End Code
 
 
             $("#main").append(htmlLayout);
-            await genQR();
+            await genQR(i);
         }
 
-        function genQR() {
-            //console.log(numI);
-            var GenQRcode = "http://localhost:49777/Home/testAPI/";
+        function genQR(i) {
+            //console.log(`ตรงที่จะ render ${i}`);
+            var GenQRcode = `http://localhost:49777/Home/testAPI/${i}`;
             if (GenQRcode !== "") {
-                new QRCode(document.getElementById(`QRcode${numI}`), {
+                new QRCode(document.getElementById(`QRcode${i}`), {
                     text: GenQRcode,
                     width: 110,
                     height: 110
@@ -468,10 +474,9 @@ End Code
                 let hisMin = DDHISTIME.substring(2, 4);
 
                 var row = `<div class="row">
-                            <div class="col-xs-3 col-md-3 nopadding">
-                                <div class="${line}">
-                                    <img class="img-iconfix" src="/Content/Icon/${icon}">
-                                    <br><br>
+                            <div class="col-xs-3 col-sm-3 nopadding">
+                                <div class="${line}-request">
+                                    <img class="img-iconfix-request" src="/Content/Icon/${icon}">
                                 </div>
                             </div>
                             <div class="col-xs-9">
@@ -500,7 +505,7 @@ End Code
         async function main() {
 
             let data = await ajax();
-            console.log(data);
+            //console.log(data);
             await filterDataDefault(data);
 
         }
