@@ -104,8 +104,8 @@ End Code
             var result = "";
             await $.ajax({
                 //"url": "http://localhost:3000/test", // mockup json-server 'http://localhost:3000/tracking'
-                //"url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/13",
-                "url": "http://localhost:3000/tracking",
+                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDRequest/13",
+                //"url": "http://localhost:3000/tracking",
                 "method": "GET",
                 "timeout": 0,
                 "success": function (data) {
@@ -157,7 +157,7 @@ End Code
 
 
             var { TITLE, BIBID, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, REQUESTCODE, DDPOINTNAME, DDADDRESS,
-                DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL, DDTYPEID } = data;
+                DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL, DDTYPEID, DDCOST } = data;
             //console.log(TITLE);
 
             var reqYear = REQUESTDATE.substring(0, 4);
@@ -324,8 +324,8 @@ End Code
 
             // เรียก อีก function เพื่อ ajax & loopRow
 
-            //let resultRow =  await getRowData(REQUESTCODE);
-            let resultRow = '1';
+            let resultRow =  await getRowData(REQUESTCODE);
+            //let resultRow = '1';
 
             //console.log(a);
 
@@ -342,7 +342,7 @@ End Code
                 <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=${BIBID}"
                                  target="_blank">${TITLE}</a><br>
                 <b>Barcode:</b> ${BARCODE}<br>
-                <b>Fee: </b> ${reqDate} <!-- /${reqMonth}/${reqYear} --> <br><br>
+                <b>Fee: </b> ${DDCOST} <!-- ${reqDate}/${reqMonth}/${reqYear} --> <br><br>
                 <div class="col-xs-12 nopadding">
                     ${divSendpoint}
                 </div>

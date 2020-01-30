@@ -26,14 +26,17 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <!--
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Content", "Content", "Home")</li>
-                    -->
-                    <li>@Html.ActionLink("Tracking", "Ajax", "Home")</li>
+    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    <li>@Html.ActionLink("Content", "Content", "Home")</li>
+    -->
+                    @*<li>@Html.ActionLink("Tracking", "Ajax", "Home")</li>*@  @* tracking เดิม *@
                     <!--<li>@Html.ActionLink("new", "Newtracking", "Home")</li>-->
-                    <li>@Html.ActionLink("Search", "testAPI", "Home")</li>
+                    @*<li>@Html.ActionLink("Search", "testAPI", "Home")</li>*@ @* search เดิม*@
                     <!--<li>@Html.ActionLink("AJAX", "Ajax", "Home")</li>-->
                     @*<li>@Html.ActionLink("Test Ajax page", "Test", "Test")</li>*@
+
+                    <li>@Html.ActionLink("Tracking", "wait", "Test")</li>
+                    <li>@Html.ActionLink("Search", "requestcode", "Test")</li>
                 </ul>
             </div>
         </div>
