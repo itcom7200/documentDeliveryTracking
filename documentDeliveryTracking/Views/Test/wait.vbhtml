@@ -188,37 +188,7 @@ End Code
                     break;
             }
 
-            //switch (DDSENDPOINTNAME) {
-            //    case null: // Point to Home
-            //        location = `${DDADDRESS} ${DDDISTRICTNAME}`;
-            //        //location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
-            //        iconType = "iconHome.png";
-
-            //        divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
-            //        <div class="col-xs-9">
-            //             ${location}
-            //        </div>`;
-
-            //        break;
-
-            //    default: // Point to Point
-            //        var deliverYear = DELIVERDATE.substring(0, 4);
-            //        var deliverMonth = DELIVERDATE.substring(4, 6);
-            //        var deliverDate = DELIVERDATE.substring(6, 8);
-
-            //        var deliverHour = DELIVERTIME.substring(0, 2);
-            //        var deliverMin = DELIVERTIME.substring(2, 4);
-
-            //        location = `${DDSENDPOINTNAME} <!--<br><br> <b>กำหนดส่ง</b>--> <br> ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} น.`;
-            //        iconType = "iconCar.png";
-
-            //        divSendpoint = `<div class="col-xs-2 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
-            //        <div class="col-xs-9">
-            //             ${DDSENDPOINTNAME}<br>
-            //             11/11/2020 12.30 <br>
-            //        </div>`;
-
-            //}
+            
 
             switch (DDTYPEID) {
                 case 1: // P2F
@@ -450,9 +420,6 @@ End Code
                 "method": "GET",
                 "timeout": 0,
                 "success": function (data) {
-                    //result = data;
-                    //resultMaster = data;
-                    //console.log(`Log จาก ajax`);
                     requestCodeData = data;
                 },
                 "error": function () {
