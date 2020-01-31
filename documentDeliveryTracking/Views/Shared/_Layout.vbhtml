@@ -44,8 +44,38 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <script type="text/javascript">
+
+            $.ajax({
+                //data: `requestcode=${id}`,
+                "url": "https://wulibdemoapi.walaiautolib.com/wulib/api/NDDLibraryContact",
+                "method": "GET",
+                "timeout": 0,
+                "success": function (data) {
+                    var totalContact = "";
+                    var contact = "";
+                    var result = data.split(";");
+                    //console.log(result);
+                    $.each(result, function (i) {
+                        //console.log(result[i]);
+                        contact = `${result[i]} <br>`;
+                        totalContact += contact;
+                    })
+                    $("#contact").html(totalContact);
+                },
+                "error": function () {
+                    console.log("Web service Error");
+                }
+            });
+            
+
+        </script>
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p id="contact"></p>
+                @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+                <!--<p> © 2019 Developer by Suntiparb Tunparmuan
+                    Digital Information Management(DIM)
+                    walailak University </p>-->
         </footer>
     </div>
 

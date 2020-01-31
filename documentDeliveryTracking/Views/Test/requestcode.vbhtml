@@ -8,7 +8,7 @@ End Code
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-7 col-md-8">
-                <h1 class="text">Walai DD Tracking</h1>
+                <h1 class="text">WALAI DD Tracking</h1>
                 <p class="font-discription">ติดตามหนังสือของคุณได้ทุกเวลา</p>
                 <br />
                 <div class="search-container">
@@ -174,7 +174,7 @@ End Code
                             </div>
                             <div class="col-xs-9">
                                 <b class="lead text-green-opac">${DDACTDETAIL}</b><br>
-                                By ${ACTPERSON} <br>
+                                ${ACTPERSON} <br>
                                 Date ${hisDate}/${hisMonth}/${hisYear} Time ${hisTime}:${hisMin} น. 
                             </div>
 
@@ -193,7 +193,7 @@ End Code
                     </div>
                     <div class="col-sm-4 col-md-3">
                         <hr class="visible-xs hr-set-margin">
-                        <h2>Contact</h2>
+                        <h2>DD Info</h2>
                         <p>หากมีข้อสงสัย กรุณาติดต่อ</p>
                         <address>
                             Staff: สันติภาพ 1<br>
@@ -219,7 +219,7 @@ End Code
 
             //console.log(`inputId ${inputId}`);
 
-            var GenQRcode = `https://www.facebook.com/${inputId}`;
+            var GenQRcode = `http://localhost:49777/Test/requestcode?trackingId=${inputId}`;
             if (GenQRcode !== "") {
                 new QRCode(document.getElementById('QRcode'), {
                     text: GenQRcode,

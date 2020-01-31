@@ -157,14 +157,14 @@ End Code
 
 
             var { TITLE, BIBID, BARCODE, DDRECSTATUS, REQUESTDATE, REQUESTTIME, DELIVERDATE, DELIVERTIME, REQUESTCODE, DDPOINTNAME, DDADDRESS,
-                DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL, DDTYPEID, DDCOST } = data;
+                DDDISTRICTNAME, DDPROVINCENAME, DDPOSTCODE, EDITFLAG, DELETEFLAG, DDCURRENTPROCESS, URL, DDTYPEID, DDCOST, DOWNLOADLINK } = data;
             //console.log(TITLE);
 
             var reqYear = REQUESTDATE.substring(0, 4);
             var reqMonth = REQUESTDATE.substring(4, 6);
             var reqDate = REQUESTDATE.substring(6, 8);
 
-            var btnColor, location, iconType, divSendpoint, messageType = '';
+            var btnColor, location, iconType, divSendpoint, messageType, cost = '';
 
             switch (DDRECSTATUS) {
                 case 0: // Reject
@@ -177,6 +177,15 @@ End Code
                     btnColor = "btn-success";
                     break;
 
+            }
+
+            switch (DDCOST) {
+                case null:
+                    cost = "";
+                    break;
+                default:
+                    cost = DDCOST;
+                    break;
             }
 
             //switch (DDSENDPOINTNAME) {
@@ -214,12 +223,20 @@ End Code
             switch (DDTYPEID) {
                 case 1: // P2F
                     messageType = "File delivery";
+                    iconType = "iconDoc.png";
+
+                    divSendpoint = `<div class="col-xs-2 col-sm-1 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
+                    <div class="col-xs-9">
+                         <a href="${DOWNLOADLINK}" target="_blank">Download</a> <!-- DOWNLOADLINK -->
+                    </div>`;
+
+
 
                     break;
                 case 2:  //P2P
                     var deliverYear = DELIVERDATE.substring(0, 4);
-                    var deliverMonth = DELIVERDATE.substring(4, 6);
                     var deliverDate = DELIVERDATE.substring(6, 8);
+                    var deliverMonth = DELIVERDATE.substring(4, 6);
 
                     var deliverHour = DELIVERTIME.substring(0, 2);
                     var deliverMin = DELIVERTIME.substring(2, 4);
@@ -232,12 +249,21 @@ End Code
                     divSendpoint = `<div class="col-xs-2 col-sm-1 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
                     <div class="col-xs-9">
                          ${DDPOINTNAME}<br>
-                         ${deliverDate}/${deliverMin}/${deliverYear} ${deliverHour}:${deliverMin} <br>
+                         ${deliverDate}/${deliverMonth}/${deliverYear} ${deliverHour}:${deliverMin} <br>
                     </div>`;
 
                     break;
                 case 3: //P2H
                     messageType = "Point to home";
+
+                    location = `${DDADDRESS} ${DDDISTRICTNAME}`;
+                    //location = `${DDADDRESS} ${DDDISTRICTNAME} ${DDPROVINCENAME} ${DDPOSTCODE}`;
+                    iconType = "iconHome.png";
+
+                    divSendpoint = `<div class="col-xs-2 col-sm-1 nopadding"> <img class="img-thumbnail" src="/Content/Icon/${iconType}"></div>
+                    <div class="col-xs-9">
+                         ${location}
+                    </div>`;
 
                     break;
             }
@@ -249,12 +275,12 @@ End Code
             switch (EDITFLAG) {
                 case "0": // can edit
                     editBtn = `<!-- Button trigger modal (Edit model)  -->
-                        <button type="button" class="btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit">
+                        <button type="button" class="btn-xs btn btn-primary" data-toggle="modal" data-target="#exampleModalEdit${i}">
                             <img src="/Content/Icon/IconEdit2.png">
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModalEdit${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -292,12 +318,12 @@ End Code
             switch (DELETEFLAG) {
                 case "0": // can delete
                     deleteBtn = `<!-- Button trigger modal (Reject model)  -->
-                        <button type="button" class="btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject">
+                        <button type="button" class="btn-xs btn btn-danger" data-toggle="modal" data-target="#exampleModalReject${i}">
                             <img src="/Content/Icon/IconReject2.png">
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalReject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModalReject${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -342,7 +368,7 @@ End Code
                 <b>Title:</b> <a class="text-info" href="http://192.168.74.221/psru/catalog/BibItem.aspx?BibID=${BIBID}"
                                  target="_blank">${TITLE}</a><br>
                 <b>Barcode:</b> ${BARCODE}<br>
-                <b>Fee: </b> ${DDCOST} <!-- ${reqDate}/${reqMonth}/${reqYear} --> <br><br>
+                <b>Fee: </b> ${cost} <!-- ${reqDate}/${reqMonth}/${reqYear} --> <br><br>
                 <div class="col-xs-12 nopadding">
                     ${divSendpoint}
                 </div>
@@ -355,11 +381,11 @@ End Code
                     <div class="row">
                         
                         <!-- Button -->
-                        <button type="button" class="btn ${btnColor} btn-block" data-toggle="modal" data-target="#exampleModalScrollable">
+                        <button type="button" class="btn ${btnColor} btn-block" data-toggle="modal" data-target="#exampleModalScrollable${i}">
                             <b>${DDCURRENTPROCESS}</b>
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                        <div class="modal fade" id="exampleModalScrollable${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -391,20 +417,20 @@ End Code
         </div>
     </div>
     <div id="QRcode${i}" class="visible-lg col-xs-2 nopadding">
-        <!--<img class="img-qrcode-maxsize" src="/Content/Image/genQR.png">-->
+        
     </div>
 
 
 </div>`;
 
-
+            
             $("#main").append(htmlLayout);
-            await genQR(i);
+            await genQR(i,REQUESTCODE);
         }
 
-        function genQR(i) {
+        function genQR(i,requestCode) {
             //console.log(`ตรงที่จะ render ${i}`);
-            var GenQRcode = `http://localhost:49777/Home/testAPI/${i}`;
+            var GenQRcode = `http://localhost:49777/Test/requestcode?trackingId=${requestCode}`;
             if (GenQRcode !== "") {
                 new QRCode(document.getElementById(`QRcode${i}`), {
                     text: GenQRcode,
@@ -474,14 +500,14 @@ End Code
                 let hisMin = DDHISTIME.substring(2, 4);
 
                 var row = `<div class="row">
-                            <div class="col-xs-3 col-sm-3 nopadding">
+                            <div class="col-xs-3 col-sm-2 nopadding">
                                 <div class="${line}-request">
                                     <img class="img-iconfix-request" src="/Content/Icon/${icon}">
                                 </div>
                             </div>
                             <div class="col-xs-9">
                                 <b class="lead text-green-opac">${DDACTDETAIL}</b><br>
-                                By ${ACTPERSON} <br>
+                                ${ACTPERSON} <br>
                                 Date ${hisDate}/${hisMonth}/${hisYear} Time ${hisTime}:${hisMin} น. 
                                 
                             </div>
